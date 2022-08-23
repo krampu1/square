@@ -29,7 +29,7 @@ void unit_test()
         }
         else
         {
-            printf(GREEN "test namber %d accept || ", i + 1);
+            printf(GREEN "test namber %-3d accept || ", i + 1);
         }
         if (test_n_roots[i] == Infinite_roots)
         {

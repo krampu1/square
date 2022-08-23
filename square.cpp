@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include "quadratic_equation.h"
 #include <ctype.h>
-#define test true
 
 int main() 
 {
-#if test
+#ifdef TEST
     unit_test();
 #else
     double a = 0, b = 0, c = 0;

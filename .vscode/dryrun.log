@@ -1,4 +1,5 @@
-make.exe --dry-run --keep-going --print-directory
-"make.exe" �� ���� ����७��� ��� ���譥�
-��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
-
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory 'c:/Users/actim/code/c/square'
+g++ square.cpp quadratic_equation.cpp unit_test.cpp -o square
+make: Leaving directory 'c:/Users/actim/code/c/square'
+ 
