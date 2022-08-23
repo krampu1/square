@@ -31,13 +31,16 @@ void unit_test()
         {
             printf(GREEN "test namber %-3d accept || ", i + 1);
         }
+
+        printf("a = %lg b = %lg c = %lg || ", a, b, c);
+
         if (test_n_roots[i] == Infinite_roots)
         {
-            printf("a = %lg b = %lg c = %lg || true answer: count_roots = infinite || ", a, b, c);
+            printf("true answer: count_roots = infinite || ");
         }
         else
         {
-            printf("a = %lg b = %lg c = %lg || true answer: count_roots = %d ", a, b, c, test_n_roots[i]);
+            printf("true answer: count_roots = %d ", test_n_roots[i]);
             for (int j = 0; j < test_n_roots[i]; j++)
             {
                 printf("x%d = %lg ", j, tests[i][3+j]);
