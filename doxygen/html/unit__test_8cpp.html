@@ -75,8 +75,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8e55f3e436b0268b26875038536f8e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">unit_test</a> ()</td></tr>
+<tr class="memdesc:a8e55f3e436b0268b26875038536f8e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called for code testing.  <a href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">More...</a><br /></td></tr>
 <tr class="separator:a8e55f3e436b0268b26875038536f8e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13a9924ed63c3d94a2337babb2a6b475"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">testqe</a> (double a, double b, double c, int *count_root, double *ans)</td></tr>
+<tr class="memdesc:a13a9924ed63c3d94a2337babb2a6b475"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that tests the operation of a test with certain parameters.  <a href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">More...</a><br /></td></tr>
 <tr class="separator:a13a9924ed63c3d94a2337babb2a6b475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -126,6 +128,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>A function that tests the operation of a test with certain parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>parameter of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>parameter of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>parameter of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count_root</td><td>pointer to the number of roots of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ans</td><td>pointer to the array of roots of the equation</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.<br  />
+<br  />
+ Эта функция не содержит набот тестов, а только вызывает функцию основного тестирования на заранее определённых входных и выходных данных.<br  />
+В случае если верный ответ совподает с выводом программы возврощается true иначе false.</p>
+<dl class="section return"><dt>Returns</dt><dd>If the correct answer coincides with the output of the program, true is returned otherwise false. </dd></dl>
+
 </div>
 </div>
 <a id="a8e55f3e436b0268b26875038536f8e53"></a>
@@ -142,6 +161,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Function called for code testing. </p>
+<p>This function is called when the compilation flag is specified -D TEST .<br  />
+It contains a set of tests and checks the operation of the main program on them using the <a class="el" href="quadratic__equation_8h.html#a13a9924ed63c3d94a2337babb2a6b475" title="A function that tests the operation of a test with certain parameters.">testqe()</a> function.<br  />
+Also, this function outputs information about the passed tests and the result of the check to the console.<br  />
+<br  />
+ Данная функция вызывается при указании флага компиляции -D TEST .<br  />
+Она содержит набор тестов и проверяет на них работу основной программы с помощью функции <a class="el" href="quadratic__equation_8h.html#a13a9924ed63c3d94a2337babb2a6b475" title="A function that tests the operation of a test with certain parameters.">testqe()</a>.<br  />
+Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. </p>
 
 </div>
 </div>

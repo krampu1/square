@@ -10,9 +10,9 @@ unit test code file
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A function that tests the operation of a test with certain parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -27,9 +27,45 @@ unit test code file
 \doxysubsubsection{\texorpdfstring{testqe()}{testqe()}}
 {\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
 
+
+
+A function that tests the operation of a test with certain parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the number of roots of the quadratic equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em ans} & pointer to the array of roots of the equation\\
+\hline
+\end{DoxyParams}
+This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.~\newline
+~\newline
+ Эта функция не содержит набот тестов, а только вызывает функцию основного тестирования на заранее определённых входных и выходных данных.~\newline
+В случае если верный ответ совподает с выводом программы возврощается true иначе false.
+
+\begin{DoxyReturn}{Returns}
+If the correct answer coincides with the output of the program, true is returned otherwise false. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}\label{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}} 
 \index{unit\_test.cpp@{unit\_test.cpp}!unit\_test@{unit\_test}}
 \index{unit\_test@{unit\_test}!unit\_test.cpp@{unit\_test.cpp}}
 \doxysubsubsection{\texorpdfstring{unit\_test()}{unit\_test()}}
 {\footnotesize\ttfamily void unit\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Function called for code testing. 
+
+This function is called when the compilation flag is specified -\/D TEST .~\newline
+It contains a set of tests and checks the operation of the main program on them using the \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}} function.~\newline
+Also, this function outputs information about the passed tests and the result of the check to the console.~\newline
+~\newline
+ Данная функция вызывается при указании флага компиляции -\/D TEST .~\newline
+Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}}.~\newline
+Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. 

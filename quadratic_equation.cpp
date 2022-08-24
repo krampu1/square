@@ -90,6 +90,7 @@ void liner_equation(double a, double b, int* count_root, double* ans)
 
 void quadratic_equation(double a, double b, double c, int* count_root, double* ans)
 {
+    assert(!equal_double(a, 0));
     double d = b * b - 4 * a * c;
 
     if (d < 0)
@@ -118,6 +119,8 @@ void quadratic_equation(double a, double b, double c, int* count_root, double* a
             ans[1] = 0;
     }
 }
+
+
 
 void solveqe(double a, double b, double c, int* count_root, double* ans)
 {

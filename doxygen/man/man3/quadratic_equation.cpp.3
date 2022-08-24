@@ -16,24 +16,31 @@
 .ti -1c
 .RI "void \fBswap_double\fP (double *a, double *b)"
 .br
+.RI "A function that swaps two numbers of the double type\&. "
 .ti -1c
 .RI "void \fBoutput_roots\fP (int count_root, double *ans)"
 .br
+.RI "A function that outputs the found roots of the quadratic equation\&. "
 .ti -1c
 .RI "bool \fBinput_3_argument\fP (double *a, double *b, double *c)"
 .br
+.RI "Function used to take equation parameters from the console\&. "
 .ti -1c
 .RI "bool \fBequal_double\fP (double a, double b)"
 .br
+.RI "Function for comparing 2 numbers of type double\&. "
 .ti -1c
 .RI "void \fBliner_equation\fP (double a, double b, int *count_root, double *ans)"
 .br
+.RI "The function of solving a linear equation\&. "
 .ti -1c
 .RI "void \fBquadratic_equation\fP (double a, double b, double c, int *count_root, double *ans)"
 .br
+.RI "The function of solving the correct quadratic equation\&. "
 .ti -1c
 .RI "void \fBsolveqe\fP (double a, double b, double c, int *count_root, double *ans)"
 .br
+.RI "The function of solving the quadratic equation\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -44,18 +51,189 @@ quadratic equation code file
 .PP 
 .SS "bool equal_double (double a, double b)"
 
+.PP
+Function for comparing 2 numbers of type double\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the first double number 
+.br
+\fIb\fP the second double number
+.RE
+.PP
+A constant is used for comparison, if the difference between the stored double values differs by less than this constant, these numbers are considered equal\&.
+.br
+
+.br
+ Для сравнения используется константа, если разница между сохраннёными значениями double отличается меньше чем на эту константу, эти числа считаются равными\&.
+.br
+Если числа равны вернётся true иначе false\&.
+.PP
+\fBReturns\fP
+.RS 4
+true if the numbers are equal, otherwise false 
+.RE
+.PP
+
 .SS "bool input_3_argument (double * a, double * b, double * c)"
+
+.PP
+Function used to take equation parameters from the console\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP pointer to the parameter of the quadratic equation 
+.br
+\fIb\fP pointer to the parameter of the quadratic equation 
+.br
+\fIc\fP pointer to the parameter of the quadratic equation
+.br
+\fIa\fP parameter of the quadratic equation 
+.br
+\fIb\fP parameter of the quadratic equation 
+.br
+\fIc\fP parameter of the quadratic equation
+.RE
+.PP
+The input will continue until the letter f is entered or 3 parameters are specified that can be written to double\&.
+.br
+
+.br
+ В случае если введена буква f будет считаться что человек хочет завершить работу и функция вернёт true как знак того\&.
+.br
+Ввод будет продолжаться до тех пор пока не будет введена буква f или не будет указано 3 параметра которые можно записать в double\&.
+.PP
+\fBReturns\fP
+.RS 4
+true if the letter f is entered, otherwise false 
+.RE
+.PP
 
 .SS "void liner_equation (double a, double b, int * count_root, double * ans)"
 
+.PP
+The function of solving a linear equation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP parameter of the linear equation 
+.br
+\fIb\fP parameter of the linear equation 
+.br
+\fIcount_root\fP pointer to the variable number of roots of the equation 
+.br
+\fIans\fP pointer to an array of roots
+.br
+\fIcount_root\fP the number of roots of the equation 
+.br
+\fIans\fP array of roots
+.RE
+.PP
+This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation\&.
+.br
+
+.br
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению\&. 
 .SS "void output_roots (int count_root, double * ans)"
 
+.PP
+A function that outputs the found roots of the quadratic equation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcount_root\fP number of roots of the equation 
+.br
+\fIans\fP pointer to the array of roots of the equation
+.RE
+.PP
+In this function, all cases are considered separately: there are no roots, 1 root, 2 roots, infinity of roots\&.
+.br
+
+.br
+ В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней\&. 
 .SS "void quadratic_equation (double a, double b, double c, int * count_root, double * ans)"
 
+.PP
+The function of solving the correct quadratic equation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP parameter of the quadratic equation 
+.br
+\fIb\fP parameter of the quadratic equation 
+.br
+\fIc\fP parameter of the quadratic equation 
+.br
+\fIcount_root\fP pointer to the variable number of roots 
+.br
+\fIans\fP pointer to an array of roots
+.br
+\fIcount_root\fP the variable number of roots 
+.br
+\fIans\fP array of roots
+.RE
+.PP
+This function considers the linear case of a quadratic equation when the parameter a is not equal to 0, which guarantees a non-infinite number of roots\&.
+.br
+
+.br
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0, что гарантирует не бесконечное число корней\&. 
 .SS "void solveqe (double a, double b, double c, int * count_root, double * ans)"
 
+.PP
+The function of solving the quadratic equation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP parameter of the quadratic equation 
+.br
+\fIb\fP parameter of the quadratic equation 
+.br
+\fIc\fP parameter of the quadratic equation 
+.br
+\fIcount_root\fP pointer to the variable number of roots 
+.br
+\fIans\fP pointer to an array of roots
+.br
+\fIcount_root\fP the variable number of roots 
+.br
+\fIans\fP array of roots
+.RE
+.PP
+This function divides the quadratic equation into 2 cases\&.
+.br
+If a is 0, then the equation is treated as linear\&.
+.br
+If a is not equal to 0, then the equation is considered as a square equation that cannot have an infinite number of roots\&.
+.br
+
+.br
+ Эта функция разделяет квадратное уравнение на 2 случая\&.
+.br
+Если a равен 0, то уравнение рассматривается как линейное\&.
+.br
+Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней\&. 
 .SS "void swap_double (double * a, double * b)"
 
+.PP
+A function that swaps two numbers of the double type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP pointer to a double number 
+.br
+\fIb\fP pointer to a double number
+.br
+\fIa\fP a double number 
+.br
+\fIb\fP a double number
+.RE
+.PP
+This function swaps 2 double numbers\&.
+.br
+
+.br
+ Эта функция меняет местами 2 числа типа double\&. 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for My Project from the source code\&.
