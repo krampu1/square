@@ -7,10 +7,12 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Tue Aug 23 20:37:20 2022
+# Make data base, printed on Wed Aug 24 10:09:21 2022
 
 # Variables
 
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -28,14 +30,15 @@ SYSTEMROOT = C:\Windows
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Module 
-s;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2344_EWMMECSUBKIBZVDS
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_12240_WDUNUQIAMLJEUPJU
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -83,7 +86,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2344
+VSCODE_PID = 12240
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -91,7 +94,7 @@ VSCODE_PID = 2344
 # automatic
 <D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"e2673fac9b3b0beb38d486c37331d2f9.ru","_translationsConfigFile":"C:\\Users\\actim\\AppData\\Roaming\\Code\\clp\\e2673fac9b3b0beb38d486c37331d2f9.ru\\tcf.json","_cacheRoot":"C:\\Users\\actim\\AppData\\Roaming\\Code\\clp\\e2673fac9b3b0beb38d486c37331d2f9.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\actim\\AppData\\Roaming\\Code\\clp\\e2673fac9b3b0beb38d486c37331d2f9.ru\\e4503b30fc78200f846c62cf8091b76ff5547662","_corruptedFile":"C:\\Users\\actim\\AppData\\Roaming\\Code\\clp\\e2673fac9b3b0beb38d486c37331d2f9.ru\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 ONEDRIVECONSUMER = C:\Users\actim\OneDrive
 # default
@@ -115,7 +118,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\mingw64\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Users\actim\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\actim\AppData\Local\Programs\Python\Python310\;C:\Users\actim\AppData\Local\Microsoft\WindowsApps;C:\Users\actim\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\actim\AppData\Local\GitHubDesktop\bin
+PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\mingw64\bin;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C;C:\Program Files\doxygen\bin;C:\Users\actim\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\actim\AppData\Local\Programs\Python\Python310\;C:\Users\actim\AppData\Local\Microsoft\WindowsApps;C:\Users\actim\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\actim\AppData\Local\GitHubDesktop\bin
 # environment
 COMPUTERNAME = ACTIMER
 # default
@@ -170,7 +173,8 @@ PROCESSOR_ARCHITECTURE = x86
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
-# environment
+# envi 
+ronment
 ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\actim\AppData\Local\Temp
@@ -187,13 +191,14 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver outp 
+ut-sync load
 # environment
 PROCESSOR_REVISION = 6001
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=90/1024=9%, Rehash=0, Collisions=8/120=7%
+# Load=92/1024=9%, Rehash=0, Collisions=9/122=7%
 
 # Pattern-specific Variable Values
 
@@ -201,9 +206,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key c:/Users/actim/code/c/square, mtime 1661276197): 11 files, no impossibilities.
+# . (key c:/Users/actim/code/c/square, mtime 1661283929): 15 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -273,13 +278,13 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 15 / storage = 147 B / avg = 9 B
-# current buf: size = 8174 B / used = 147 B / count = 15 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 171 B / avg = 9 B
+# current buf: size = 8174 B / used = 171 B / count = 19 / avg = 9 B
 
-# strcache performance: lookups = 23 / hit rate = 34%
+# strcache performance: l 
+ookups = 27 / hit rate = 29%
 # hash-table stats:
-# Load=15/8192=0%, Rehash=0, Collisions=0/23=0%
-# Finish 
-ed Make data base on Tue Aug 23 20:37:20 2022
+# Load=19/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Wed Aug 24 10:09:21 2022
 
  

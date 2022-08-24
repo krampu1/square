@@ -1,5 +1,10 @@
 #include "quadratic_equation.h"
 
+/*! 
+* \file unit_test.cpp 
+* \brief unit_test file
+*/
+
 void unit_test()
 {
     const int N = 10;

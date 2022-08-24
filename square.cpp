@@ -1,7 +1,17 @@
+/*! 
+* \file square.cpp 
+* \brief main file
+*/
+
 #include <stdio.h>
 #include "quadratic_equation.h"
 #include <ctype.h>
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int main() 
 {
 #ifdef TEST
