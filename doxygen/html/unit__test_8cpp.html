@@ -77,6 +77,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8e55f3e436b0268b26875038536f8e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">unit_test</a> ()</td></tr>
 <tr class="memdesc:a8e55f3e436b0268b26875038536f8e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called for code testing.  <a href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">More...</a><br /></td></tr>
 <tr class="separator:a8e55f3e436b0268b26875038536f8e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84cbfe92a473f678d2a61914f6c0b10e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a84cbfe92a473f678d2a61914f6c0b10e">outputs_with_test</a> (int num_of_test, double *test, int count_root, int *count_false_test)</td></tr>
+<tr class="memdesc:a84cbfe92a473f678d2a61914f6c0b10e"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция для проверки теста с выводом информации в консиль  <a href="unit__test_8cpp.html#a84cbfe92a473f678d2a61914f6c0b10e">More...</a><br /></td></tr>
+<tr class="separator:a84cbfe92a473f678d2a61914f6c0b10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13a9924ed63c3d94a2337babb2a6b475"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">testqe</a> (double a, double b, double c, int *count_root, double *ans)</td></tr>
 <tr class="memdesc:a13a9924ed63c3d94a2337babb2a6b475"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that tests the operation of a test with certain parameters.  <a href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">More...</a><br /></td></tr>
 <tr class="separator:a13a9924ed63c3d94a2337babb2a6b475"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -84,6 +87,61 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>unit test code file </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a84cbfe92a473f678d2a61914f6c0b10e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84cbfe92a473f678d2a61914f6c0b10e">&#9670;&nbsp;</a></span>outputs_with_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void outputs_with_test </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_of_test</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>test</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count_false_test</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>функция для проверки теста с выводом информации в консиль </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_of_test</td><td>number of test </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">test</td><td>pointer to an array containing test data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count_root</td><td>the variable number of roots </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count_false_test</td><td>pointer to the invalid test counter</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count_false_test</td><td>invalid test counter</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test.<br  />
+<br  />
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. </p>
+
+</div>
+</div>
 <a id="a13a9924ed63c3d94a2337babb2a6b475"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13a9924ed63c3d94a2337babb2a6b475">&#9670;&nbsp;</a></span>testqe()</h2>
 

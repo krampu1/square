@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 24 22:35:01 2022
+# Make data base, printed on Wed Aug 24 23:54:42 2022
 
 # Variables
 
@@ -27,7 +27,8 @@ SYSTEMROOT = C:\Windows
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Module 
+s;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
@@ -63,7 +64,7 @@ ONEDRIVE = C:\Users\actim\OneDrive
 # makefile
 CURDIR := c:/Users/actim/code/c/square
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -199,7 +200,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key c:/Users/actim/code/c/square, mtime 1661356341): 13 files, no impossibilities.
+# . (key c:/Users/actim/code/c/square, mtime 1661374367): 13 files, no impossibilities.
 
 # 13 files, no impossibilities in 1 directories.
 
@@ -214,12 +215,12 @@ debug:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 4):
-	g++ square.cpp quadratic_equation.cpp unit_test.cpp -D TEST -o square
+	g++ square.cpp quadratic_equation.cpp unit_test.cpp -D TEST -o squareDB
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-23 20:36:04
+#  Last modified 2022-08-24 23:54:41
 #  File has been updated.
 #  Successfully updated.
 
@@ -277,6 +278,6 @@ all:
 # strcache performance: lookups = 25 / hit rate = 32%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Wed Aug 24 22:35:01 2022
+# Finished Make data base on Wed Aug 24 23:54:42 2022
 
  

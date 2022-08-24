@@ -20,15 +20,15 @@
 .ti -1c
 .RI "#define \fBRED\fP   '\\x1B[31m'"
 .br
-.RI "эта строка позволяет перекрасить цвет последующих символов в консоли в красный "
+.RI "this line allows you to recolor the color of subsequent characters in the console to red "
 .ti -1c
 .RI "#define \fBGREEN\fP   '\\x1B[32m'"
 .br
-.RI "эта строка позволяет перекрасить цвет последующих символов в консоли в зелный "
+.RI "this line allows you to recolor the color of subsequent characters in the console to green "
 .ti -1c
 .RI "#define \fBEND_COLOR\fP   '\\033[0m'"
 .br
-.RI "эта строка позволяет вернуть цвет последующих символов в консоли к стандартному "
+.RI "this line allows you to recolor the color of subsequent characters in the console to defoult сcolor "
 .in -1c
 .SS "Functions"
 
@@ -69,6 +69,10 @@
 .RI "void \fBswap_double\fP (double *a, double *b)"
 .br
 .RI "A function that swaps two numbers of the double type\&. "
+.ti -1c
+.RI "void \fBoutputs_with_test\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
+.br
+.RI "функция для проверки теста с выводом информации в консиль "
 .in -1c
 .SS "Variables"
 
@@ -76,11 +80,15 @@
 .ti -1c
 .RI "const double \fBEpsilon\fP = 1e\-5"
 .br
-.RI "константа минимальной разницы, при которой double считаются разными "
+.RI "the constant of the minimum difference at which doubles are considered different "
 .ti -1c
 .RI "const int \fBInfinite_roots\fP = \-1"
 .br
-.RI "константа обозначающая что уравнение имеет бесконечное колличество решений "
+.RI "a constant denoting that the equation has an infinite number of solutions "
+.ti -1c
+.RI "const int \fBoffset_root\fP = 3"
+.br
+.RI "the amount of data up to the first root in the array with test information "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -92,15 +100,15 @@ quadratic equation header file
 .SS "#define END_COLOR   '\\033[0m'"
 
 .PP
-эта строка позволяет вернуть цвет последующих символов в консоли к стандартному 
+this line allows you to recolor the color of subsequent characters in the console to defoult сcolor 
 .SS "#define GREEN   '\\x1B[32m'"
 
 .PP
-эта строка позволяет перекрасить цвет последующих символов в консоли в зелный 
+this line allows you to recolor the color of subsequent characters in the console to green 
 .SS "#define RED   '\\x1B[31m'"
 
 .PP
-эта строка позволяет перекрасить цвет последующих символов в консоли в красный 
+this line allows you to recolor the color of subsequent characters in the console to red 
 .SH "Function Documentation"
 .PP 
 .SS "bool equal_double (double a, double b)"
@@ -205,6 +213,29 @@ In this function, all cases are considered separately: there are no roots, 1 roo
 
 .br
  В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней\&. 
+.SS "void outputs_with_test (int num_of_test, double * test, int count_root, int * count_false_test)"
+
+.PP
+функция для проверки теста с выводом информации в консиль 
+.PP
+\fBParameters\fP
+.RS 4
+\fInum_of_test\fP number of test 
+.br
+\fItest\fP pointer to an array containing test data 
+.br
+\fIcount_root\fP the variable number of roots 
+.br
+\fIcount_false_test\fP pointer to the invalid test counter
+.br
+\fIcount_false_test\fP invalid test counter
+.RE
+.PP
+This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test\&.
+.br
+
+.br
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте\&. 
 .SS "void quadratic_equation (double a, double b, double c, int * count_root, double * ans)"
 
 .PP
@@ -341,11 +372,15 @@ Also, this function outputs information about the passed tests and the result of
 .SS "const double Epsilon = 1e\-5"
 
 .PP
-константа минимальной разницы, при которой double считаются разными 
+the constant of the minimum difference at which doubles are considered different 
 .SS "const int Infinite_roots = \-1"
 
 .PP
-константа обозначающая что уравнение имеет бесконечное колличество решений 
+a constant denoting that the equation has an infinite number of solutions 
+.SS "const int offset_root = 3"
+
+.PP
+the amount of data up to the first root in the array with test information 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for My Project from the source code\&.

@@ -164,11 +164,12 @@ void swap_double(double* a, double* b);
 
 /// функция для проверки теста с выводом информации в консиль
 /**
-* @param [in] a parameter of the quadratic equation
-* @param [in] b parameter of the quadratic equation
-* @param [in] c parameter of the quadratic equation
+* @param [in] num_of_test number of test
+* @param [in] test pointer to an array containing test data
 * @param [out] count_root the variable number of roots
-* @param [out] ans array of roots
+* @param [in] count_false_test pointer to the invalid test counter
+*
+* @param [out] count_false_test invalid test counter
 *
 * This function tests the program on certain data and outputs information
 * to the console about whether the test was successfully passed and about the test.\n\n
@@ -176,4 +177,4 @@ void swap_double(double* a, double* b);
 * Эта функция тестирует программу на определённых данных и выводит в консоль
 * информацию о том успешно ли пройден тест и о сомом тесте. 
 */
-void outputs_with_test(double a, double b, double c, int* count_roots, double* ans);
+void outputs_with_test(int num_of_test, double* test, int count_root, int* count_false_test);

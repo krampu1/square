@@ -18,6 +18,10 @@
 .br
 .RI "Function called for code testing\&. "
 .ti -1c
+.RI "void \fBoutputs_with_test\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
+.br
+.RI "функция для проверки теста с выводом информации в консиль "
+.ti -1c
 .RI "bool \fBtestqe\fP (double a, double b, double c, int *count_root, double *ans)"
 .br
 .RI "A function that tests the operation of a test with certain parameters\&. "
@@ -29,6 +33,29 @@ unit test code file
 
 .SH "Function Documentation"
 .PP 
+.SS "void outputs_with_test (int num_of_test, double * test, int count_root, int * count_false_test)"
+
+.PP
+функция для проверки теста с выводом информации в консиль 
+.PP
+\fBParameters\fP
+.RS 4
+\fInum_of_test\fP number of test 
+.br
+\fItest\fP pointer to an array containing test data 
+.br
+\fIcount_root\fP the variable number of roots 
+.br
+\fIcount_false_test\fP pointer to the invalid test counter
+.br
+\fIcount_false_test\fP invalid test counter
+.RE
+.PP
+This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test\&.
+.br
+
+.br
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте\&. 
 .SS "bool testqe (double a, double b, double c, int * count_root, double * ans)"
 
 .PP
