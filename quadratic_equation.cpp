@@ -1,5 +1,9 @@
-#include "quadratic_equation.h"
+/** 
+* \file quadratic_equation.cpp 
+* \brief quadratic equation code file
+*/
 
+#include "quadratic_equation.h"
 
 void swap_double(double* a, double* b)
 {

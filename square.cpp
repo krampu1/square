@@ -1,17 +1,12 @@
-/*! 
+/** 
 * \file square.cpp 
-* \brief main file
+* \brief main code file
 */
 
 #include <stdio.h>
 #include "quadratic_equation.h"
 #include <ctype.h>
 
-/**
- * @brief 
- * 
- * @return int 
- */
 int main() 
 {
 #ifdef TEST
@@ -22,7 +17,7 @@ int main()
     int count_root = 0;
     
     printf("this program solve quadratic equation. To exit, press f\n");
-    while (true)
+    while (true) 
     {
         printf("enter a, b, c:\n");
 

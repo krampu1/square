@@ -1,3 +1,8 @@
+/** 
+* \file quadratic_equation.h
+* \brief quadratic equation header file
+*/
+
 #include <math.h>
 #include <stdio.h>
 

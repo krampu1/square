@@ -1,0 +1,128 @@
+\hypertarget{quadratic__equation_8h}{}\doxysection{/mnt/c/\+Users/actim/code/c/square/quadratic\+\_\+equation.h File Reference}
+\label{quadratic__equation_8h}\index{/mnt/c/Users/actim/code/c/square/quadratic\_equation.h@{/mnt/c/Users/actim/code/c/square/quadratic\_equation.h}}
+
+
+quadratic equation header file  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{quadratic__equation_8h_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
+\item 
+bool \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+\item 
+void \mbox{\hyperlink{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}{output\+\_\+roots}} (int count\+\_\+root, double $\ast$ans)
+\item 
+bool \mbox{\hyperlink{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}{input\+\_\+3\+\_\+argument}} (double $\ast$a, double $\ast$b, double $\ast$c)
+\item 
+bool \mbox{\hyperlink{quadratic__equation_8h_aeb6b390b838fa0bdf05f81831e406722}{equal\+\_\+double}} (double a, double b)
+\item 
+void \mbox{\hyperlink{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}{solveqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+\item 
+void \mbox{\hyperlink{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}{swap\+\_\+double}} (double $\ast$a, double $\ast$b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}{Epsilon}} = 1e-\/5
+\item 
+const int \mbox{\hyperlink{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}{Infinite\+\_\+roots}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+quadratic equation header file 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!END\_COLOR@{END\_COLOR}}
+\index{END\_COLOR@{END\_COLOR}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{END\_COLOR}{END\_COLOR}}
+{\footnotesize\ttfamily \#define END\+\_\+\+COLOR~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+\mbox{\Hypertarget{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}\label{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \#define GREEN~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}\label{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!RED@{RED}}
+\index{RED@{RED}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define RED~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_aeb6b390b838fa0bdf05f81831e406722}\label{quadratic__equation_8h_aeb6b390b838fa0bdf05f81831e406722}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!equal\_double@{equal\_double}}
+\index{equal\_double@{equal\_double}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{equal\_double()}{equal\_double()}}
+{\footnotesize\ttfamily bool equal\+\_\+double (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}\label{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!input\_3\_argument@{input\_3\_argument}}
+\index{input\_3\_argument@{input\_3\_argument}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{input\_3\_argument()}{input\_3\_argument()}}
+{\footnotesize\ttfamily bool input\+\_\+3\+\_\+argument (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}\label{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!output\_roots@{output\_roots}}
+\index{output\_roots@{output\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
+{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{int}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}\label{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!solveqe@{solveqe}}
+\index{solveqe@{solveqe}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{solveqe()}{solveqe()}}
+{\footnotesize\ttfamily void solveqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}\label{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!swap\_double@{swap\_double}}
+\index{swap\_double@{swap\_double}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{swap\_double()}{swap\_double()}}
+{\footnotesize\ttfamily void swap\+\_\+double (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}\label{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!testqe@{testqe}}
+\index{testqe@{testqe}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{testqe()}{testqe()}}
+{\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8h_a8e55f3e436b0268b26875038536f8e53}\label{quadratic__equation_8h_a8e55f3e436b0268b26875038536f8e53}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!unit\_test@{unit\_test}}
+\index{unit\_test@{unit\_test}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{unit\_test()}{unit\_test()}}
+{\footnotesize\ttfamily void unit\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}\label{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!Epsilon@{Epsilon}}
+\index{Epsilon@{Epsilon}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Epsilon}{Epsilon}}
+{\footnotesize\ttfamily const double Epsilon = 1e-\/5}
+
+\mbox{\Hypertarget{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}\label{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!Infinite\_roots@{Infinite\_roots}}
+\index{Infinite\_roots@{Infinite\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{Infinite\_roots}{Infinite\_roots}}
+{\footnotesize\ttfamily const int Infinite\+\_\+roots = -\/1}
+

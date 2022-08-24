@@ -1,9 +1,9 @@
-#include "quadratic_equation.h"
-
-/*! 
+/** 
 * \file unit_test.cpp 
-* \brief unit_test file
+* \brief unit test code file
 */
+
+#include "quadratic_equation.h"
 
 void unit_test()
 {
