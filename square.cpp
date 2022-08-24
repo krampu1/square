@@ -10,7 +10,9 @@
 int main() 
 {
 #ifdef TEST
+
     unit_test();
+    
 #else
 
     double a = 0, b = 0, c = 0;
