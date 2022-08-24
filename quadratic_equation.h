@@ -7,13 +7,15 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define RED "\x1B[31m"      ///< эта строка позволяет перекрасить цвет последующих символов в консоли в красный
-#define GREEN "\x1B[32m"    ///< эта строка позволяет перекрасить цвет последующих символов в консоли в зелный
-#define END_COLOR "\033[0m" ///< эта строка позволяет вернуть цвет последующих символов в консоли к стандартному
+#define RED "\x1B[31m"      ///< this line allows you to recolor the color of subsequent characters in the console to red
+#define GREEN "\x1B[32m"    ///< this line allows you to recolor the color of subsequent characters in the console to green
+#define END_COLOR "\033[0m" ///< this line allows you to recolor the color of subsequent characters in the console to defoult сcolor
 
-const double Epsilon = 1e-5; ///< константа минимальной разницы, при которой double считаются разными
+const double Epsilon = 1e-5; ///< the constant of the minimum difference at which doubles are considered different
 
-const int Infinite_roots = -1; ///< константа обозначающая что уравнение имеет бесконечное колличество решений
+const int Infinite_roots = -1; ///< a constant denoting that the equation has an infinite number of solutions
+
+const int offset_root = 3; ///< the amount of data up to the first root in the array with test information
 
 /// Function called for code testing
 /**
@@ -159,3 +161,19 @@ void solveqe(double a, double b, double c, int* count_root, double* ans);
 * Эта функция меняет местами 2 числа типа double.
 */
 void swap_double(double* a, double* b);
+
+/// функция для проверки теста с выводом информации в консиль
+/**
+* @param [in] a parameter of the quadratic equation
+* @param [in] b parameter of the quadratic equation
+* @param [in] c parameter of the quadratic equation
+* @param [out] count_root the variable number of roots
+* @param [out] ans array of roots
+*
+* This function tests the program on certain data and outputs information
+* to the console about whether the test was successfully passed and about the test.\n\n
+*
+* Эта функция тестирует программу на определённых данных и выводит в консоль
+* информацию о том успешно ли пройден тест и о сомом тесте. 
+*/
+void outputs_with_test(double a, double b, double c, int* count_roots, double* ans);

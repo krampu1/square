@@ -83,6 +83,7 @@ void liner_equation(double a, double b, int* count_root, double* ans)
     {
         *count_root = 1;
         ans[0] = -b / a;
+        
         if (equal_double(ans[0], 0))
             ans[0] = 0;
     }
@@ -101,6 +102,7 @@ void quadratic_equation(double a, double b, double c, int* count_root, double* a
     {
         *count_root = 1;
         ans[0] = -b / (2 * a);
+
         if (equal_double(ans[0], 0))
             ans[0] = 0;
     }
@@ -113,6 +115,7 @@ void quadratic_equation(double a, double b, double c, int* count_root, double* a
 
         if (ans[0] > ans[1])
             swap_double(&ans[0], &ans[1]);
+
         if (equal_double(ans[0], 0))
             ans[0] = 0;
         if (equal_double(ans[1], 0))
