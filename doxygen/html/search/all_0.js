@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['end_5fcolor_0',['END_COLOR',['../quadratic__equation_8h.html#a475df0d9bbf72a496b3b362ef75a2a0f',1,'quadratic_equation.h']]],
-  ['epsilon_1',['Epsilon',['../quadratic__equation_8h.html#a94827e2d927e061829e6b000e8e07d8d',1,'quadratic_equation.h']]],
-  ['equal_5fdouble_2',['equal_double',['../quadratic__equation_8cpp.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp']]]
+  ['clear_5fbuffer_0',['clear_buffer',['../quadratic__equation_8cpp.html#afa847549e9dc6e4f49f651623bc456dc',1,'clear_buffer():&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#afa847549e9dc6e4f49f651623bc456dc',1,'clear_buffer():&#160;quadratic_equation.cpp']]],
+  ['count_5finput_5fparam_1',['count_input_param',['../quadratic__equation_8h.html#a252f30d193bab1bcfc295f1500a0954c',1,'quadratic_equation.h']]]
 ];

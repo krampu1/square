@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['epsilon_36',['Epsilon',['../quadratic__equation_8h.html#a94827e2d927e061829e6b000e8e07d8d',1,'quadratic_equation.h']]]
+  ['count_5finput_5fparam_39',['count_input_param',['../quadratic__equation_8h.html#a252f30d193bab1bcfc295f1500a0954c',1,'quadratic_equation.h']]]
 ];

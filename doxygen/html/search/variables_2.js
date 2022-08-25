@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['offset_5froot_38',['offset_root',['../quadratic__equation_8h.html#a720fedc28fd22e4f6e1a3f9c012ecb27',1,'quadratic_equation.h']]]
+  ['infinite_5froots_41',['Infinite_roots',['../quadratic__equation_8h.html#abdfdbcf14d3b5f2cc137505a4c5f6360',1,'quadratic_equation.h']]]
 ];

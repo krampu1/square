@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_7',['main',['../square_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'square.cpp']]]
+  ['linear_5fequation_8',['linear_equation',['../quadratic__equation_8cpp.html#a5e30efe81799ed4df160c74dcbc46dad',1,'linear_equation(double a, double b, int *count_root, double *ans):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#a5e30efe81799ed4df160c74dcbc46dad',1,'linear_equation(double a, double b, int *count_root, double *ans):&#160;quadratic_equation.cpp']]]
 ];

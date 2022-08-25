@@ -1,4 +1,4 @@
-.TH "/mnt/c/Users/actim/code/c/square/quadratic_equation.cpp" 3 "Wed Aug 24 2022" "My Project" \" -*- nroff -*-
+.TH "/mnt/c/Users/actim/code/c/square/quadratic_equation.cpp" 3 "Thu Aug 25 2022" "My Project" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,6 +22,10 @@
 .br
 .RI "A function that outputs the found roots of the quadratic equation\&. "
 .ti -1c
+.RI "void \fBclear_buffer\fP ()"
+.br
+.RI "Function for clearing the input buffer\&. "
+.ti -1c
 .RI "bool \fBinput_3_argument\fP (double *a, double *b, double *c)"
 .br
 .RI "Function used to take equation parameters from the console\&. "
@@ -30,7 +34,7 @@
 .br
 .RI "Function for comparing 2 numbers of type double\&. "
 .ti -1c
-.RI "void \fBliner_equation\fP (double a, double b, int *count_root, double *ans)"
+.RI "void \fBlinear_equation\fP (double a, double b, int *count_root, double *ans)"
 .br
 .RI "The function of solving a linear equation\&. "
 .ti -1c
@@ -49,6 +53,14 @@ quadratic equation code file
 
 .SH "Function Documentation"
 .PP 
+.SS "void clear_buffer ()"
+
+.PP
+Function for clearing the input buffer\&. This function clears the input buffer before moving to the next line\&.
+.br
+
+.br
+ Эта функция очищает буфер ввода до перехода на следующую строку\&. 
 .SS "bool equal_double (double a, double b)"
 
 .PP
@@ -109,7 +121,7 @@ true if the letter f is entered, otherwise false
 .RE
 .PP
 
-.SS "void liner_equation (double a, double b, int * count_root, double * ans)"
+.SS "void linear_equation (double a, double b, int * count_root, double * ans)"
 
 .PP
 The function of solving a linear equation\&. 

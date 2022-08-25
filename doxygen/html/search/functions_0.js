@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equal_5fdouble_25',['equal_double',['../quadratic__equation_8cpp.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp']]]
+  ['clear_5fbuffer_27',['clear_buffer',['../quadratic__equation_8cpp.html#afa847549e9dc6e4f49f651623bc456dc',1,'clear_buffer():&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#afa847549e9dc6e4f49f651623bc456dc',1,'clear_buffer():&#160;quadratic_equation.cpp']]]
 ];

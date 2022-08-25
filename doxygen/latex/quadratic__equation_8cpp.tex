@@ -13,11 +13,13 @@ void \mbox{\hyperlink{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e
 \begin{DoxyCompactList}\small\item\em A function that swaps two numbers of the double type. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8cpp_a38b409bb4a94d8ec84202cc8f62d1d9c}{output\+\_\+roots}} (int count\+\_\+root, double $\ast$ans)
 \begin{DoxyCompactList}\small\item\em A function that outputs the found roots of the quadratic equation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Function for clearing the input buffer. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{quadratic__equation_8cpp_aaf8e57f28457f0597807bedfd9aeadcd}{input\+\_\+3\+\_\+argument}} (double $\ast$a, double $\ast$b, double $\ast$c)
 \begin{DoxyCompactList}\small\item\em Function used to take equation parameters from the console. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}{equal\+\_\+double}} (double a, double b)
 \begin{DoxyCompactList}\small\item\em Function for comparing 2 numbers of type double. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8cpp_af677a692388addd6152672b1964e092a}{liner\+\_\+equation}} (double a, double b, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}{linear\+\_\+equation}} (double a, double b, int $\ast$count\+\_\+root, double $\ast$ans)
 \begin{DoxyCompactList}\small\item\em The function of solving a linear equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8cpp_a33cc463ef942dc80b25ede397b55e0cb}{quadratic\+\_\+equation}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
 \begin{DoxyCompactList}\small\item\em The function of solving the correct quadratic equation. \end{DoxyCompactList}\item 
@@ -31,7 +33,19 @@ quadratic equation code file
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}\label{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}} 
+\mbox{\Hypertarget{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}\label{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!clear\_buffer@{clear\_buffer}}
+\index{clear\_buffer@{clear\_buffer}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{clear\_buffer()}{clear\_buffer()}}
+{\footnotesize\ttfamily void clear\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for clearing the input buffer. 
+
+This function clears the input buffer before moving to the next line.~\newline
+~\newline
+ Эта функция очищает буфер ввода до перехода на следующую строку. \mbox{\Hypertarget{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}\label{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!equal\_double@{equal\_double}}
 \index{equal\_double@{equal\_double}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
 \doxysubsubsection{\texorpdfstring{equal\_double()}{equal\_double()}}
@@ -89,11 +103,11 @@ The input will continue until the letter f is entered or 3 parameters are specif
 \begin{DoxyReturn}{Returns}
 true if the letter f is entered, otherwise false 
 \end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8cpp_af677a692388addd6152672b1964e092a}\label{quadratic__equation_8cpp_af677a692388addd6152672b1964e092a}} 
-\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!liner\_equation@{liner\_equation}}
-\index{liner\_equation@{liner\_equation}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
-\doxysubsubsection{\texorpdfstring{liner\_equation()}{liner\_equation()}}
-{\footnotesize\ttfamily void liner\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}\label{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!linear\_equation@{linear\_equation}}
+\index{linear\_equation@{linear\_equation}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{linear\_equation()}{linear\_equation()}}
+{\footnotesize\ttfamily void linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
 
 
 
