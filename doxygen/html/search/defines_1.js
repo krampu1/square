@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green_44',['GREEN',['../quadratic__equation_8h.html#acfbc006ea433ad708fdee3e82996e721',1,'quadratic_equation.h']]]
+  ['end_5fcolor_47',['END_COLOR',['../quadratic__equation_8h.html#a475df0d9bbf72a496b3b362ef75a2a0f',1,'quadratic_equation.h']]]
 ];

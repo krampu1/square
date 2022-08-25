@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "cegilmoqrstu",
+  0: "ceilmopqstu",
   1: "qsu",
-  2: "ceilmoqstu",
-  3: "ceio",
-  4: "egr"
+  2: "ceilmopqstu",
+  3: "q",
+  4: "cio",
+  5: "ce"
 };
 
 var indexSectionNames =
@@ -12,8 +13,9 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "variables",
-  4: "defines"
+  3: "enums",
+  4: "enumvalues",
+  5: "defines"
 };
 
 var indexSectionLabels =
@@ -21,7 +23,8 @@ var indexSectionLabels =
   0: "All",
   1: "Files",
   2: "Functions",
-  3: "Variables",
-  4: "Macros"
+  3: "Enumerations",
+  4: "Enumerator",
+  5: "Macros"
 };
 

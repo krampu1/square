@@ -4,9 +4,18 @@
 */
 
 #include "quadratic_equation.h"
+#include <math.h>
+#include <assert.h>
 
 void swap_double(double* a, double* b)
 {
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(*a != NAN);
+    assert(*b != NAN);
+    assert(*a != INFINITY);
+    assert(*b != INFINITY);
+
     if (*a > *b)
     {
         double x = *a;
@@ -17,6 +26,8 @@ void swap_double(double* a, double* b)
 
 void output_roots(int count_root, double* ans)
 {
+    assert(ans != NULL);
+
     if (count_root == Infinite_roots)
     {
         printf("infinit namber of roots");
@@ -44,6 +55,18 @@ void clear_buffer()
 
 bool input_3_argument(double *a, double *b, double *c)
 {
+    assert(a != NULL);
+    assert(b != NULL);
+    assert(c != NULL);
+    assert(*a != NAN);
+    assert(*b != NAN);
+    assert(*c != NAN);
+    assert(*a != INFINITY);
+    assert(*b != INFINITY);
+    assert(*c != INFINITY);
+
+    printf("enter a, b, c:\n");
+
     while (true)
     {
         int accept = scanf("%lf %lf %lf", a, b, c);
@@ -75,6 +98,9 @@ bool equal_double(double a, double b)
 
 void linear_equation(double a, double b, int* count_root, double* ans)
 {
+    assert(count_root != NULL);
+    assert(ans != NULL);
+
     if (equal_double(a, 0))
     {
         if (equal_double(b, 0))
@@ -98,6 +124,9 @@ void linear_equation(double a, double b, int* count_root, double* ans)
 
 void quadratic_equation(double a, double b, double c, int* count_root, double* ans)
 {
+    assert(count_root != NULL);
+    assert(ans != NULL);
+
     assert(!equal_double(a, 0));
     // assert
 
@@ -136,6 +165,8 @@ void quadratic_equation(double a, double b, double c, int* count_root, double* a
 
 void solveqe(double a, double b, double c, int* count_root, double* ans)
 {
+    assert(count_root != NULL);
+    assert(ans != NULL);
 
     if (equal_double(a, 0))
         linear_equation(b, c, count_root, ans);

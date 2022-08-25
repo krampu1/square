@@ -18,8 +18,9 @@
 
 .in +1c
 .ti -1c
-.RI "int \fBmain\fP ()"
+.RI "int \fBmain\fP (int argc, char *argv[])"
 .br
+.RI "main function "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -28,7 +29,29 @@ main code file
 
 .SH "Function Documentation"
 .PP 
-.SS "int main ()"
+.SS "int main (int argc, char * argv[])"
+
+.PP
+main function 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP number of command line flags 
+.br
+\fIargv\fP array of command line flags
+.RE
+.PP
+This function separates the types of program startup: user and testing\&.
+.br
+
+.br
+ Эта функция разделяет типы запуска программы: пользовательский и тестирование\&.
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
 
 .SH "Author"
 .PP 

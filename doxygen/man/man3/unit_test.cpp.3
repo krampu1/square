@@ -9,16 +9,23 @@
 .PP
 \fC#include 'quadratic_equation\&.h'\fP
 .br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
 
 .SS "Functions"
 
 .in +1c
 .ti -1c
+.RI "bool \fBcheck_test\fP (int argc, char **argv)"
+.br
+.ti -1c
 .RI "void \fBunit_test\fP ()"
 .br
 .RI "Function called for code testing\&. "
 .ti -1c
-.RI "void \fBoutputs_with_test\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
+.RI "void \fBprint_tests_res\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
 .br
 .RI "функция для проверки теста с выводом информации в консиль "
 .ti -1c
@@ -33,7 +40,9 @@ unit test code file
 
 .SH "Function Documentation"
 .PP 
-.SS "void outputs_with_test (int num_of_test, double * test, int count_root, int * count_false_test)"
+.SS "bool check_test (int argc, char ** argv)"
+
+.SS "void print_tests_res (int num_of_test, double * test, int count_root, int * count_false_test)"
 
 .PP
 функция для проверки теста с выводом информации в консиль 

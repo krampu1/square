@@ -7,17 +7,48 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define RED "\x1B[31m"      ///< this line allows you to recolor the color of subsequent characters in the console to red
-#define GREEN "\x1B[32m"    ///< this line allows you to recolor the color of subsequent characters in the console to green
+#define COLOR_RED "\x1B[31m"      ///< this line allows you to recolor the color of subsequent characters in the console to red
+
+#define COLOR_GREEN "\x1B[32m"    ///< this line allows you to recolor the color of subsequent characters in the console to green
+
 #define END_COLOR "\033[0m" ///< this line allows you to recolor the color of subsequent characters in the console to defoult сcolor
 
-const double Epsilon = 1e-5; ///< the constant of the minimum difference at which doubles are considered different
 
-const int Infinite_roots = -1; ///< a constant denoting that the equation has an infinite number of solutions
+static const double Epsilon = 1e-5; ///< the constant of the minimum difference at which doubles are considered different
 
-const int offset_root = 3; ///< the amount of data up to the first root in the array with test information
+enum quadratic_equation_const
+{
+    Infinite_roots = -1,   ///< a constant denoting that the equation has an infinite number of solutions
 
-const int count_input_param = 3; ///<  number of input parameters
+    offset_root = 3,       ///< the amount of data up to the first root in the array with test information
+
+    count_input_param = 3  ///<  number of input parameters
+
+};
+
+///
+/**
+* @param [in] argc number of command line arguments
+* @param [in] argv array of command line arguments
+*
+* Если один из флагов командной строки -d , то true, иначе false
+*
+* @return If one of the command line flags is -d , then true otherwise fals.
+*/
+bool check_test(int argc, char *argv[]);
+
+/// main function
+/**
+* @param [in] argc number of command line flags
+* @param [in] argv array of command line flags
+*
+* This function separates the types of program startup: user and testing.\n\n
+*
+* Эта функция разделяет типы запуска программы: пользовательский и тестирование.
+*
+* @return int
+*/
+int main(int argc, char *argv[]);
 
 /// Function called for code testing
 /**
@@ -187,4 +218,4 @@ void swap_double(double* a, double* b);
 * Эта функция тестирует программу на определённых данных и выводит в консоль
 * информацию о том успешно ли пройден тест и о сомом тесте. 
 */
-void outputs_with_test(int num_of_test, double* test, int count_root, int* count_false_test);
+void print_tests_res(int num_of_test, double* test, int count_root, int* count_false_test);

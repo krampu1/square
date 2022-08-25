@@ -11,15 +11,27 @@ quadratic equation header file
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}{RED}}~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
+\#define \mbox{\hyperlink{quadratic__equation_8h_ad86358bf19927183dd7b4ae215a29731}{COLOR\+\_\+\+RED}}~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
 \begin{DoxyCompactList}\small\item\em this line allows you to recolor the color of subsequent characters in the console to red \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}{GREEN}}~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
+\#define \mbox{\hyperlink{quadratic__equation_8h_afc9149f5de51bd9ac4f5ebbfa153f018}{COLOR\+\_\+\+GREEN}}~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
 \begin{DoxyCompactList}\small\item\em this line allows you to recolor the color of subsequent characters in the console to green \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
 \begin{DoxyCompactList}\small\item\em this line allows you to recolor the color of subsequent characters in the console to defoult сcolor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}{quadratic\+\_\+equation\+\_\+const}} \{ \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}{Infinite\+\_\+roots}} = -\/1
+, \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}{offset\+\_\+root}} = 3
+, \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}{count\+\_\+input\+\_\+param}} = 3
+ \}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}{check\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8h_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
 \begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
@@ -40,19 +52,8 @@ void \mbox{\hyperlink{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}{
 \begin{DoxyCompactList}\small\item\em The function of solving the quadratic equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}{swap\+\_\+double}} (double $\ast$a, double $\ast$b)
 \begin{DoxyCompactList}\small\item\em A function that swaps two numbers of the double type. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_a84cbfe92a473f678d2a61914f6c0b10e}{outputs\+\_\+with\+\_\+test}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
+void \mbox{\hyperlink{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
 \begin{DoxyCompactList}\small\item\em функция для проверки теста с выводом информации в консиль \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const double \mbox{\hyperlink{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}{Epsilon}} = 1e-\/5
-\begin{DoxyCompactList}\small\item\em the constant of the minimum difference at which doubles are considered different \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}{Infinite\+\_\+roots}} = -\/1
-\begin{DoxyCompactList}\small\item\em a constant denoting that the equation has an infinite number of solutions \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{quadratic__equation_8h_a720fedc28fd22e4f6e1a3f9c012ecb27}{offset\+\_\+root}} = 3
-\begin{DoxyCompactList}\small\item\em the amount of data up to the first root in the array with test information \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{quadratic__equation_8h_a252f30d193bab1bcfc295f1500a0954c}{count\+\_\+input\+\_\+param}} = 3
-\begin{DoxyCompactList}\small\item\em number of input parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -61,6 +62,26 @@ quadratic equation header file
 
 
 \doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_afc9149f5de51bd9ac4f5ebbfa153f018}\label{quadratic__equation_8h_afc9149f5de51bd9ac4f5ebbfa153f018}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!COLOR\_GREEN@{COLOR\_GREEN}}
+\index{COLOR\_GREEN@{COLOR\_GREEN}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_GREEN}{COLOR\_GREEN}}
+{\footnotesize\ttfamily \#define COLOR\+\_\+\+GREEN~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}}
+
+
+
+this line allows you to recolor the color of subsequent characters in the console to green 
+
+\mbox{\Hypertarget{quadratic__equation_8h_ad86358bf19927183dd7b4ae215a29731}\label{quadratic__equation_8h_ad86358bf19927183dd7b4ae215a29731}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!COLOR\_RED@{COLOR\_RED}}
+\index{COLOR\_RED@{COLOR\_RED}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_RED}{COLOR\_RED}}
+{\footnotesize\ttfamily \#define COLOR\+\_\+\+RED~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}}
+
+
+
+this line allows you to recolor the color of subsequent characters in the console to red 
+
 \mbox{\Hypertarget{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!END\_COLOR@{END\_COLOR}}
 \index{END\_COLOR@{END\_COLOR}!quadratic\_equation.h@{quadratic\_equation.h}}
@@ -71,29 +92,50 @@ quadratic equation header file
 
 this line allows you to recolor the color of subsequent characters in the console to defoult сcolor 
 
-\mbox{\Hypertarget{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}\label{quadratic__equation_8h_acfbc006ea433ad708fdee3e82996e721}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!GREEN@{GREEN}}
-\index{GREEN@{GREEN}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
-{\footnotesize\ttfamily \#define GREEN~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}}
 
 
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!quadratic\_equation\_const@{quadratic\_equation\_const}}
+\index{quadratic\_equation\_const@{quadratic\_equation\_const}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{quadratic\_equation\_const}{quadratic\_equation\_const}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}{quadratic\+\_\+equation\+\_\+const}}}
 
-this line allows you to recolor the color of subsequent characters in the console to green 
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinite\_roots@{Infinite\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!Infinite\_roots@{Infinite\_roots}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}} 
+Infinite\+\_\+roots&a constant denoting that the equation has an infinite number of solutions \\
+\hline
 
-\mbox{\Hypertarget{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}\label{quadratic__equation_8h_a8d23feea868a983c8c2b661e1e16972f}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!RED@{RED}}
-\index{RED@{RED}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{RED}{RED}}
-{\footnotesize\ttfamily \#define RED~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{offset\_root@{offset\_root}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!offset\_root@{offset\_root}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}} 
+offset\+\_\+root&the amount of data up to the first root in the array with test information \\
+\hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{count\_input\_param@{count\_input\_param}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!count\_input\_param@{count\_input\_param}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}} 
+count\+\_\+input\+\_\+param&number of input parameters \\
+\hline
 
-
-this line allows you to recolor the color of subsequent characters in the console to red 
-
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}\label{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!check\_test@{check\_test}}
+\index{check\_test@{check\_test}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
+{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & number of command line arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & array of command line arguments\\
+\hline
+\end{DoxyParams}
+Если один из флагов командной строки -\/d , то true, иначе false
+
+\begin{DoxyReturn}{Returns}
+If one of the command line flags is -\/d , then true otherwise fals. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{quadratic__equation_8h_afa847549e9dc6e4f49f651623bc456dc}\label{quadratic__equation_8h_afa847549e9dc6e4f49f651623bc456dc}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!clear\_buffer@{clear\_buffer}}
 \index{clear\_buffer@{clear\_buffer}!quadratic\_equation.h@{quadratic\_equation.h}}
@@ -191,7 +233,31 @@ The function of solving a linear equation.
 \end{DoxyParams}
 This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation.~\newline
 ~\newline
- Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}\label{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}} 
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}\label{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!main@{main}}
+\index{main@{main}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main function 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & number of command line flags \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & array of command line flags\\
+\hline
+\end{DoxyParams}
+This function separates the types of program startup\+: user and testing.~\newline
+~\newline
+ Эта функция разделяет типы запуска программы\+: пользовательский и тестирование.
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}\label{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!output\_roots@{output\_roots}}
 \index{output\_roots@{output\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
@@ -210,11 +276,11 @@ A function that outputs the found roots of the quadratic equation.
 \end{DoxyParams}
 In this function, all cases are considered separately\+: there are no roots, 1 root, 2 roots, infinity of roots.~\newline
 ~\newline
- В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. \mbox{\Hypertarget{quadratic__equation_8h_a84cbfe92a473f678d2a61914f6c0b10e}\label{quadratic__equation_8h_a84cbfe92a473f678d2a61914f6c0b10e}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!outputs\_with\_test@{outputs\_with\_test}}
-\index{outputs\_with\_test@{outputs\_with\_test}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{outputs\_with\_test()}{outputs\_with\_test()}}
-{\footnotesize\ttfamily void outputs\+\_\+with\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
+ В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. \mbox{\Hypertarget{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}\label{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!print\_tests\_res@{print\_tests\_res}}
+\index{print\_tests\_res@{print\_tests\_res}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
+{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
 
 
 
@@ -368,45 +434,3 @@ Also, this function outputs information about the passed tests and the result of
  Данная функция вызывается при указании флага компиляции -\/D TEST .~\newline
 Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}}.~\newline
 Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. 
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{quadratic__equation_8h_a252f30d193bab1bcfc295f1500a0954c}\label{quadratic__equation_8h_a252f30d193bab1bcfc295f1500a0954c}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!count\_input\_param@{count\_input\_param}}
-\index{count\_input\_param@{count\_input\_param}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{count\_input\_param}{count\_input\_param}}
-{\footnotesize\ttfamily const int count\+\_\+input\+\_\+param = 3}
-
-
-
-number of input parameters 
-
-\mbox{\Hypertarget{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}\label{quadratic__equation_8h_a94827e2d927e061829e6b000e8e07d8d}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!Epsilon@{Epsilon}}
-\index{Epsilon@{Epsilon}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{Epsilon}{Epsilon}}
-{\footnotesize\ttfamily const double Epsilon = 1e-\/5}
-
-
-
-the constant of the minimum difference at which doubles are considered different 
-
-\mbox{\Hypertarget{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}\label{quadratic__equation_8h_abdfdbcf14d3b5f2cc137505a4c5f6360}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!Infinite\_roots@{Infinite\_roots}}
-\index{Infinite\_roots@{Infinite\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{Infinite\_roots}{Infinite\_roots}}
-{\footnotesize\ttfamily const int Infinite\+\_\+roots = -\/1}
-
-
-
-a constant denoting that the equation has an infinite number of solutions 
-
-\mbox{\Hypertarget{quadratic__equation_8h_a720fedc28fd22e4f6e1a3f9c012ecb27}\label{quadratic__equation_8h_a720fedc28fd22e4f6e1a3f9c012ecb27}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!offset\_root@{offset\_root}}
-\index{offset\_root@{offset\_root}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{offset\_root}{offset\_root}}
-{\footnotesize\ttfamily const int offset\+\_\+root = 3}
-
-
-
-the amount of data up to the first root in the array with test information 
-

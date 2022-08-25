@@ -6,12 +6,16 @@ unit test code file
 
 
 {\ttfamily \#include \char`\"{}quadratic\+\_\+equation.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}{check\+\_\+test}} (int argc, char $\ast$$\ast$argv)
+\item 
 void \mbox{\hyperlink{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
 \begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{unit__test_8cpp_a84cbfe92a473f678d2a61914f6c0b10e}{outputs\+\_\+with\+\_\+test}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
+void \mbox{\hyperlink{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
 \begin{DoxyCompactList}\small\item\em функция для проверки теста с выводом информации в консиль \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
 \begin{DoxyCompactList}\small\item\em A function that tests the operation of a test with certain parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -23,11 +27,17 @@ unit test code file
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{unit__test_8cpp_a84cbfe92a473f678d2a61914f6c0b10e}\label{unit__test_8cpp_a84cbfe92a473f678d2a61914f6c0b10e}} 
-\index{unit\_test.cpp@{unit\_test.cpp}!outputs\_with\_test@{outputs\_with\_test}}
-\index{outputs\_with\_test@{outputs\_with\_test}!unit\_test.cpp@{unit\_test.cpp}}
-\doxysubsubsection{\texorpdfstring{outputs\_with\_test()}{outputs\_with\_test()}}
-{\footnotesize\ttfamily void outputs\+\_\+with\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}\label{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}} 
+\index{unit\_test.cpp@{unit\_test.cpp}!check\_test@{check\_test}}
+\index{check\_test@{check\_test}!unit\_test.cpp@{unit\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
+{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}\label{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}} 
+\index{unit\_test.cpp@{unit\_test.cpp}!print\_tests\_res@{print\_tests\_res}}
+\index{print\_tests\_res@{print\_tests\_res}!unit\_test.cpp@{unit\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
+{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
 
 
 

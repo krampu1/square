@@ -18,11 +18,11 @@
 
 .in +1c
 .ti -1c
-.RI "#define \fBRED\fP   '\\x1B[31m'"
+.RI "#define \fBCOLOR_RED\fP   '\\x1B[31m'"
 .br
 .RI "this line allows you to recolor the color of subsequent characters in the console to red "
 .ti -1c
-.RI "#define \fBGREEN\fP   '\\x1B[32m'"
+.RI "#define \fBCOLOR_GREEN\fP   '\\x1B[32m'"
 .br
 .RI "this line allows you to recolor the color of subsequent characters in the console to green "
 .ti -1c
@@ -30,9 +30,23 @@
 .br
 .RI "this line allows you to recolor the color of subsequent characters in the console to defoult сcolor "
 .in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBquadratic_equation_const\fP { \fBInfinite_roots\fP = -1, \fBoffset_root\fP = 3, \fBcount_input_param\fP = 3 }"
+.br
+.in -1c
 .SS "Functions"
 
 .in +1c
+.ti -1c
+.RI "bool \fBcheck_test\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.RI "main function "
 .ti -1c
 .RI "void \fBunit_test\fP ()"
 .br
@@ -74,29 +88,9 @@
 .br
 .RI "A function that swaps two numbers of the double type\&. "
 .ti -1c
-.RI "void \fBoutputs_with_test\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
+.RI "void \fBprint_tests_res\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
 .br
 .RI "функция для проверки теста с выводом информации в консиль "
-.in -1c
-.SS "Variables"
-
-.in +1c
-.ti -1c
-.RI "const double \fBEpsilon\fP = 1e\-5"
-.br
-.RI "the constant of the minimum difference at which doubles are considered different "
-.ti -1c
-.RI "const int \fBInfinite_roots\fP = \-1"
-.br
-.RI "a constant denoting that the equation has an infinite number of solutions "
-.ti -1c
-.RI "const int \fBoffset_root\fP = 3"
-.br
-.RI "the amount of data up to the first root in the array with test information "
-.ti -1c
-.RI "const int \fBcount_input_param\fP = 3"
-.br
-.RI "number of input parameters "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -105,20 +99,54 @@ quadratic equation header file
 
 .SH "Macro Definition Documentation"
 .PP 
+.SS "#define COLOR_GREEN   '\\x1B[32m'"
+
+.PP
+this line allows you to recolor the color of subsequent characters in the console to green 
+.SS "#define COLOR_RED   '\\x1B[31m'"
+
+.PP
+this line allows you to recolor the color of subsequent characters in the console to red 
 .SS "#define END_COLOR   '\\033[0m'"
 
 .PP
 this line allows you to recolor the color of subsequent characters in the console to defoult сcolor 
-.SS "#define GREEN   '\\x1B[32m'"
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBquadratic_equation_const\fP"
 
 .PP
-this line allows you to recolor the color of subsequent characters in the console to green 
-.SS "#define RED   '\\x1B[31m'"
-
-.PP
-this line allows you to recolor the color of subsequent characters in the console to red 
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIInfinite_roots \fP\fP
+a constant denoting that the equation has an infinite number of solutions 
+.TP
+\fB\fIoffset_root \fP\fP
+the amount of data up to the first root in the array with test information 
+.TP
+\fB\fIcount_input_param \fP\fP
+number of input parameters 
 .SH "Function Documentation"
 .PP 
+.SS "bool check_test (int argc, char * argv[])"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP number of command line arguments 
+.br
+\fIargv\fP array of command line arguments
+.RE
+.PP
+Если один из флагов командной строки -d , то true, иначе false
+.PP
+\fBReturns\fP
+.RS 4
+If one of the command line flags is -d , then true otherwise fals\&. 
+.RE
+.PP
+
 .SS "void clear_buffer ()"
 
 .PP
@@ -212,6 +240,30 @@ This function considers the linear case of a quadratic equation when the paramet
 
 .br
  Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению\&. 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+main function 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP number of command line flags 
+.br
+\fIargv\fP array of command line flags
+.RE
+.PP
+This function separates the types of program startup: user and testing\&.
+.br
+
+.br
+ Эта функция разделяет типы запуска программы: пользовательский и тестирование\&.
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
 .SS "void output_roots (int count_root, double * ans)"
 
 .PP
@@ -229,7 +281,7 @@ In this function, all cases are considered separately: there are no roots, 1 roo
 
 .br
  В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней\&. 
-.SS "void outputs_with_test (int num_of_test, double * test, int count_root, int * count_false_test)"
+.SS "void print_tests_res (int num_of_test, double * test, int count_root, int * count_false_test)"
 
 .PP
 функция для проверки теста с выводом информации в консиль 
@@ -383,24 +435,6 @@ Also, this function outputs information about the passed tests and the result of
 Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \fBtestqe()\fP\&.
 .br
 Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки\&. 
-.SH "Variable Documentation"
-.PP 
-.SS "const int count_input_param = 3"
-
-.PP
-number of input parameters 
-.SS "const double Epsilon = 1e\-5"
-
-.PP
-the constant of the minimum difference at which doubles are considered different 
-.SS "const int Infinite_roots = \-1"
-
-.PP
-a constant denoting that the equation has an infinite number of solutions 
-.SS "const int offset_root = 3"
-
-.PP
-the amount of data up to the first root in the array with test information 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for My Project from the source code\&.

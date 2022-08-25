@@ -7,6 +7,17 @@
 // {}
 
 #include "quadratic_equation.h"
+#include <string.h>
+#include <assert.h>
+
+bool check_test(int argc, char** argv)
+{
+    for (int i = 0; i < argc; i++)
+    {
+        if (!strcmp("-d", argv[i])) return true;
+    }
+    return false;
+}
 
 void unit_test()
 {
@@ -38,23 +49,22 @@ void unit_test()
 
     int count_false_test = 0;
 
-    for (int i = 0; i < N; i++) outputs_with_test(i, tests[i], test_n_roots[i], &count_false_test);
+    for (int i = 0; i < N; i++) print_tests_res(i, tests[i], test_n_roots[i], &count_false_test);
 
     if (count_false_test == 0) 
     {
-        printf(GREEN "all test accepted\n" END_COLOR);
+        printf(COLOR_GREEN "all test accepted\n" END_COLOR);
     }
     else
     {
-        printf(RED "decline %d test\n" END_COLOR, count_false_test);
+        printf(COLOR_RED "decline %d test\n" END_COLOR, count_false_test);
     }
 }
 
-
-// print_tests_res()
-
-void outputs_with_test(int num_of_test, double* test, int count_root, int* count_false_test)
+void print_tests_res(int num_of_test, double* test, int count_root, int* count_false_test)
 {
+    assert(test != NULL);
+    assert(count_false_test != NULL);
 
     double a = test[0], b = test[1], c = test[2];
     int testqe_count_roots = count_root;
@@ -62,12 +72,12 @@ void outputs_with_test(int num_of_test, double* test, int count_root, int* count
 
     if (testqe(a, b, c, &testqe_count_roots, testqe_ans))
     {
-        printf(RED "error in test number %d || ", num_of_test + 1);
+        printf(COLOR_RED "error in test number %d || ", num_of_test + 1);
         *count_false_test++;
     }
     else
     {
-        printf(GREEN "test number %-3d accept || ", num_of_test + 1);
+        printf(COLOR_GREEN "test number %-3d accept || ", num_of_test + 1);
     }
 
     printf("a = %lg b = %lg c = %lg || ", a, b, c);
@@ -106,23 +116,25 @@ void outputs_with_test(int num_of_test, double* test, int count_root, int* count
 
 bool testqe(double a, double b, double c, int* count_root, double* ans)
 {
+    assert(count_root != NULL);
+    assert(ans != NULL);
+
     int solveqe_count_root = 0;
     double solveqe_ans[2] = {0};
     
     solveqe(a, b, c, &solveqe_count_root, solveqe_ans);
 
-    // bool ret_val = 
+    bool equal_test = solveqe_count_root != *count_root || 
+                      !equal_double(solveqe_ans[0], ans[0]) || 
+                      !equal_double(solveqe_ans[1], ans[1]);
+    
+    ans[0] = solveqe_ans[0];
+    ans[1] = solveqe_ans[1];
 
-    if (solveqe_count_root != *count_root || 
-        !equal_double(solveqe_ans[0], ans[0]) || 
-        !equal_double(solveqe_ans[1], ans[1]))
+    if (equal_test)
     {
-        ans[0] = solveqe_ans[0];
-        ans[1] = solveqe_ans[1];
         return true;
     }
 
-    ans[0] = solveqe_ans[0];
-    ans[1] = solveqe_ans[1];
     return false;
 }
