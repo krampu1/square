@@ -17,6 +17,8 @@ const int Infinite_roots = -1; ///< a constant denoting that the equation has an
 
 const int offset_root = 3; ///< the amount of data up to the first root in the array with test information
 
+const int count_input_param = 3; ///<  number of input parameters
+
 /// Function called for code testing
 /**
 * This function is called when the compilation flag is specified -D TEST .\n
@@ -57,6 +59,14 @@ bool testqe(double a, double b, double c, int* count_root, double* ans);
 * В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
 */
 void output_roots(int count_root, double* ans);
+
+/// Function for clearing the input buffer
+/**
+* This function clears the input buffer before moving to the next line.\n\n
+*
+* Эта функция очищает буфер ввода до перехода на следующую строку.
+*/
+void clear_buffer();
 
 /// Function used to take equation parameters from the console
 /**
@@ -107,7 +117,7 @@ bool equal_double(double a, double b);
 *
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению.
 */
-void liner_equation(double a, double b, int* count_root, double* ans);
+void linear_equation(double a, double b, int* count_root, double* ans);
 
 /// The function of solving the correct quadratic equation
 /**

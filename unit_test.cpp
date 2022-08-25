@@ -50,11 +50,15 @@ void unit_test()
     }
 }
 
-void outputs_with_test(int num_of_test, double* test, int count_root, int* count_false_test){
+
+// print_tests_res()
+
+void outputs_with_test(int num_of_test, double* test, int count_root, int* count_false_test)
+{
 
     double a = test[0], b = test[1], c = test[2];
     int testqe_count_roots = count_root;
-    double testqe_ans[2] = {test[offset_root+0], test[offset_root+1]};
+    double testqe_ans[2] = { test[offset_root+0], test[offset_root+1] };
 
     if (testqe(a, b, c, &testqe_count_roots, testqe_ans))
     {
@@ -96,6 +100,7 @@ void outputs_with_test(int num_of_test, double* test, int count_root, int* count
             printf("x%d = %lg ", num_of_root, testqe_ans[num_of_root]);
         }
     }
+
     printf(END_COLOR "\n");
 }
 
@@ -105,7 +110,12 @@ bool testqe(double a, double b, double c, int* count_root, double* ans)
     double solveqe_ans[2] = {0};
     
     solveqe(a, b, c, &solveqe_count_root, solveqe_ans);
-    if (solveqe_count_root != *count_root || !equal_double(solveqe_ans[0], ans[0]) || !equal_double(solveqe_ans[1], ans[1]))
+
+    // bool ret_val = 
+
+    if (solveqe_count_root != *count_root || 
+        !equal_double(solveqe_ans[0], ans[0]) || 
+        !equal_double(solveqe_ans[1], ans[1]))
     {
         ans[0] = solveqe_ans[0];
         ans[1] = solveqe_ans[1];

@@ -37,6 +37,11 @@ void output_roots(int count_root, double* ans)
     printf("\n");
 }
 
+void clear_buffer()
+{
+    while (getchar() != '\n') ;
+}
+
 bool input_3_argument(double *a, double *b, double *c)
 {
     while (true)
@@ -50,14 +55,16 @@ bool input_3_argument(double *a, double *b, double *c)
             return true;
         }
 
-        if (first_char != '\n'){
-            while (getchar() != '\n') ;
+        if (first_char != '\n') 
+        {
+            clear_buffer();
         }
 
-        if (accept == 3) break;
+        if (accept == count_input_param) break;
 
         printf("error in input data, enter 3 numbers\n");
     }
+
     return false;
 }
 
@@ -66,7 +73,7 @@ bool equal_double(double a, double b)
     return (fabs(a-b) < Epsilon);
 }
 
-void liner_equation(double a, double b, int* count_root, double* ans)
+void linear_equation(double a, double b, int* count_root, double* ans)
 {
     if (equal_double(a, 0))
     {
@@ -92,6 +99,8 @@ void liner_equation(double a, double b, int* count_root, double* ans)
 void quadratic_equation(double a, double b, double c, int* count_root, double* ans)
 {
     assert(!equal_double(a, 0));
+    // assert
+
     double d = b * b - 4 * a * c;
 
     if (d < 0)
@@ -129,7 +138,7 @@ void solveqe(double a, double b, double c, int* count_root, double* ans)
 {
 
     if (equal_double(a, 0))
-        liner_equation(b, c, count_root, ans);
+        linear_equation(b, c, count_root, ans);
     else
         quadratic_equation(a, b, c, count_root, ans);
 }
