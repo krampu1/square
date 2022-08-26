@@ -1,47 +1,51 @@
 #include "quadratic_equation.h"
 #include <math.h>
 
-void output_roots(Equation_data *data_out)
+void output_roots(const QE_roots roots)
 {
-    assert(data_out != NULL);
+    assert(isfinite(roots.x1));
+    assert(isfinite(roots.x2));
 
-    assert(isfinite(data_out->a));
-    assert(isfinite(data_out->b));
-    assert(isfinite(data_out->c));
-    assert(isfinite(data_out->x1));
-    assert(isfinite(data_out->x2));
+    switch (roots.count_roots)
+    {
+        case INFINITE_ROOTS:
 
-    if (data_out->count_roots == Infinite_roots)
-    {
-        printf("infinit number of roots\n");
-    }
-    else if (data_out->count_roots == 0)
-    {
-        printf("no roots\n");
-    }
-    else
-    {
-        printf("number of roots %d\n", data_out->count_roots);
+            printf("infinit number of roots\n");
+            break;
+        
+        case 0:
 
-        if (data_out->count_roots == 1)
-        {
-            printf("%lg\n", data_out->x1);
-        }
-        else{
-            printf("%lg %lg\n", data_out->x1, data_out->x2);
-        }
+            printf("no roots\n");
+            break;
+
+        case 1:
+
+            printf("x1 = %lg\n", roots.x1);
+            break;
+
+        case 2:
+
+            printf("x1 = %lg x2 = %lg\n", roots.x1, roots.x2);
+            break;
+
+        default:
+
+            printf("error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots.count_roots);
+            break;
     }
 }
 
-bool input_param(Equation_data *data_in)
+bool input_param(QE_coeff *coeff)
 {
-    assert(data_in != NULL);
+    assert(coeff != NULL);
+
+    const int COUNT_INPUT_PARAM = 3;
 
     printf("enter a, b, c:\n");
 
     while (true)
     {
-        int num_correctly_numbers = scanf("%lf %lf %lf", &(data_in->a), &(data_in->b), &(data_in->c));
+        int num_correctly_numbers = scanf("%lf %lf %lf", &coeff->a, &coeff->b, &coeff->c);
 
         if (num_correctly_numbers == EOF)
         {
@@ -60,7 +64,7 @@ bool input_param(Equation_data *data_in)
             clear_buffer();
         }
 
-        if (num_correctly_numbers == count_input_param) 
+        if (num_correctly_numbers == COUNT_INPUT_PARAM) 
         {
             break;
         }

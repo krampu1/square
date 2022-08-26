@@ -10,9 +10,11 @@
 
 bool check_flag_test(int argc, char *argv[])
 {
+    const int STRING_FLAG_SIZE = 3;
+
     for (int i = 0; i < argc; i++)
     {
-        if (!strncmp("-d", argv[i], 3))
+        if (!strncmp("-d", argv[i], STRING_FLAG_SIZE))
         {
             return true;
         }
@@ -24,7 +26,6 @@ bool check_flag_test(int argc, char *argv[])
 void fix_zero_double(double *a)
 {
     assert(a != NULL);
-
     assert(isfinite(*a));
 
     if (equal_double(*a, 0))
@@ -51,26 +52,23 @@ void arrange_double(double *a, double *b)
 
 void start_solve()
 {
-    printf("this program solve quadratic equation. To exit, press f\n");
+    printf("this program solve quadratic equation. Press f to exit program\n");
+
+    QE_coeff coeff = {};
 
     while (true)
     {
-        Equation_data data_in;
-
-        bool exit_program = input_param(&data_in);
+        bool exit_program = input_param(&coeff);
 
         if (exit_program) 
         {
             break;
         }
 
-        Equation_data data_out;
-        data_out.a = data_in.a;
-        data_out.b = data_in.b;
-        data_out.c = data_in.c;
+        QE_roots roots = {};
 
-        solveqe(&data_in, &data_out);
-        output_roots(&data_out);
+        solveqe(coeff, &roots);
+        output_roots(roots);
     }
 }
 
@@ -97,115 +95,97 @@ bool equal_double(double a, double b)
     return (fabs(a-b) < Epsilon);
 }
 
-void linear_equation(Equation_data *data_in, Equation_data *data_out)
+void linear_equation(const QE_coeff coeff, QE_roots *roots)
 {
-    assert(data_in  != NULL);
-    assert(data_out != NULL);
+    assert(roots  != NULL);
 
-    assert(isfinite(data_in->a));
-    assert(isfinite(data_in->b));
-    assert(isfinite(data_in->c));
-    assert(isfinite(data_in->x1));
-    assert(isfinite(data_in->x2));
+    assert(isfinite(coeff.a));
+    assert(isfinite(coeff.b));
+    assert(isfinite(coeff.c));
 
-    assert(isfinite(data_out->a));
-    assert(isfinite(data_out->b));
-    assert(isfinite(data_out->c));
-    assert(isfinite(data_out->x1));
-    assert(isfinite(data_out->x2));
+    assert(isfinite(roots->x1));
+    assert(isfinite(roots->x2));
 
-    if (equal_double(data_in->b, 0))
+    if (equal_double(coeff.b, 0))
     {
-        if (equal_double(data_in->c, 0))
+        if (equal_double(coeff.c, 0))
         {
-            data_out->count_roots = Infinite_roots; 
+            roots->count_roots = INFINITE_ROOTS; 
         }
         else
         {
-            data_out->count_roots = 0;
+            roots->count_roots = 0;
         }
     }
     else
     {
-        data_out->count_roots = 1;
-        data_out->x1 = -data_in->c / data_in->b;
+        roots->count_roots = 1;
+        roots->x1 = -coeff.c / coeff.b;
         
-        fix_zero_double(&(data_out->x1));
+        fix_zero_double(&roots->x1);
     }
 }
 
-void quadratic_equation(Equation_data *data_in, Equation_data *data_out)
+void quadratic_equation(const QE_coeff coeff, QE_roots *roots)
 {
-    assert(data_in  != NULL);
-    assert(data_out != NULL);
+    assert(roots != NULL);
 
-    assert(isfinite(data_in->a));
-    assert(isfinite(data_in->b));
-    assert(isfinite(data_in->c));
-    assert(isfinite(data_in->x1));
-    assert(isfinite(data_in->x2));
+    assert(isfinite(coeff.a));
+    assert(isfinite(coeff.b));
+    assert(isfinite(coeff.c));
 
-    assert(isfinite(data_out->a));
-    assert(isfinite(data_out->b));
-    assert(isfinite(data_out->c));
-    assert(isfinite(data_out->x1));
-    assert(isfinite(data_out->x2));
+    assert(isfinite(roots->x1));
+    assert(isfinite(roots->x2));
 
-    assert(!equal_double(data_in->a, 0));
+    assert(!equal_double(coeff.a, 0));
 
-    double discrimenant = data_in->b * data_in->b - 4 * data_in->a * data_in->c;
+    double discrimenant = coeff.b * coeff.b - 4 * coeff.a * coeff.c;
 
     if (equal_double(discrimenant, 0))
     {
-        data_out->count_roots = 1;
-        data_out->x1 = -(data_in->b) / (2 * (data_in->a));
+        roots->count_roots = 1;
+        roots->x1 = -coeff.b / (2 * coeff.a);
 
-        fix_zero_double(&(data_out->x1));
+        fix_zero_double(&roots->x1);
     }
     else if (discrimenant < 0)
     {
-        data_out->count_roots = 0;
+        roots->count_roots = 0;
     }
     else
     {
         double sqrt_discrimenant = sqrt(discrimenant);
 
-        data_out->count_roots = 2;
-        data_out->x1 = (-(data_in->b) + sqrt_discrimenant) / (2 * (data_in->a));
-        data_out->x2 = (-(data_in->b) - sqrt_discrimenant) / (2 * (data_in->a));
+        roots->count_roots = 2;
+        roots->x1 = (-coeff.b + sqrt_discrimenant) / (2 * coeff.a);
+        roots->x2 = (-coeff.b - sqrt_discrimenant) / (2 * coeff.a);
 
-        arrange_double(&(data_out->x1), &(data_out->x2));
+        arrange_double(&roots->x1, &roots->x2);
 
-        fix_zero_double(&(data_out->x1));
-        fix_zero_double(&(data_out->x2));
+        fix_zero_double(&roots->x1);
+        fix_zero_double(&roots->x2);
     }
 }
 
 
 
-void solveqe(Equation_data *data_in, Equation_data *data_out)
+void solveqe(const QE_coeff coeff, QE_roots *roots)
 {
-    assert(data_in  != NULL);
-    assert(data_out != NULL);
+    assert(roots != NULL);
 
-    assert(isfinite(data_in->a));
-    assert(isfinite(data_in->b));
-    assert(isfinite(data_in->c));
-    assert(isfinite(data_in->x1));
-    assert(isfinite(data_in->x2));
+    assert(isfinite(coeff.a));
+    assert(isfinite(coeff.b));
+    assert(isfinite(coeff.c));
 
-    assert(isfinite(data_out->a));
-    assert(isfinite(data_out->b));
-    assert(isfinite(data_out->c));
-    assert(isfinite(data_out->x1));
-    assert(isfinite(data_out->x2));
+    assert(isfinite(roots->x1));
+    assert(isfinite(roots->x2));
 
-    if (equal_double(data_in->a, 0))
+    if (equal_double(coeff.a, 0))
     {
-        linear_equation(data_in, data_out);
+        linear_equation(coeff, roots);
     }
     else
     {
-        quadratic_equation(data_in, data_out);
+        quadratic_equation(coeff, roots);
     }
 }
