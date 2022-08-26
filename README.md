@@ -8,13 +8,13 @@
 This program can solve quadratic equations.
 
 ## Installation
-To use a progect you should have ```g++ compiler``` and ```make```
+To use a progect you should have `g++ compiler` and `make`
 * Clone this repository:
     * `git clone https://github.com/krampu1/square.git`
     * `cd square`
  * Build the program:
     * `make`
- * Clean after work ```make```:
+ * Clean after work `make`:
     * `make clean`
 
 ## Usage
