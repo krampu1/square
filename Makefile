@@ -13,7 +13,7 @@ BUILDDIR := ./object_files
 TESTDIR  := ./test
 
 all: square.o quadratic_equation.o unit_test.o input_output.o
-	$(CC) $(FLUGS) ./object_files/square.o ./object_files/quadratic_equation.o ./test/unit_test.o ./object_files/input_output.o -o square
+	$(CC) $(FLUGS) ./object_files/square.o ./object_files/quadratic_equation.o ./test/unit_test.o ./object_files/input_output.o -o run
 
 square.o: square.cpp
 	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@

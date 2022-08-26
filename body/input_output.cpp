@@ -74,7 +74,7 @@ int input_param(QE_coeffs *coeffs)
             break;
         }
 
-        printf("error in input data, enter 3 numbers\n");
+        printf("error in input data, enter 3 numbers:\n");
     }
 
     return SUCCESS;
