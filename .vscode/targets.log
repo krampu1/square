@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 19:16:13 2022
+# Make data base, printed on Fri Aug 26 20:10:42 2022
 
 # Variables
 
@@ -14,6 +14,8 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 SYSTEMDRIVE = C:
 # environment
 LC_ALL = C
+# makefile (from 'Makefile', line 13)
+TESTDIR := ./test
 # environment
 USERPROFILE = C:\Users\actim
 # environment
@@ -27,14 +29,13 @@ SYSTEMROOT = C:\Windows
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Module 
-s;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14316_NULKBCIWEKKDHWPW
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_21176_PECPYWIYJJGQMRXW
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -64,7 +65,7 @@ ONEDRIVE = C:\Users\actim\OneDrive
 # makefile
 CURDIR := c:/Users/actim/code/c/square
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
 # environment
@@ -82,7 +83,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 14316
+VSCODE_PID = 21176
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -122,7 +123,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # makefile (from 'Makefile', line 2)
-FLUGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE
+FLUGS := -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE
 # environment
 PROMPT = $P$G
 # environment
@@ -192,11 +193,13 @@ SESSIONNAME = Console
 # environment
 PROCESSOR_REVISION = 6001
 # makefile (from 'Makefile', line 1)
-CC = g++
+CC := g++
+# makefile (from 'Makefile', line 12)
+BUILDDIR := ./object_files
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=92/1024=9%, Rehash=0, Collisions=8/124=6%
+# Load=94/1024=9%, Rehash=0, Collisions=8/127=6%
 
 # Pattern-specific Variable Values
 
@@ -204,9 +207,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key c:/Users/actim/code/c/square, mtime 1661530541): 13 files, no impossibilities.
+# . (key c:/Users/actim/code/c/square, mtime 1661533750): 12 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -218,8 +221,8 @@ quadratic_equation.o: body/quadratic_equation.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	$(CC) $(FLUGS) -c ./body/quadratic_equation.cpp -o ./object_files/quadratic_equation.o
+#  recipe to execute (from 'Makefile', line 22):
+	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
 # Not a target:
 body/quadratic_equation.cpp:
@@ -250,14 +253,14 @@ square.o: square.cpp
 # automatic
 # | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
-#  recipe to execute (from 'Makefile', line 16):
-	$(CC) $(FLUGS) -c square.cpp -o ./object_files/square.o
+# Load=8/32=25%, Rehash=0, Collisions=2/16=12%
+#  recipe to execute (from 'Makefile', line 19):
+	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-26 19:15:38
+#  Last modified 2022-08-26 19:50:36
 #  File has been updated.
 #  Successfully updated.
 
@@ -271,25 +274,25 @@ unit_test.o: test/unit_test.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
-	$(CC) $(FLUGS) -c ./test/unit_test.cpp -o ./test/unit_test.o
+#  recipe to execute (from 'Makefile', line 25):
+	$(CC) $(FLUGS) -c $< -o $(TESTDIR)/$@
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 31):
 	del .\object_files\square.o
 	del .\object_files\quadratic_equation.o
-	del .\object_files\unit_test.o
+	del .\test\unit_test.o
 	del .\object_files\input_output.o
 
 input_output.o: body/input_output.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
-	$(CC) $(FLUGS) -c ./body/input_output.cpp -o ./object_files/input_output.o
+#  recipe to execute (from 'Makefile', line 28):
+	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
 # Not a target:
 body/input_output.cpp:
@@ -310,8 +313,8 @@ all: square.o quadratic_equation.o unit_test.o input_output.o
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from 'Makefile', line 13):
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 16):
 	$(CC) $(FLUGS) ./object_files/square.o ./object_files/quadratic_equation.o ./test/unit_test.o ./object_files/input_output.o -o square
 
 # Not a target:
@@ -335,12 +338,12 @@ square.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 257 B / avg = 10 B
-# current buf: size = 8174 B / used = 257 B / count = 24 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 248 B / avg = 10 B
+# current buf: size = 8174 B / used = 248 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 41 / hit rate = 41%
+# strcache performance: lookups = 40 / hit rate = 42%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Fri Aug 26 19:16:13 2022
+# Load=23/8192=0%, Rehash=0, Collisions=0/40=0%
+# Finished Make data base on Fri Aug 26 20:10:42 2022
 
  
