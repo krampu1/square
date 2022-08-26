@@ -11,12 +11,12 @@ unit test code file
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}{check\+\_\+test}} (int argc, char $\ast$$\ast$argv)
+bool \mbox{\hyperlink{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}{check\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \item 
 void \mbox{\hyperlink{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
 \begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
-\begin{DoxyCompactList}\small\item\em функция для проверки теста с выводом информации в консиль \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double test\mbox{[}$\,$\mbox{]}, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
+\item 
 bool \mbox{\hyperlink{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
 \begin{DoxyCompactList}\small\item\em A function that tests the operation of a test with certain parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -27,38 +27,31 @@ unit test code file
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}\label{unit__test_8cpp_ab69340c369850730cb6142a7a48d5534}} 
+\mbox{\Hypertarget{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}\label{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}} 
 \index{unit\_test.cpp@{unit\_test.cpp}!check\_test@{check\_test}}
 \index{check\_test@{check\_test}!unit\_test.cpp@{unit\_test.cpp}}
 \doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
-{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}\label{unit__test_8cpp_a24c4100e78d16e7a93d5a3610ed859fe}} 
-\index{unit\_test.cpp@{unit\_test.cpp}!print\_tests\_res@{print\_tests\_res}}
-\index{print\_tests\_res@{print\_tests\_res}!unit\_test.cpp@{unit\_test.cpp}}
-\doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
-{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
-
-
-
-функция для проверки теста с выводом информации в консиль 
+{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+test} & number of test \\
+\mbox{\texttt{ in}}  & {\em argc} & number of command line arguments \\
 \hline
-\mbox{\texttt{ in}}  & {\em test} & pointer to an array containing test data \\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+false\+\_\+test} & pointer to the invalid test counter\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+false\+\_\+test} & invalid test counter\\
+\mbox{\texttt{ in}}  & {\em argv} & array of command line arguments\\
 \hline
 \end{DoxyParams}
-This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test.~\newline
-~\newline
- Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. \mbox{\Hypertarget{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}\label{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}} 
+Если один из флагов командной строки -\/d , то true, иначе false
+
+\begin{DoxyReturn}{Returns}
+If one of the command line flags is -\/d , then true otherwise fals. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}\label{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}} 
+\index{unit\_test.cpp@{unit\_test.cpp}!print\_tests\_res@{print\_tests\_res}}
+\index{print\_tests\_res@{print\_tests\_res}!unit\_test.cpp@{unit\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
+{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double}]{test\mbox{[}$\,$\mbox{]},  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}\label{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}} 
 \index{unit\_test.cpp@{unit\_test.cpp}!testqe@{testqe}}
 \index{testqe@{testqe}!unit\_test.cpp@{unit\_test.cpp}}
 \doxysubsubsection{\texorpdfstring{testqe()}{testqe()}}

@@ -18,16 +18,15 @@
 
 .in +1c
 .ti -1c
-.RI "bool \fBcheck_test\fP (int argc, char **argv)"
+.RI "bool \fBcheck_test\fP (int argc, char *argv[])"
 .br
 .ti -1c
 .RI "void \fBunit_test\fP ()"
 .br
 .RI "Function called for code testing\&. "
 .ti -1c
-.RI "void \fBprint_tests_res\fP (int num_of_test, double *test, int count_root, int *count_false_test)"
+.RI "void \fBprint_tests_res\fP (int num_of_test, double test[], int count_root, int *count_false_test)"
 .br
-.RI "функция для проверки теста с выводом информации в консиль "
 .ti -1c
 .RI "bool \fBtestqe\fP (double a, double b, double c, int *count_root, double *ans)"
 .br
@@ -40,31 +39,26 @@ unit test code file
 
 .SH "Function Documentation"
 .PP 
-.SS "bool check_test (int argc, char ** argv)"
+.SS "bool check_test (int argc, char * argv[])"
 
-.SS "void print_tests_res (int num_of_test, double * test, int count_root, int * count_false_test)"
-
-.PP
-функция для проверки теста с выводом информации в консиль 
 .PP
 \fBParameters\fP
 .RS 4
-\fInum_of_test\fP number of test 
+\fIargc\fP number of command line arguments 
 .br
-\fItest\fP pointer to an array containing test data 
-.br
-\fIcount_root\fP the variable number of roots 
-.br
-\fIcount_false_test\fP pointer to the invalid test counter
-.br
-\fIcount_false_test\fP invalid test counter
+\fIargv\fP array of command line arguments
 .RE
 .PP
-This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test\&.
-.br
+Если один из флагов командной строки -d , то true, иначе false
+.PP
+\fBReturns\fP
+.RS 4
+If one of the command line flags is -d , then true otherwise fals\&. 
+.RE
+.PP
 
-.br
- Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте\&. 
+.SS "void print_tests_res (int num_of_test, double test[], int count_root, int * count_false_test)"
+
 .SS "bool testqe (double a, double b, double c, int * count_root, double * ans)"
 
 .PP

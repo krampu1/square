@@ -14,16 +14,22 @@
 #define END_COLOR "\033[0m" ///< this line allows you to recolor the color of subsequent characters in the console to defoult сcolor
 
 
-static const double Epsilon = 1e-5; ///< the constant of the minimum difference at which doubles are considered different
+static const double Epsilon = 1e-5;       ///< the constant of the minimum difference at which doubles are considered different
 
-enum quadratic_equation_const
+static const int Infinite_roots = -1;    ///< a constant denoting that the equation has an infinite number of solutions
+
+static const int offset_root = 3;        ///< the amount of data up to the first root in the array with test information
+
+static const int count_input_param = 3;  ///<  number of input parameters
+
+struct Equation_data
 {
-    Infinite_roots = -1,   ///< a constant denoting that the equation has an infinite number of solutions
-
-    offset_root = 3,       ///< the amount of data up to the first root in the array with test information
-
-    count_input_param = 3  ///<  number of input parameters
-
+    int count_roots = 0;
+    double a        = 0;
+    double b        = 0;
+    double c        = 0;
+    double x1       = 0;
+    double x2       = 0;
 };
 
 ///
@@ -35,28 +41,15 @@ enum quadratic_equation_const
 *
 * @return If one of the command line flags is -d , then true otherwise fals.
 */
-bool check_test(int argc, char *argv[]);
-
-/// main function
-/**
-* @param [in] argc number of command line flags
-* @param [in] argv array of command line flags
-*
-* This function separates the types of program startup: user and testing.\n\n
-*
-* Эта функция разделяет типы запуска программы: пользовательский и тестирование.
-*
-* @return int
-*/
-int main(int argc, char *argv[]);
+bool check_flag_test(int argc, char *argv[]);
 
 /// Function called for code testing
 /**
-* This function is called when the compilation flag is specified -D TEST .\n
+* This function is called when you specify the start of the program -d .\n
 * It contains a set of tests and checks the operation of the main program on them using the testqe() function.\n
 * Also, this function outputs information about the passed tests and the result of the check to the console.\n\n
 *
-* Данная функция вызывается при указании флага компиляции -D TEST .\n
+* Данная функция вызывается при указании запуска программы -d .\n
 * Она содержит набор тестов и проверяет на них работу основной программы с помощью функции testqe().\n
 * Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки.
 */
@@ -64,11 +57,9 @@ void unit_test();
 
 /// A function that tests the operation of a test with certain parameters
 /**
-* @param [in] a parameter of the quadratic equation
-* @param [in] b parameter of the quadratic equation
-* @param [in] c parameter of the quadratic equation
-* @param [in] count_root pointer to the number of roots of the quadratic equation
-* @param [in] ans pointer to the array of roots of the equation
+* @param [in] data_in information about the quadratic equation
+*
+* @param [out] data_out information about the quadratic equation
 *
 * This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.\n\n
 *
@@ -78,18 +69,17 @@ void unit_test();
 *
 * @return If the correct answer coincides with the output of the program, true is returned otherwise false.
 */
-bool testqe(double a, double b, double c, int* count_root, double* ans);
+bool testqe(Equation_data *data_in, Equation_data *data_out);
 
 /// A function that outputs the found roots of the quadratic equation
 /**
-* @param [in] count_root number of roots of the equation
-* @param [in] ans pointer to the array of roots of the equation
+* @param [out] data_out information about the quadratic equation 
 *
 * In this function, all cases are considered separately: there are no roots, 1 root, 2 roots, infinity of roots.\n\n
 *
 * В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
 */
-void output_roots(int count_root, double* ans);
+void output_roots(Equation_data *data_out);
 
 /// Function for clearing the input buffer
 /**
@@ -101,13 +91,7 @@ void clear_buffer();
 
 /// Function used to take equation parameters from the console
 /**
-* @param [in] a pointer to the parameter of the quadratic equation
-* @param [in] b pointer to the parameter of the quadratic equation
-* @param [in] c pointer to the parameter of the quadratic equation
-*
-* @param [out] a parameter of the quadratic equation
-* @param [out] b parameter of the quadratic equation
-* @param [out] c parameter of the quadratic equation
+* @param [in] data_in information about the quadratic equation
 *
 * The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.\n\n
 *
@@ -116,7 +100,7 @@ void clear_buffer();
 *
 * @return true if the letter f is entered, otherwise false
 */
-bool input_3_argument(double *a, double *b, double *c);
+bool input_param(Equation_data *data_in);
 
 /// Function for comparing 2 numbers of type double
 /**
@@ -136,48 +120,34 @@ bool equal_double(double a, double b);
 
 /// The function of solving a linear equation
 /**
-* @param [in] a parameter of the linear equation
-* @param [in] b parameter of the linear equation
-* @param [in] count_root pointer to the variable number of roots of the equation
-* @param [in] ans pointer to an array of roots
+* @param [in] data_in information about the quadratic equation
 *
-* @param [out] count_root the number of roots of the equation
-* @param [out] ans array of roots
+* @param [out] data_out information about the quadratic equation
 *
 * This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation.\n\n
 *
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению.
 */
-void linear_equation(double a, double b, int* count_root, double* ans);
+void linear_equation(Equation_data *data_in, Equation_data *data_out);
 
 /// The function of solving the correct quadratic equation
 /**
-* @param [in] a parameter of the quadratic equation
-* @param [in] b parameter of the quadratic equation
-* @param [in] c parameter of the quadratic equation
-* @param [in] count_root pointer to the variable number of roots
-* @param [in] ans pointer to an array of roots
+* @param [in] data_in information about the quadratic equation
 *
-* @param [out] count_root the variable number of roots
-* @param [out] ans array of roots
+* @param [out] data_out information about the quadratic equation
 *
 * This function considers the linear case of a quadratic equation when the parameter a is not equal to 0, which guarantees a non-infinite number of roots.\n\n
 *
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0,
 * что гарантирует не бесконечное число корней.
 */
-void quadratic_equation(double a, double b, double c, int* count_root, double* ans);
+void quadratic_equation(Equation_data *data_in, Equation_data *data_out);
 
 /// The function of solving the quadratic equation
 /**
-* @param [in] a parameter of the quadratic equation
-* @param [in] b parameter of the quadratic equation
-* @param [in] c parameter of the quadratic equation
-* @param [in] count_root pointer to the variable number of roots
-* @param [in] ans pointer to an array of roots
+* @param [in] data_in information about the quadratic equation
 *
-* @param [out] count_root the variable number of roots
-* @param [out] ans array of roots
+* @param [out] data_out information about the quadratic equation
 *
 * This function divides the quadratic equation into 2 cases.\n
 * If a is 0, then the equation is treated as linear.\n
@@ -187,7 +157,7 @@ void quadratic_equation(double a, double b, double c, int* count_root, double* a
 * Если a равен 0, то уравнение рассматривается как линейное.\n
 * Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней.
 */
-void solveqe(double a, double b, double c, int* count_root, double* ans);
+void solveqe(Equation_data *data_in, Equation_data *data_out);
 
 /// A function that swaps two numbers of the double type
 /**
@@ -203,12 +173,10 @@ void solveqe(double a, double b, double c, int* count_root, double* ans);
 */
 void swap_double(double* a, double* b);
 
-/// функция для проверки теста с выводом информации в консиль
+/// Function for checking the test with the output of information to the console
 /**
 * @param [in] num_of_test number of test
-* @param [in] test pointer to an array containing test data
-* @param [out] count_root the variable number of roots
-* @param [in] count_false_test pointer to the invalid test counter
+* @param [in] data_in information about the quadratic equation
 *
 * @param [out] count_false_test invalid test counter
 *
@@ -218,4 +186,7 @@ void swap_double(double* a, double* b);
 * Эта функция тестирует программу на определённых данных и выводит в консоль
 * информацию о том успешно ли пройден тест и о сомом тесте. 
 */
-void print_tests_res(int num_of_test, double* test, int count_root, int* count_false_test);
+void print_tests_res(int num_of_test, Equation_data *data_in, int* count_false_test);
+
+/// This function calls the user interface in the console
+void start_solve();

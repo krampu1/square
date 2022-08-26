@@ -6,17 +6,42 @@
 #include "quadratic_equation.h"
 #include <math.h>
 #include <assert.h>
+#include <string.h>
 
-void swap_double(double* a, double* b)
+bool check_flag_test(int argc, char *argv[])
+{
+    for (int i = 0; i < argc; i++)
+    {
+        if (!strncmp("-d", argv[i], 3))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void fix_zero_double(double *a)
+{
+    assert(a != NULL);
+
+    assert(isfinite(*a));
+
+    if (equal_double(*a, 0))
+    {
+        *a = 0;
+    }  
+}
+
+void arrange_double(double *a, double *b)
 {
     assert(a != NULL);
     assert(b != NULL);
-    assert(*a != NAN);
-    assert(*b != NAN);
-    assert(*a != INFINITY);
-    assert(*b != INFINITY);
 
-    if (*a > *b)
+    assert(isfinite(*a));
+    assert(isfinite(*b));
+
+    if (*a > * b)
     {
         double x = *a;
         *a = *b;
@@ -24,71 +49,47 @@ void swap_double(double* a, double* b)
     }
 }
 
-void output_roots(int count_root, double* ans)
+void start_solve()
 {
-    assert(ans != NULL);
+    printf("this program solve quadratic equation. To exit, press f\n");
 
-    if (count_root == Infinite_roots)
+    while (true)
     {
-        printf("infinit namber of roots");
-    }
-    else if (count_root == 0)
-    {
-        printf("no roots");
-    }
-    else
-    {
-        printf("namber of roots %d\n", count_root);
-    }
+        Equation_data data_in;
 
-    for (int i = 0; i < count_root; i++)
-    {
-        printf("%lg ", ans[i]);
+        bool exit_program = input_param(&data_in);
+
+        if (exit_program) 
+        {
+            break;
+        }
+
+        Equation_data data_out;
+        data_out.a = data_in.a;
+        data_out.b = data_in.b;
+        data_out.c = data_in.c;
+
+        solveqe(&data_in, &data_out);
+        output_roots(&data_out);
     }
-    printf("\n");
+}
+
+void swap_double(double* a, double* b)
+{
+    assert(a != NULL);
+    assert(b != NULL);
+    
+    assert(isfinite(*a));
+    assert(isfinite(*b));
+
+    double x = *a;
+    *a = *b;
+    *b = x;
 }
 
 void clear_buffer()
 {
-    while (getchar() != '\n') ;
-}
-
-bool input_3_argument(double *a, double *b, double *c)
-{
-    assert(a != NULL);
-    assert(b != NULL);
-    assert(c != NULL);
-    assert(*a != NAN);
-    assert(*b != NAN);
-    assert(*c != NAN);
-    assert(*a != INFINITY);
-    assert(*b != INFINITY);
-    assert(*c != INFINITY);
-
-    printf("enter a, b, c:\n");
-
-    while (true)
-    {
-        int accept = scanf("%lf %lf %lf", a, b, c);
-
-        char first_char = getchar();
-
-        if (first_char == 'f')
-        {
-            return true;
-        }
-
-        if (first_char != '\n') 
-        {
-            clear_buffer();
-        }
-
-        if (accept == count_input_param) break;
-
-        printf("error in input data, enter 3 numbers\n");
-    }
-
-    return false;
+    while (getchar() != '\n') { }
 }
 
 bool equal_double(double a, double b)
@@ -96,80 +97,115 @@ bool equal_double(double a, double b)
     return (fabs(a-b) < Epsilon);
 }
 
-void linear_equation(double a, double b, int* count_root, double* ans)
+void linear_equation(Equation_data *data_in, Equation_data *data_out)
 {
-    assert(count_root != NULL);
-    assert(ans != NULL);
+    assert(data_in  != NULL);
+    assert(data_out != NULL);
 
-    if (equal_double(a, 0))
+    assert(isfinite(data_in->a));
+    assert(isfinite(data_in->b));
+    assert(isfinite(data_in->c));
+    assert(isfinite(data_in->x1));
+    assert(isfinite(data_in->x2));
+
+    assert(isfinite(data_out->a));
+    assert(isfinite(data_out->b));
+    assert(isfinite(data_out->c));
+    assert(isfinite(data_out->x1));
+    assert(isfinite(data_out->x2));
+
+    if (equal_double(data_in->b, 0))
     {
-        if (equal_double(b, 0))
+        if (equal_double(data_in->c, 0))
         {
-            *count_root = Infinite_roots;
+            data_out->count_roots = Infinite_roots; 
         }
         else
         {
-            *count_root = 0;
+            data_out->count_roots = 0;
         }
     }
     else
     {
-        *count_root = 1;
-        ans[0] = -b / a;
+        data_out->count_roots = 1;
+        data_out->x1 = -data_in->c / data_in->b;
         
-        if (equal_double(ans[0], 0))
-            ans[0] = 0;
+        fix_zero_double(&(data_out->x1));
     }
 }
 
-void quadratic_equation(double a, double b, double c, int* count_root, double* ans)
+void quadratic_equation(Equation_data *data_in, Equation_data *data_out)
 {
-    assert(count_root != NULL);
-    assert(ans != NULL);
+    assert(data_in  != NULL);
+    assert(data_out != NULL);
 
-    assert(!equal_double(a, 0));
-    // assert
+    assert(isfinite(data_in->a));
+    assert(isfinite(data_in->b));
+    assert(isfinite(data_in->c));
+    assert(isfinite(data_in->x1));
+    assert(isfinite(data_in->x2));
 
-    double d = b * b - 4 * a * c;
+    assert(isfinite(data_out->a));
+    assert(isfinite(data_out->b));
+    assert(isfinite(data_out->c));
+    assert(isfinite(data_out->x1));
+    assert(isfinite(data_out->x2));
 
-    if (d < 0)
+    assert(!equal_double(data_in->a, 0));
+
+    double discrimenant = data_in->b * data_in->b - 4 * data_in->a * data_in->c;
+
+    if (equal_double(discrimenant, 0))
     {
-        *count_root = 0;
+        data_out->count_roots = 1;
+        data_out->x1 = -(data_in->b) / (2 * (data_in->a));
+
+        fix_zero_double(&(data_out->x1));
     }
-    else if (equal_double(d, 0))
+    else if (discrimenant < 0)
     {
-        *count_root = 1;
-        ans[0] = -b / (2 * a);
-
-        if (equal_double(ans[0], 0))
-            ans[0] = 0;
+        data_out->count_roots = 0;
     }
     else
     {
-        double sd = sqrt(d);
-        *count_root = 2;
-        ans[0] = (-b + sd) / (2 * a);
-        ans[1] = (-b - sd) / (2 * a);
+        double sqrt_discrimenant = sqrt(discrimenant);
 
-        if (ans[0] > ans[1])
-            swap_double(&ans[0], &ans[1]);
+        data_out->count_roots = 2;
+        data_out->x1 = (-(data_in->b) + sqrt_discrimenant) / (2 * (data_in->a));
+        data_out->x2 = (-(data_in->b) - sqrt_discrimenant) / (2 * (data_in->a));
 
-        if (equal_double(ans[0], 0))
-            ans[0] = 0;
-        if (equal_double(ans[1], 0))
-            ans[1] = 0;
+        arrange_double(&(data_out->x1), &(data_out->x2));
+
+        fix_zero_double(&(data_out->x1));
+        fix_zero_double(&(data_out->x2));
     }
 }
 
 
 
-void solveqe(double a, double b, double c, int* count_root, double* ans)
+void solveqe(Equation_data *data_in, Equation_data *data_out)
 {
-    assert(count_root != NULL);
-    assert(ans != NULL);
+    assert(data_in  != NULL);
+    assert(data_out != NULL);
 
-    if (equal_double(a, 0))
-        linear_equation(b, c, count_root, ans);
+    assert(isfinite(data_in->a));
+    assert(isfinite(data_in->b));
+    assert(isfinite(data_in->c));
+    assert(isfinite(data_in->x1));
+    assert(isfinite(data_in->x2));
+
+    assert(isfinite(data_out->a));
+    assert(isfinite(data_out->b));
+    assert(isfinite(data_out->c));
+    assert(isfinite(data_out->x1));
+    assert(isfinite(data_out->x2));
+
+    if (equal_double(data_in->a, 0))
+    {
+        linear_equation(data_in, data_out);
+    }
     else
-        quadratic_equation(a, b, c, count_root, ans);
+    {
+        quadratic_equation(data_in, data_out);
+    }
 }
