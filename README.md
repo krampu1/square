@@ -14,8 +14,6 @@ To use a progect you should have `g++ compiler` and `make`
     * `cd square`
  * Build the program:
     * `make`
- * Clean after work `make`:
-    * `make clean`
 
 ## Usage
 To use a program you should run `run` file in linux and `run.exe` file in windows.
@@ -29,7 +27,4 @@ For solve: just run the program
 Usage example:
 <p align="center">
     <img src="example//solve.bmp" alt="Preview" width="416"/>
-</p>
-<p align="center">
-    <img src="example//test.bmp" alt="Preview" width="832"/>
 </p>
