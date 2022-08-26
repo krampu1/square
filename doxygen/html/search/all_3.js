@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linear_5fequation_9',['linear_equation',['../quadratic__equation_8cpp.html#a5e30efe81799ed4df160c74dcbc46dad',1,'linear_equation(double a, double b, int *count_root, double *ans):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#a5e30efe81799ed4df160c74dcbc46dad',1,'linear_equation(double a, double b, int *count_root, double *ans):&#160;quadratic_equation.cpp']]]
+  ['end_5fcolor_9',['END_COLOR',['../quadratic__equation_8h.html#a475df0d9bbf72a496b3b362ef75a2a0f',1,'quadratic_equation.h']]],
+  ['equal_5fdouble_10',['equal_double',['../quadratic__equation_8cpp.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#aeb6b390b838fa0bdf05f81831e406722',1,'equal_double(double a, double b):&#160;quadratic_equation.cpp']]]
 ];

@@ -11,13 +11,15 @@ unit test code file
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}{check\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+bool \mbox{\hyperlink{unit__test_8cpp_a6c960184227dad4692b9052ac69021c7}{read\+\_\+test}} (FILE $\ast$input\+\_\+file, \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \item 
 void \mbox{\hyperlink{unit__test_8cpp_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
 \begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double test\mbox{[}$\,$\mbox{]}, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
+void \mbox{\hyperlink{unit__test_8cpp_a85df8b3c2271f20ea501cc620a3cf845}{output\+\_\+answer}} (\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} roots, const char $\ast$str)
 \item 
-bool \mbox{\hyperlink{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{unit__test_8cpp_a774516c1db0a39fccc944f41d71b43a2}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} corr\+\_\+roots, int $\ast$count\+\_\+false\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function for checking the test with the output of information to the console. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{unit__test_8cpp_a9b7fd1c9c6785668832b407db30181b0}{testqe}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} corr\+\_\+roots, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$test\+\_\+roots)
 \begin{DoxyCompactList}\small\item\em A function that tests the operation of a test with certain parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -27,35 +29,46 @@ unit test code file
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}\label{unit__test_8cpp_a84f6d3e00d4fd0a177a4fa31d673910d}} 
-\index{unit\_test.cpp@{unit\_test.cpp}!check\_test@{check\_test}}
-\index{check\_test@{check\_test}!unit\_test.cpp@{unit\_test.cpp}}
-\doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
-{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{unit__test_8cpp_a85df8b3c2271f20ea501cc620a3cf845}\label{unit__test_8cpp_a85df8b3c2271f20ea501cc620a3cf845}} 
+\index{unit\_test.cpp@{unit\_test.cpp}!output\_answer@{output\_answer}}
+\index{output\_answer@{output\_answer}!unit\_test.cpp@{unit\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{output\_answer()}{output\_answer()}}
+{\footnotesize\ttfamily void output\+\_\+answer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{roots,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
 
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em argc} & number of command line arguments \\
-\hline
-\mbox{\texttt{ in}}  & {\em argv} & array of command line arguments\\
-\hline
-\end{DoxyParams}
-Если один из флагов командной строки -\/d , то true, иначе false
-
-\begin{DoxyReturn}{Returns}
-If one of the command line flags is -\/d , then true otherwise fals. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}\label{unit__test_8cpp_a09839a9dd83d7d12fa92eb1d8a273310}} 
+\mbox{\Hypertarget{unit__test_8cpp_a774516c1db0a39fccc944f41d71b43a2}\label{unit__test_8cpp_a774516c1db0a39fccc944f41d71b43a2}} 
 \index{unit\_test.cpp@{unit\_test.cpp}!print\_tests\_res@{print\_tests\_res}}
 \index{print\_tests\_res@{print\_tests\_res}!unit\_test.cpp@{unit\_test.cpp}}
 \doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
-{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double}]{test\mbox{[}$\,$\mbox{]},  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{corr\+\_\+roots,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}\label{unit__test_8cpp_a13a9924ed63c3d94a2337babb2a6b475}} 
+
+
+Function for checking the test with the output of information to the console. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+test} & number of test \\
+\hline
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em corr\+\_\+roots} & correct roots of the quadratic equation\\
+\hline
+\mbox{\texttt{ out}}  & {\em count\+\_\+false\+\_\+test} & invalid test counter\\
+\hline
+\end{DoxyParams}
+This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test.~\newline
+~\newline
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. \mbox{\Hypertarget{unit__test_8cpp_a6c960184227dad4692b9052ac69021c7}\label{unit__test_8cpp_a6c960184227dad4692b9052ac69021c7}} 
+\index{unit\_test.cpp@{unit\_test.cpp}!read\_test@{read\_test}}
+\index{read\_test@{read\_test}!unit\_test.cpp@{unit\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_test()}{read\_test()}}
+{\footnotesize\ttfamily bool read\+\_\+test (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{input\+\_\+file,  }\item[{\mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{unit__test_8cpp_a9b7fd1c9c6785668832b407db30181b0}\label{unit__test_8cpp_a9b7fd1c9c6785668832b407db30181b0}} 
 \index{unit\_test.cpp@{unit\_test.cpp}!testqe@{testqe}}
 \index{testqe@{testqe}!unit\_test.cpp@{unit\_test.cpp}}
 \doxysubsubsection{\texorpdfstring{testqe()}{testqe()}}
-{\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{corr\+\_\+roots,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{test\+\_\+roots }\end{DoxyParamCaption})}
 
 
 
@@ -63,15 +76,11 @@ A function that tests the operation of a test with certain parameters.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation \\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em corr\+\_\+roots} & correct roots of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the number of roots of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to the array of roots of the equation\\
+\mbox{\texttt{ out}}  & {\em test\+\_\+roots} & the found roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.~\newline
@@ -92,10 +101,10 @@ If the correct answer coincides with the output of the program, true is returned
 
 Function called for code testing. 
 
-This function is called when the compilation flag is specified -\/D TEST .~\newline
-It contains a set of tests and checks the operation of the main program on them using the \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}} function.~\newline
+This function is called when you specify the start of the program -\/d .~\newline
+It contains a set of tests and checks the operation of the main program on them using the \mbox{\hyperlink{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}{testqe()}} function.~\newline
 Also, this function outputs information about the passed tests and the result of the check to the console.~\newline
 ~\newline
- Данная функция вызывается при указании флага компиляции -\/D TEST .~\newline
-Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}}.~\newline
+ Данная функция вызывается при указании запуска программы -\/d .~\newline
+Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}{testqe()}}.~\newline
 Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. 

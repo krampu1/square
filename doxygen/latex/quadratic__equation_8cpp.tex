@@ -8,24 +8,29 @@ quadratic equation code file
 {\ttfamily \#include \char`\"{}quadratic\+\_\+equation.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{quadratic__equation_8cpp_a7adc7548bbb31d8dcc931ac98ed8c0e1}{check\+\_\+flag\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{quadratic__equation_8cpp_a671e8febc35da4b73a720a9e3620b3df}{fix\+\_\+zero\+\_\+double}} (double $\ast$a)
+\item 
+void \mbox{\hyperlink{quadratic__equation_8cpp_a460b70f1f323d1bd0d16da6928fa5388}{arrange\+\_\+double}} (double $\ast$a, double $\ast$b)
+\item 
+void \mbox{\hyperlink{quadratic__equation_8cpp_a064b4827489bd25ab16253e53a2a1861}{start\+\_\+solve}} ()
+\begin{DoxyCompactList}\small\item\em This function calls the user interface in the console. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e}{swap\+\_\+double}} (double $\ast$a, double $\ast$b)
 \begin{DoxyCompactList}\small\item\em A function that swaps two numbers of the double type. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8cpp_a38b409bb4a94d8ec84202cc8f62d1d9c}{output\+\_\+roots}} (int count\+\_\+root, double $\ast$ans)
-\begin{DoxyCompactList}\small\item\em A function that outputs the found roots of the quadratic equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
 \begin{DoxyCompactList}\small\item\em Function for clearing the input buffer. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{quadratic__equation_8cpp_aaf8e57f28457f0597807bedfd9aeadcd}{input\+\_\+3\+\_\+argument}} (double $\ast$a, double $\ast$b, double $\ast$c)
-\begin{DoxyCompactList}\small\item\em Function used to take equation parameters from the console. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{quadratic__equation_8cpp_aeb6b390b838fa0bdf05f81831e406722}{equal\+\_\+double}} (double a, double b)
 \begin{DoxyCompactList}\small\item\em Function for comparing 2 numbers of type double. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}{linear\+\_\+equation}} (double a, double b, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8cpp_a81c4dcf681ae2efbfcb2bdce55174670}{linear\+\_\+equation}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving a linear equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8cpp_a33cc463ef942dc80b25ede397b55e0cb}{quadratic\+\_\+equation}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8cpp_a46259accedddaefed21299d72bf616d2}{quadratic\+\_\+equation}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving the correct quadratic equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8cpp_ac904eed21d010dc5ccdfff4e8727fabd}{solveqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8cpp_add78894a461bd208c9e13032ff9f5bc9}{solveqe}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving the quadratic equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -35,6 +40,30 @@ quadratic equation code file
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{quadratic__equation_8cpp_a460b70f1f323d1bd0d16da6928fa5388}\label{quadratic__equation_8cpp_a460b70f1f323d1bd0d16da6928fa5388}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!arrange\_double@{arrange\_double}}
+\index{arrange\_double@{arrange\_double}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{arrange\_double()}{arrange\_double()}}
+{\footnotesize\ttfamily void arrange\+\_\+double (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{quadratic__equation_8cpp_a7adc7548bbb31d8dcc931ac98ed8c0e1}\label{quadratic__equation_8cpp_a7adc7548bbb31d8dcc931ac98ed8c0e1}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!check\_flag\_test@{check\_flag\_test}}
+\index{check\_flag\_test@{check\_flag\_test}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_flag\_test()}{check\_flag\_test()}}
+{\footnotesize\ttfamily bool check\+\_\+flag\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & number of command line arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & array of command line arguments\\
+\hline
+\end{DoxyParams}
+Если один из флагов командной строки -\/d , то true, иначе false
+
+\begin{DoxyReturn}{Returns}
+If one of the command line flags is -\/d , then true otherwise fals. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}\label{quadratic__equation_8cpp_afa847549e9dc6e4f49f651623bc456dc}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!clear\_buffer@{clear\_buffer}}
 \index{clear\_buffer@{clear\_buffer}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
@@ -72,44 +101,17 @@ A constant is used for comparison, if the difference between the stored double v
 \begin{DoxyReturn}{Returns}
 true if the numbers are equal, otherwise false 
 \end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8cpp_aaf8e57f28457f0597807bedfd9aeadcd}\label{quadratic__equation_8cpp_aaf8e57f28457f0597807bedfd9aeadcd}} 
-\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!input\_3\_argument@{input\_3\_argument}}
-\index{input\_3\_argument@{input\_3\_argument}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
-\doxysubsubsection{\texorpdfstring{input\_3\_argument()}{input\_3\_argument()}}
-{\footnotesize\ttfamily bool input\+\_\+3\+\_\+argument (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{quadratic__equation_8cpp_a671e8febc35da4b73a720a9e3620b3df}\label{quadratic__equation_8cpp_a671e8febc35da4b73a720a9e3620b3df}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!fix\_zero\_double@{fix\_zero\_double}}
+\index{fix\_zero\_double@{fix\_zero\_double}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{fix\_zero\_double()}{fix\_zero\_double()}}
+{\footnotesize\ttfamily void fix\+\_\+zero\+\_\+double (\begin{DoxyParamCaption}\item[{double $\ast$}]{a }\end{DoxyParamCaption})}
 
-
-
-Function used to take equation parameters from the console. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & pointer to the parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em b} & pointer to the parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & pointer to the parameter of the quadratic equation\\
-\hline
-\mbox{\texttt{ out}}  & {\em a} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em c} & parameter of the quadratic equation\\
-\hline
-\end{DoxyParams}
-The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.~\newline
-~\newline
- В случае если введена буква f будет считаться что человек хочет завершить работу и функция вернёт true как знак того.~\newline
-Ввод будет продолжаться до тех пор пока не будет введена буква f или не будет указано 3 параметра которые можно записать в double.
-
-\begin{DoxyReturn}{Returns}
-true if the letter f is entered, otherwise false 
-\end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}\label{quadratic__equation_8cpp_a5e30efe81799ed4df160c74dcbc46dad}} 
+\mbox{\Hypertarget{quadratic__equation_8cpp_a81c4dcf681ae2efbfcb2bdce55174670}\label{quadratic__equation_8cpp_a81c4dcf681ae2efbfcb2bdce55174670}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!linear\_equation@{linear\_equation}}
 \index{linear\_equation@{linear\_equation}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
 \doxysubsubsection{\texorpdfstring{linear\_equation()}{linear\_equation()}}
-{\footnotesize\ttfamily void linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void linear\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -117,45 +119,18 @@ The function of solving a linear equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the linear equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the linear equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots of the equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the number of roots of the equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the linear equation\\
 \hline
 \end{DoxyParams}
 This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation.~\newline
 ~\newline
- Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8cpp_a38b409bb4a94d8ec84202cc8f62d1d9c}\label{quadratic__equation_8cpp_a38b409bb4a94d8ec84202cc8f62d1d9c}} 
-\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!output\_roots@{output\_roots}}
-\index{output\_roots@{output\_roots}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
-\doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
-{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{int}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
-
-
-
-A function that outputs the found roots of the quadratic equation. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & number of roots of the equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to the array of roots of the equation\\
-\hline
-\end{DoxyParams}
-In this function, all cases are considered separately\+: there are no roots, 1 root, 2 roots, infinity of roots.~\newline
-~\newline
- В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. \mbox{\Hypertarget{quadratic__equation_8cpp_a33cc463ef942dc80b25ede397b55e0cb}\label{quadratic__equation_8cpp_a33cc463ef942dc80b25ede397b55e0cb}} 
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8cpp_a46259accedddaefed21299d72bf616d2}\label{quadratic__equation_8cpp_a46259accedddaefed21299d72bf616d2}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!quadratic\_equation@{quadratic\_equation}}
 \index{quadratic\_equation@{quadratic\_equation}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
 \doxysubsubsection{\texorpdfstring{quadratic\_equation()}{quadratic\_equation()}}
-{\footnotesize\ttfamily void quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -163,28 +138,18 @@ The function of solving the correct quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function considers the linear case of a quadratic equation when the parameter a is not equal to 0, which guarantees a non-\/infinite number of roots.~\newline
 ~\newline
- Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0, что гарантирует не бесконечное число корней. \mbox{\Hypertarget{quadratic__equation_8cpp_ac904eed21d010dc5ccdfff4e8727fabd}\label{quadratic__equation_8cpp_ac904eed21d010dc5ccdfff4e8727fabd}} 
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0, что гарантирует не бесконечное число корней. \mbox{\Hypertarget{quadratic__equation_8cpp_add78894a461bd208c9e13032ff9f5bc9}\label{quadratic__equation_8cpp_add78894a461bd208c9e13032ff9f5bc9}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!solveqe@{solveqe}}
 \index{solveqe@{solveqe}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
 \doxysubsubsection{\texorpdfstring{solveqe()}{solveqe()}}
-{\footnotesize\ttfamily void solveqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void solveqe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -192,19 +157,9 @@ The function of solving the quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function divides the quadratic equation into 2 cases.~\newline
@@ -213,7 +168,17 @@ If a is not equal to 0, then the equation is considered as a square equation tha
 ~\newline
  Эта функция разделяет квадратное уравнение на 2 случая.~\newline
 Если a равен 0, то уравнение рассматривается как линейное.~\newline
-Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней. \mbox{\Hypertarget{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e}\label{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e}} 
+Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней. \mbox{\Hypertarget{quadratic__equation_8cpp_a064b4827489bd25ab16253e53a2a1861}\label{quadratic__equation_8cpp_a064b4827489bd25ab16253e53a2a1861}} 
+\index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!start\_solve@{start\_solve}}
+\index{start\_solve@{start\_solve}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_solve()}{start\_solve()}}
+{\footnotesize\ttfamily void start\+\_\+solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function calls the user interface in the console. 
+
+\mbox{\Hypertarget{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e}\label{quadratic__equation_8cpp_abfa4eebba539e060400a6a7fe746614e}} 
 \index{quadratic\_equation.cpp@{quadratic\_equation.cpp}!swap\_double@{swap\_double}}
 \index{swap\_double@{swap\_double}!quadratic\_equation.cpp@{quadratic\_equation.cpp}}
 \doxysubsubsection{\texorpdfstring{swap\_double()}{swap\_double()}}

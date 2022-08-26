@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_10',['main',['../quadratic__equation_8h.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;square.cpp'],['../square_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;square.cpp']]]
+  ['fix_5fzero_5fdouble_11',['fix_zero_double',['../quadratic__equation_8cpp.html#a671e8febc35da4b73a720a9e3620b3df',1,'quadratic_equation.cpp']]]
 ];

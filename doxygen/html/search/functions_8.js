@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solveqe_37',['solveqe',['../quadratic__equation_8cpp.html#ac904eed21d010dc5ccdfff4e8727fabd',1,'solveqe(double a, double b, double c, int *count_root, double *ans):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#ac904eed21d010dc5ccdfff4e8727fabd',1,'solveqe(double a, double b, double c, int *count_root, double *ans):&#160;quadratic_equation.cpp']]],
-  ['swap_5fdouble_38',['swap_double',['../quadratic__equation_8cpp.html#abfa4eebba539e060400a6a7fe746614e',1,'swap_double(double *a, double *b):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#abfa4eebba539e060400a6a7fe746614e',1,'swap_double(double *a, double *b):&#160;quadratic_equation.cpp']]]
+  ['print_5ftests_5fres_51',['print_tests_res',['../quadratic__equation_8h.html#a774516c1db0a39fccc944f41d71b43a2',1,'print_tests_res(int num_of_test, const QE_coeff coeff, const QE_roots corr_roots, int *count_false_test):&#160;unit_test.cpp'],['../unit__test_8cpp.html#a774516c1db0a39fccc944f41d71b43a2',1,'print_tests_res(int num_of_test, const QE_coeff coeff, const QE_roots corr_roots, int *count_false_test):&#160;unit_test.cpp']]]
 ];

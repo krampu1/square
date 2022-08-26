@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['count_5finput_5fparam_39',['count_input_param',['../quadratic__equation_8h.html#a252f30d193bab1bcfc295f1500a0954c',1,'quadratic_equation.h']]]
+  ['a_59',['a',['../struct_q_e__coeff.html#a4ddf60f803e91a6c975dff0968c2b91a',1,'QE_coeff']]]
 ];

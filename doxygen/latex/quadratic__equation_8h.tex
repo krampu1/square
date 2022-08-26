@@ -8,6 +8,13 @@ quadratic equation header file
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}
+\item 
+struct \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,43 +24,35 @@ quadratic equation header file
 \begin{DoxyCompactList}\small\item\em this line allows you to recolor the color of subsequent characters in the console to green \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{quadratic__equation_8h_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
 \begin{DoxyCompactList}\small\item\em this line allows you to recolor the color of subsequent characters in the console to defoult сcolor \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}{quadratic\+\_\+equation\+\_\+const}} \{ \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}{Infinite\+\_\+roots}} = -\/1
-, \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}{offset\+\_\+root}} = 3
-, \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}{count\+\_\+input\+\_\+param}} = 3
- \}
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}{check\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+bool \mbox{\hyperlink{quadratic__equation_8h_a7adc7548bbb31d8dcc931ac98ed8c0e1}{check\+\_\+flag\+\_\+test}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \item 
-int \mbox{\hyperlink{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8h_a8e55f3e436b0268b26875038536f8e53}{unit\+\_\+test}} ()
 \begin{DoxyCompactList}\small\item\em Function called for code testing. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+bool \mbox{\hyperlink{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}{testqe}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} corr\+\_\+roots, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$test\+\_\+roots)
 \begin{DoxyCompactList}\small\item\em A function that tests the operation of a test with certain parameters. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}{output\+\_\+roots}} (int count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8h_ae0a06c12f5097cd45d9a80d1ecba72c9}{output\+\_\+roots}} (const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} roots)
 \begin{DoxyCompactList}\small\item\em A function that outputs the found roots of the quadratic equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8h_afa847549e9dc6e4f49f651623bc456dc}{clear\+\_\+buffer}} ()
 \begin{DoxyCompactList}\small\item\em Function for clearing the input buffer. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}{input\+\_\+3\+\_\+argument}} (double $\ast$a, double $\ast$b, double $\ast$c)
+bool \mbox{\hyperlink{quadratic__equation_8h_a7f57c40cbb8019693612b2cca2b23070}{input\+\_\+param}} (\mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$coeff)
 \begin{DoxyCompactList}\small\item\em Function used to take equation parameters from the console. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{quadratic__equation_8h_aeb6b390b838fa0bdf05f81831e406722}{equal\+\_\+double}} (double a, double b)
 \begin{DoxyCompactList}\small\item\em Function for comparing 2 numbers of type double. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_a5e30efe81799ed4df160c74dcbc46dad}{linear\+\_\+equation}} (double a, double b, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8h_a81c4dcf681ae2efbfcb2bdce55174670}{linear\+\_\+equation}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving a linear equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_a33cc463ef942dc80b25ede397b55e0cb}{quadratic\+\_\+equation}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8h_a46259accedddaefed21299d72bf616d2}{quadratic\+\_\+equation}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving the correct quadratic equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}{solveqe}} (double a, double b, double c, int $\ast$count\+\_\+root, double $\ast$ans)
+void \mbox{\hyperlink{quadratic__equation_8h_add78894a461bd208c9e13032ff9f5bc9}{solveqe}} (const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$roots)
 \begin{DoxyCompactList}\small\item\em The function of solving the quadratic equation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}{swap\+\_\+double}} (double $\ast$a, double $\ast$b)
 \begin{DoxyCompactList}\small\item\em A function that swaps two numbers of the double type. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, double $\ast$test, int count\+\_\+root, int $\ast$count\+\_\+false\+\_\+test)
-\begin{DoxyCompactList}\small\item\em функция для проверки теста с выводом информации в консиль \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{quadratic__equation_8h_a774516c1db0a39fccc944f41d71b43a2}{print\+\_\+tests\+\_\+res}} (int num\+\_\+of\+\_\+test, const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} coeff, const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} corr\+\_\+roots, int $\ast$count\+\_\+false\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function for checking the test with the output of information to the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadratic__equation_8h_a064b4827489bd25ab16253e53a2a1861}{start\+\_\+solve}} ()
+\begin{DoxyCompactList}\small\item\em This function calls the user interface in the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -94,35 +93,12 @@ this line allows you to recolor the color of subsequent characters in the consol
 
 
 
-\doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!quadratic\_equation\_const@{quadratic\_equation\_const}}
-\index{quadratic\_equation\_const@{quadratic\_equation\_const}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{quadratic\_equation\_const}{quadratic\_equation\_const}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569}{quadratic\+\_\+equation\+\_\+const}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Infinite\_roots@{Infinite\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!Infinite\_roots@{Infinite\_roots}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af99a087a1e52ac1a432bcb12fae830b7}} 
-Infinite\+\_\+roots&a constant denoting that the equation has an infinite number of solutions \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{offset\_root@{offset\_root}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!offset\_root@{offset\_root}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569afaa3920888617f8fbe8bf26a29321e79}} 
-offset\+\_\+root&the amount of data up to the first root in the array with test information \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{count\_input\_param@{count\_input\_param}!quadratic\_equation.h@{quadratic\_equation.h}}\index{quadratic\_equation.h@{quadratic\_equation.h}!count\_input\_param@{count\_input\_param}}}\mbox{\Hypertarget{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}\label{quadratic__equation_8h_a0c3b656ddb3390c1b2d6c6237c39d569af55c56bb66c93ce2b48bdf2c6c26c390}} 
-count\+\_\+input\+\_\+param&number of input parameters \\
-\hline
-
-\end{DoxyEnumFields}
-
-
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}\label{quadratic__equation_8h_a84f6d3e00d4fd0a177a4fa31d673910d}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!check\_test@{check\_test}}
-\index{check\_test@{check\_test}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{check\_test()}{check\_test()}}
-{\footnotesize\ttfamily bool check\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{quadratic__equation_8h_a7adc7548bbb31d8dcc931ac98ed8c0e1}\label{quadratic__equation_8h_a7adc7548bbb31d8dcc931ac98ed8c0e1}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!check\_flag\_test@{check\_flag\_test}}
+\index{check\_flag\_test@{check\_flag\_test}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{check\_flag\_test()}{check\_flag\_test()}}
+{\footnotesize\ttfamily bool check\+\_\+flag\+\_\+test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -173,11 +149,11 @@ A constant is used for comparison, if the difference between the stored double v
 \begin{DoxyReturn}{Returns}
 true if the numbers are equal, otherwise false 
 \end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}\label{quadratic__equation_8h_aaf8e57f28457f0597807bedfd9aeadcd}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!input\_3\_argument@{input\_3\_argument}}
-\index{input\_3\_argument@{input\_3\_argument}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{input\_3\_argument()}{input\_3\_argument()}}
-{\footnotesize\ttfamily bool input\+\_\+3\+\_\+argument (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{quadratic__equation_8h_a7f57c40cbb8019693612b2cca2b23070}\label{quadratic__equation_8h_a7f57c40cbb8019693612b2cca2b23070}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!input\_param@{input\_param}}
+\index{input\_param@{input\_param}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{input\_param()}{input\_param()}}
+{\footnotesize\ttfamily bool input\+\_\+param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$}]{coeff }\end{DoxyParamCaption})}
 
 
 
@@ -185,17 +161,9 @@ Function used to take equation parameters from the console.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & pointer to the parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & pointer to the coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & pointer to the parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & pointer to the parameter of the quadratic equation\\
-\hline
-\mbox{\texttt{ out}}  & {\em a} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em c} & parameter of the quadratic equation\\
+\mbox{\texttt{ out}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
 \end{DoxyParams}
 The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.~\newline
@@ -206,11 +174,11 @@ The input will continue until the letter f is entered or 3 parameters are specif
 \begin{DoxyReturn}{Returns}
 true if the letter f is entered, otherwise false 
 \end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8h_a5e30efe81799ed4df160c74dcbc46dad}\label{quadratic__equation_8h_a5e30efe81799ed4df160c74dcbc46dad}} 
+\mbox{\Hypertarget{quadratic__equation_8h_a81c4dcf681ae2efbfcb2bdce55174670}\label{quadratic__equation_8h_a81c4dcf681ae2efbfcb2bdce55174670}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!linear\_equation@{linear\_equation}}
 \index{linear\_equation@{linear\_equation}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{linear\_equation()}{linear\_equation()}}
-{\footnotesize\ttfamily void linear\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void linear\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -218,50 +186,18 @@ The function of solving a linear equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the linear equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the linear equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots of the equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the number of roots of the equation \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the linear equation\\
 \hline
 \end{DoxyParams}
 This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation.~\newline
 ~\newline
- Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}\label{quadratic__equation_8h_a0ddf1224851353fc92bfbff6f499fa97}} 
-\index{quadratic\_equation.h@{quadratic\_equation.h}!main@{main}}
-\index{main@{main}!quadratic\_equation.h@{quadratic\_equation.h}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-main function 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em argc} & number of command line flags \\
-\hline
-\mbox{\texttt{ in}}  & {\em argv} & array of command line flags\\
-\hline
-\end{DoxyParams}
-This function separates the types of program startup\+: user and testing.~\newline
-~\newline
- Эта функция разделяет типы запуска программы\+: пользовательский и тестирование.
-
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-\mbox{\Hypertarget{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}\label{quadratic__equation_8h_a38b409bb4a94d8ec84202cc8f62d1d9c}} 
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению. \mbox{\Hypertarget{quadratic__equation_8h_ae0a06c12f5097cd45d9a80d1ecba72c9}\label{quadratic__equation_8h_ae0a06c12f5097cd45d9a80d1ecba72c9}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!output\_roots@{output\_roots}}
 \index{output\_roots@{output\_roots}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
-{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{int}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -269,43 +205,39 @@ A function that outputs the found roots of the quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & number of roots of the equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to the array of roots of the equation\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 In this function, all cases are considered separately\+: there are no roots, 1 root, 2 roots, infinity of roots.~\newline
 ~\newline
- В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. \mbox{\Hypertarget{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}\label{quadratic__equation_8h_a24c4100e78d16e7a93d5a3610ed859fe}} 
+ В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. \mbox{\Hypertarget{quadratic__equation_8h_a774516c1db0a39fccc944f41d71b43a2}\label{quadratic__equation_8h_a774516c1db0a39fccc944f41d71b43a2}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!print\_tests\_res@{print\_tests\_res}}
 \index{print\_tests\_res@{print\_tests\_res}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{print\_tests\_res()}{print\_tests\_res()}}
-{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{double $\ast$}]{test,  }\item[{int}]{count\+\_\+root,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+\_\+tests\+\_\+res (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+of\+\_\+test,  }\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{corr\+\_\+roots,  }\item[{int $\ast$}]{count\+\_\+false\+\_\+test }\end{DoxyParamCaption})}
 
 
 
-функция для проверки теста с выводом информации в консиль 
+Function for checking the test with the output of information to the console. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+test} & number of test \\
 \hline
-\mbox{\texttt{ in}}  & {\em test} & pointer to an array containing test data \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation \\
 \hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+false\+\_\+test} & pointer to the invalid test counter\\
+\mbox{\texttt{ in}}  & {\em corr\+\_\+roots} & correct roots of the quadratic equation\\
 \hline
 \mbox{\texttt{ out}}  & {\em count\+\_\+false\+\_\+test} & invalid test counter\\
 \hline
 \end{DoxyParams}
 This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test.~\newline
 ~\newline
- Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. \mbox{\Hypertarget{quadratic__equation_8h_a33cc463ef942dc80b25ede397b55e0cb}\label{quadratic__equation_8h_a33cc463ef942dc80b25ede397b55e0cb}} 
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. \mbox{\Hypertarget{quadratic__equation_8h_a46259accedddaefed21299d72bf616d2}\label{quadratic__equation_8h_a46259accedddaefed21299d72bf616d2}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!quadratic\_equation@{quadratic\_equation}}
 \index{quadratic\_equation@{quadratic\_equation}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{quadratic\_equation()}{quadratic\_equation()}}
-{\footnotesize\ttfamily void quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void quadratic\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -313,28 +245,18 @@ The function of solving the correct quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function considers the linear case of a quadratic equation when the parameter a is not equal to 0, which guarantees a non-\/infinite number of roots.~\newline
 ~\newline
- Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0, что гарантирует не бесконечное число корней. \mbox{\Hypertarget{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}\label{quadratic__equation_8h_ac904eed21d010dc5ccdfff4e8727fabd}} 
+ Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0, что гарантирует не бесконечное число корней. \mbox{\Hypertarget{quadratic__equation_8h_add78894a461bd208c9e13032ff9f5bc9}\label{quadratic__equation_8h_add78894a461bd208c9e13032ff9f5bc9}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!solveqe@{solveqe}}
 \index{solveqe@{solveqe}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{solveqe()}{solveqe()}}
-{\footnotesize\ttfamily void solveqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void solveqe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{roots }\end{DoxyParamCaption})}
 
 
 
@@ -342,19 +264,9 @@ The function of solving the quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the variable number of roots \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to an array of roots\\
-\hline
-\mbox{\texttt{ out}}  & {\em count\+\_\+root} & the variable number of roots \\
-\hline
-\mbox{\texttt{ out}}  & {\em ans} & array of roots\\
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function divides the quadratic equation into 2 cases.~\newline
@@ -363,7 +275,17 @@ If a is not equal to 0, then the equation is considered as a square equation tha
 ~\newline
  Эта функция разделяет квадратное уравнение на 2 случая.~\newline
 Если a равен 0, то уравнение рассматривается как линейное.~\newline
-Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней. \mbox{\Hypertarget{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}\label{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}} 
+Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней. \mbox{\Hypertarget{quadratic__equation_8h_a064b4827489bd25ab16253e53a2a1861}\label{quadratic__equation_8h_a064b4827489bd25ab16253e53a2a1861}} 
+\index{quadratic\_equation.h@{quadratic\_equation.h}!start\_solve@{start\_solve}}
+\index{start\_solve@{start\_solve}!quadratic\_equation.h@{quadratic\_equation.h}}
+\doxysubsubsection{\texorpdfstring{start\_solve()}{start\_solve()}}
+{\footnotesize\ttfamily void start\+\_\+solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function calls the user interface in the console. 
+
+\mbox{\Hypertarget{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}\label{quadratic__equation_8h_abfa4eebba539e060400a6a7fe746614e}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!swap\_double@{swap\_double}}
 \index{swap\_double@{swap\_double}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{swap\_double()}{swap\_double()}}
@@ -386,11 +308,11 @@ A function that swaps two numbers of the double type.
 \end{DoxyParams}
 This function swaps 2 double numbers.~\newline
 ~\newline
- Эта функция меняет местами 2 числа типа double. \mbox{\Hypertarget{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}\label{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}} 
+ Эта функция меняет местами 2 числа типа double. \mbox{\Hypertarget{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}\label{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}} 
 \index{quadratic\_equation.h@{quadratic\_equation.h}!testqe@{testqe}}
 \index{testqe@{testqe}!quadratic\_equation.h@{quadratic\_equation.h}}
 \doxysubsubsection{\texorpdfstring{testqe()}{testqe()}}
-{\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{int $\ast$}]{count\+\_\+root,  }\item[{double $\ast$}]{ans }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool testqe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}}}]{coeff,  }\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{corr\+\_\+roots,  }\item[{\mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} $\ast$}]{test\+\_\+roots }\end{DoxyParamCaption})}
 
 
 
@@ -398,15 +320,11 @@ A function that tests the operation of a test with certain parameters.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em coeff} & coefficients of the quadratic equation \\
 \hline
-\mbox{\texttt{ in}}  & {\em b} & parameter of the quadratic equation \\
+\mbox{\texttt{ in}}  & {\em corr\+\_\+roots} & correct roots of the quadratic equation\\
 \hline
-\mbox{\texttt{ in}}  & {\em c} & parameter of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em count\+\_\+root} & pointer to the number of roots of the quadratic equation \\
-\hline
-\mbox{\texttt{ in}}  & {\em ans} & pointer to the array of roots of the equation\\
+\mbox{\texttt{ out}}  & {\em test\+\_\+roots} & the found roots of the quadratic equation\\
 \hline
 \end{DoxyParams}
 This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.~\newline
@@ -427,10 +345,10 @@ If the correct answer coincides with the output of the program, true is returned
 
 Function called for code testing. 
 
-This function is called when the compilation flag is specified -\/D TEST .~\newline
-It contains a set of tests and checks the operation of the main program on them using the \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}} function.~\newline
+This function is called when you specify the start of the program -\/d .~\newline
+It contains a set of tests and checks the operation of the main program on them using the \mbox{\hyperlink{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}{testqe()}} function.~\newline
 Also, this function outputs information about the passed tests and the result of the check to the console.~\newline
 ~\newline
- Данная функция вызывается при указании флага компиляции -\/D TEST .~\newline
-Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a13a9924ed63c3d94a2337babb2a6b475}{testqe()}}.~\newline
+ Данная функция вызывается при указании запуска программы -\/d .~\newline
+Она содержит набор тестов и проверяет на них работу основной программы с помощью функции \mbox{\hyperlink{quadratic__equation_8h_a9b7fd1c9c6785668832b407db30181b0}{testqe()}}.~\newline
 Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. 

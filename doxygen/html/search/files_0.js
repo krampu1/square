@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['quadratic_5fequation_2ecpp_24',['quadratic_equation.cpp',['../quadratic__equation_8cpp.html',1,'']]],
-  ['quadratic_5fequation_2eh_25',['quadratic_equation.h',['../quadratic__equation_8h.html',1,'']]]
+  ['input_5foutput_2ecpp_36',['input_output.cpp',['../input__output_8cpp.html',1,'']]]
 ];

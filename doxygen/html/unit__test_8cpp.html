@@ -76,37 +76,40 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a84f6d3e00d4fd0a177a4fa31d673910d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a84f6d3e00d4fd0a177a4fa31d673910d">check_test</a> (int argc, char *argv[])</td></tr>
-<tr class="separator:a84f6d3e00d4fd0a177a4fa31d673910d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c960184227dad4692b9052ac69021c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a6c960184227dad4692b9052ac69021c7">read_test</a> (FILE *input_file, <a class="el" href="struct_q_e__coeff.html">QE_coeff</a> *coeff, <a class="el" href="struct_q_e__roots.html">QE_roots</a> *roots)</td></tr>
+<tr class="separator:a6c960184227dad4692b9052ac69021c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e55f3e436b0268b26875038536f8e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">unit_test</a> ()</td></tr>
 <tr class="memdesc:a8e55f3e436b0268b26875038536f8e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called for code testing.  <a href="unit__test_8cpp.html#a8e55f3e436b0268b26875038536f8e53">More...</a><br /></td></tr>
 <tr class="separator:a8e55f3e436b0268b26875038536f8e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09839a9dd83d7d12fa92eb1d8a273310"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a09839a9dd83d7d12fa92eb1d8a273310">print_tests_res</a> (int num_of_test, double test[], int count_root, int *count_false_test)</td></tr>
-<tr class="separator:a09839a9dd83d7d12fa92eb1d8a273310"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a9924ed63c3d94a2337babb2a6b475"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">testqe</a> (double a, double b, double c, int *count_root, double *ans)</td></tr>
-<tr class="memdesc:a13a9924ed63c3d94a2337babb2a6b475"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that tests the operation of a test with certain parameters.  <a href="unit__test_8cpp.html#a13a9924ed63c3d94a2337babb2a6b475">More...</a><br /></td></tr>
-<tr class="separator:a13a9924ed63c3d94a2337babb2a6b475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85df8b3c2271f20ea501cc620a3cf845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a85df8b3c2271f20ea501cc620a3cf845">output_answer</a> (<a class="el" href="struct_q_e__roots.html">QE_roots</a> roots, const char *str)</td></tr>
+<tr class="separator:a85df8b3c2271f20ea501cc620a3cf845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774516c1db0a39fccc944f41d71b43a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a774516c1db0a39fccc944f41d71b43a2">print_tests_res</a> (int num_of_test, const <a class="el" href="struct_q_e__coeff.html">QE_coeff</a> coeff, const <a class="el" href="struct_q_e__roots.html">QE_roots</a> corr_roots, int *count_false_test)</td></tr>
+<tr class="memdesc:a774516c1db0a39fccc944f41d71b43a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for checking the test with the output of information to the console.  <a href="unit__test_8cpp.html#a774516c1db0a39fccc944f41d71b43a2">More...</a><br /></td></tr>
+<tr class="separator:a774516c1db0a39fccc944f41d71b43a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7fd1c9c6785668832b407db30181b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unit__test_8cpp.html#a9b7fd1c9c6785668832b407db30181b0">testqe</a> (const <a class="el" href="struct_q_e__coeff.html">QE_coeff</a> coeff, const <a class="el" href="struct_q_e__roots.html">QE_roots</a> corr_roots, <a class="el" href="struct_q_e__roots.html">QE_roots</a> *test_roots)</td></tr>
+<tr class="memdesc:a9b7fd1c9c6785668832b407db30181b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that tests the operation of a test with certain parameters.  <a href="unit__test_8cpp.html#a9b7fd1c9c6785668832b407db30181b0">More...</a><br /></td></tr>
+<tr class="separator:a9b7fd1c9c6785668832b407db30181b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>unit test code file </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a84f6d3e00d4fd0a177a4fa31d673910d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f6d3e00d4fd0a177a4fa31d673910d">&#9670;&nbsp;</a></span>check_test()</h2>
+<a id="a85df8b3c2271f20ea501cc620a3cf845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85df8b3c2271f20ea501cc620a3cf845">&#9670;&nbsp;</a></span>output_answer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool check_test </td>
+          <td class="memname">void output_answer </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_q_e__roots.html">QE_roots</a>&#160;</td>
+          <td class="paramname"><em>roots</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -115,20 +118,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>number of command line arguments </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">argv</td><td>array of command line arguments</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Если один из флагов командной строки -d , то true, иначе false</p>
-<dl class="section return"><dt>Returns</dt><dd>If one of the command line flags is -d , then true otherwise fals. </dd></dl>
 
 </div>
 </div>
-<a id="a09839a9dd83d7d12fa92eb1d8a273310"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09839a9dd83d7d12fa92eb1d8a273310">&#9670;&nbsp;</a></span>print_tests_res()</h2>
+<a id="a774516c1db0a39fccc944f41d71b43a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774516c1db0a39fccc944f41d71b43a2">&#9670;&nbsp;</a></span>print_tests_res()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,14 +136,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>test</em>[], </td>
+          <td class="paramtype">const <a class="el" href="struct_q_e__coeff.html">QE_coeff</a>&#160;</td>
+          <td class="paramname"><em>coeff</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>count_root</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_q_e__roots.html">QE_roots</a>&#160;</td>
+          <td class="paramname"><em>corr_roots</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -165,10 +159,58 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Function for checking the test with the output of information to the console. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_of_test</td><td>number of test </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coeff</td><td>coefficients of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">corr_roots</td><td>correct roots of the quadratic equation</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count_false_test</td><td>invalid test counter</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function tests the program on certain data and outputs information to the console about whether the test was successfully passed and about the test.<br  />
+<br  />
+ Эта функция тестирует программу на определённых данных и выводит в консоль информацию о том успешно ли пройден тест и о сомом тесте. </p>
+
 </div>
 </div>
-<a id="a13a9924ed63c3d94a2337babb2a6b475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13a9924ed63c3d94a2337babb2a6b475">&#9670;&nbsp;</a></span>testqe()</h2>
+<a id="a6c960184227dad4692b9052ac69021c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c960184227dad4692b9052ac69021c7">&#9670;&nbsp;</a></span>read_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool read_test </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>input_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_q_e__coeff.html">QE_coeff</a> *&#160;</td>
+          <td class="paramname"><em>coeff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_q_e__roots.html">QE_roots</a> *&#160;</td>
+          <td class="paramname"><em>roots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b7fd1c9c6785668832b407db30181b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7fd1c9c6785668832b407db30181b0">&#9670;&nbsp;</a></span>testqe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,32 +218,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool testqe </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_q_e__coeff.html">QE_coeff</a>&#160;</td>
+          <td class="paramname"><em>coeff</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramtype">const <a class="el" href="struct_q_e__roots.html">QE_roots</a>&#160;</td>
+          <td class="paramname"><em>corr_roots</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>count_root</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>ans</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_q_e__roots.html">QE_roots</a> *&#160;</td>
+          <td class="paramname"><em>test_roots</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -214,11 +244,9 @@ Functions</h2></td></tr>
 <p>A function that tests the operation of a test with certain parameters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>parameter of the quadratic equation </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>parameter of the quadratic equation </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>parameter of the quadratic equation </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count_root</td><td>pointer to the number of roots of the quadratic equation </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ans</td><td>pointer to the array of roots of the equation</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coeff</td><td>coefficients of the quadratic equation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">corr_roots</td><td>correct roots of the quadratic equation</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">test_roots</td><td>the found roots of the quadratic equation</td></tr>
   </table>
   </dd>
 </dl>
@@ -246,12 +274,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function called for code testing. </p>
-<p>This function is called when the compilation flag is specified -D TEST .<br  />
-It contains a set of tests and checks the operation of the main program on them using the <a class="el" href="quadratic__equation_8h.html#a13a9924ed63c3d94a2337babb2a6b475" title="A function that tests the operation of a test with certain parameters.">testqe()</a> function.<br  />
+<p>This function is called when you specify the start of the program -d .<br  />
+It contains a set of tests and checks the operation of the main program on them using the <a class="el" href="quadratic__equation_8h.html#a9b7fd1c9c6785668832b407db30181b0" title="A function that tests the operation of a test with certain parameters.">testqe()</a> function.<br  />
 Also, this function outputs information about the passed tests and the result of the check to the console.<br  />
 <br  />
- Данная функция вызывается при указании флага компиляции -D TEST .<br  />
-Она содержит набор тестов и проверяет на них работу основной программы с помощью функции <a class="el" href="quadratic__equation_8h.html#a13a9924ed63c3d94a2337babb2a6b475" title="A function that tests the operation of a test with certain parameters.">testqe()</a>.<br  />
+ Данная функция вызывается при указании запуска программы -d .<br  />
+Она содержит набор тестов и проверяет на них работу основной программы с помощью функции <a class="el" href="quadratic__equation_8h.html#a9b7fd1c9c6785668832b407db30181b0" title="A function that tests the operation of a test with certain parameters.">testqe()</a>.<br  />
 Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки. </p>
 
 </div>

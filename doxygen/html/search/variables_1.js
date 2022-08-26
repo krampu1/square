@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['epsilon_40',['Epsilon',['../quadratic__equation_8h.html#a94827e2d927e061829e6b000e8e07d8d',1,'quadratic_equation.h']]]
+  ['b_60',['b',['../struct_q_e__coeff.html#a4696c92e5319f5ed94cc0c0877e7e994',1,'QE_coeff']]]
 ];

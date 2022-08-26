@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output_5froots_34',['output_roots',['../quadratic__equation_8cpp.html#a38b409bb4a94d8ec84202cc8f62d1d9c',1,'output_roots(int count_root, double *ans):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#a38b409bb4a94d8ec84202cc8f62d1d9c',1,'output_roots(int count_root, double *ans):&#160;quadratic_equation.cpp']]]
+  ['linear_5fequation_47',['linear_equation',['../quadratic__equation_8cpp.html#a81c4dcf681ae2efbfcb2bdce55174670',1,'linear_equation(const QE_coeff coeff, QE_roots *roots):&#160;quadratic_equation.cpp'],['../quadratic__equation_8h.html#a81c4dcf681ae2efbfcb2bdce55174670',1,'linear_equation(const QE_coeff coeff, QE_roots *roots):&#160;quadratic_equation.cpp']]]
 ];

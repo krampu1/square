@@ -1,0 +1,57 @@
+\hypertarget{input__output_8cpp}{}\doxysection{/mnt/c/\+Users/actim/code/c/square/input\+\_\+output.cpp File Reference}
+\label{input__output_8cpp}\index{/mnt/c/Users/actim/code/c/square/input\_output.cpp@{/mnt/c/Users/actim/code/c/square/input\_output.cpp}}
+{\ttfamily \#include \char`\"{}quadratic\+\_\+equation.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input__output_8cpp_ae0a06c12f5097cd45d9a80d1ecba72c9}{output\+\_\+roots}} (const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}} roots)
+\begin{DoxyCompactList}\small\item\em A function that outputs the found roots of the quadratic equation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input__output_8cpp_a7f57c40cbb8019693612b2cca2b23070}{input\+\_\+param}} (\mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$coeff)
+\begin{DoxyCompactList}\small\item\em Function used to take equation parameters from the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input__output_8cpp_a7f57c40cbb8019693612b2cca2b23070}\label{input__output_8cpp_a7f57c40cbb8019693612b2cca2b23070}} 
+\index{input\_output.cpp@{input\_output.cpp}!input\_param@{input\_param}}
+\index{input\_param@{input\_param}!input\_output.cpp@{input\_output.cpp}}
+\doxysubsubsection{\texorpdfstring{input\_param()}{input\_param()}}
+{\footnotesize\ttfamily bool input\+\_\+param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_q_e__coeff}{QE\+\_\+coeff}} $\ast$}]{coeff }\end{DoxyParamCaption})}
+
+
+
+Function used to take equation parameters from the console. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coeff} & pointer to the coefficients of the quadratic equation\\
+\hline
+\mbox{\texttt{ out}}  & {\em coeff} & coefficients of the quadratic equation\\
+\hline
+\end{DoxyParams}
+The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.~\newline
+~\newline
+ В случае если введена буква f будет считаться что человек хочет завершить работу и функция вернёт true как знак того.~\newline
+Ввод будет продолжаться до тех пор пока не будет введена буква f или не будет указано 3 параметра которые можно записать в double.
+
+\begin{DoxyReturn}{Returns}
+true if the letter f is entered, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input__output_8cpp_ae0a06c12f5097cd45d9a80d1ecba72c9}\label{input__output_8cpp_ae0a06c12f5097cd45d9a80d1ecba72c9}} 
+\index{input\_output.cpp@{input\_output.cpp}!output\_roots@{output\_roots}}
+\index{output\_roots@{output\_roots}!input\_output.cpp@{input\_output.cpp}}
+\doxysubsubsection{\texorpdfstring{output\_roots()}{output\_roots()}}
+{\footnotesize\ttfamily void output\+\_\+roots (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_q_e__roots}{QE\+\_\+roots}}}]{roots }\end{DoxyParamCaption})}
+
+
+
+A function that outputs the found roots of the quadratic equation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em roots} & roots of the quadratic equation\\
+\hline
+\end{DoxyParams}
+In this function, all cases are considered separately\+: there are no roots, 1 root, 2 roots, infinity of roots.~\newline
+~\newline
+ В этой функции отдельно рассматриваются все случаи\+: корней нет, 1 корень, 2 корня, бесконечность корней. 
