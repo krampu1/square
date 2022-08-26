@@ -31,5 +31,5 @@ Usage example:
     <img src="example//solve.bmp" alt="Preview" width="416"/>
 </p>
 <p align="center">
-    <img src="example//test.bmp" alt="Preview" width="416"/>
+    <img src="example//test.bmp" alt="Preview" width="832"/>
 </p>
