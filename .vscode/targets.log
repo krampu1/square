@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 25 19:53:44 2022
+# Make data base, printed on Fri Aug 26 19:16:13 2022
 
 # Variables
 
@@ -27,7 +27,8 @@ SYSTEMROOT = C:\Windows
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Module 
+s;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
@@ -87,8 +88,7 @@ VSCODE_PID = 14316
 # automatic
 *F = $(notdir $*)
 # automatic
-<D = $(pat 
-subst %/,%,$(patsubst %\,%,$(dir $<)))
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -121,6 +121,8 @@ COMPUTERNAME = ACTIMER
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
+# makefile (from 'Makefile', line 2)
+FLUGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE
 # environment
 PROMPT = $P$G
 # environment
@@ -189,10 +191,12 @@ SESSIONNAME = Console
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
 PROCESSOR_REVISION = 6001
+# makefile (from 'Makefile', line 1)
+CC = g++
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=90/1024=9%, Rehash=0, Collisions=8/120=7%
+# Load=92/1024=9%, Rehash=0, Collisions=8/124=6%
 
 # Pattern-specific Variable Values
 
@@ -200,9 +204,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key c:/Users/actim/code/c/square, mtime 1661443657): 15 files, no impossibilities.
+# . (key c:/Users/actim/code/c/square, mtime 1661530541): 13 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -210,12 +214,88 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
 
 # Files
 
+quadratic_equation.o: body/quadratic_equation.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	$(CC) $(FLUGS) -c ./body/quadratic_equation.cpp -o ./object_files/quadratic_equation.o
+
+# Not a target:
+body/quadratic_equation.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+square.o: square.cpp
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := square.o
+# automatic
+# * := 
+# automatic
+# < := square.cpp
+# automatic
+# + := square.cpp
+# automatic
+# % := 
+# automatic
+# ^ := square.cpp
+# automatic
+# ? := square.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+#  recipe to execute (from 'Makefile', line 16):
+	$(CC) $(FLUGS) -c square.cpp -o ./object_files/square.o
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-25 19:53:41
+#  Last modified 2022-08-26 19:15:38
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+test/unit_test.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+unit_test.o: test/unit_test.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 22):
+	$(CC) $(FLUGS) -c ./test/unit_test.cpp -o ./test/unit_test.o
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	del .\object_files\square.o
+	del .\object_files\quadratic_equation.o
+	del .\object_files\unit_test.o
+	del .\object_files\input_output.o
+
+input_output.o: body/input_output.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 25):
+	$(CC) $(FLUGS) -c ./body/input_output.cpp -o ./object_files/input_output.o
+
+# Not a target:
+body/input_output.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -223,33 +303,23 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-all:
+all: square.o quadratic_equation.o unit_test.o input_output.o
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# * := 
-# automatic
-# < := 
-# automatic
-# + := 
-# automatic
-# % := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 2):
-	g++ square.cpp quadratic_equation.cpp unit_test.cpp input_output.cpp -o square
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) $(FLUGS) ./object_files/square.o ./object_files/quadratic_equation.o ./test/unit_test.o ./object_files/input_output.o -o square
+
+# Not a target:
+square.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 19:01:19
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .SUFFIXES:
@@ -258,19 +328,19 @@ all:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/16=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 190 B / avg = 10 B
-# current buf: size = 8174 B / used = 190 B / count = 18 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 257 B / avg = 10 B
+# current buf: size = 8174 B / used = 257 B / count = 24 / avg = 10 B
 
-# strcache performance: lookups = 25 / hit rate = 28%
+# strcache performance: lookups = 41 / hit rate = 41%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Thu Aug 25 19:53:44 2022
+# Load=24/8192=0%, Rehash=0, Collisions=0/41=0%
+# Finished Make data base on Fri Aug 26 19:16:13 2022
 
  

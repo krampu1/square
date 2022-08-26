@@ -1,1 +1,6 @@
 /square.exe
+/.vscode/
+/.gitignore
+/object_file/
+/test/unit_test.o
+/doxygen/

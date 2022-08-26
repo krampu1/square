@@ -1,12 +1,17 @@
+/** 
+* \file input_output.cpp 
+* \brief input/output code file
+*/
+
 #include "quadratic_equation.h"
-#include <math.h>
+#include "input_output.h"
 
-void output_roots(const QE_roots roots)
+void output_roots(const QE_roots *roots)
 {
-    assert(isfinite(roots.x1));
-    assert(isfinite(roots.x2));
+    assert(isfinite(roots->x1));
+    assert(isfinite(roots->x2));
 
-    switch (roots.count_roots)
+    switch (roots->count_roots)
     {
         case INFINITE_ROOTS:
 
@@ -20,24 +25,24 @@ void output_roots(const QE_roots roots)
 
         case 1:
 
-            printf("x1 = %lg\n", roots.x1);
+            printf("x1 = %lg\n", roots->x1);
             break;
 
         case 2:
 
-            printf("x1 = %lg x2 = %lg\n", roots.x1, roots.x2);
+            printf("x1 = %lg x2 = %lg\n", roots->x1, roots->x2);
             break;
 
         default:
 
-            printf("error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots.count_roots);
+            printf("error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots->count_roots);
             break;
     }
 }
 
-bool input_param(QE_coeff *coeff)
+int input_param(QE_coeffs *coeffs)
 {
-    assert(coeff != NULL);
+    assert(coeffs != NULL);
 
     const int COUNT_INPUT_PARAM = 3;
 
@@ -45,18 +50,18 @@ bool input_param(QE_coeff *coeff)
 
     while (true)
     {
-        int num_correctly_numbers = scanf("%lf %lf %lf", &coeff->a, &coeff->b, &coeff->c);
+        int num_correctly_numbers = scanf("%lf %lf %lf", &coeffs->a, &coeffs->b, &coeffs->c);
 
         if (num_correctly_numbers == EOF)
         {
-            return true;
+            return CLOSE;
         }
 
-        char first_char = getchar();
+        int first_char = getchar();
 
         if (first_char == 'f')
         {
-            return true;
+            return CLOSE;
         }
 
         if (first_char != '\n') 
@@ -72,5 +77,5 @@ bool input_param(QE_coeff *coeff)
         printf("error in input data, enter 3 numbers\n");
     }
 
-    return false;
+    return SUCCESS;
 }

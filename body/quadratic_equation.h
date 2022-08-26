@@ -20,7 +20,7 @@ static const int INFINITE_ROOTS = -1;    ///< a constant denoting that the equat
 
 static const int OFFSER_ROOTS = 3;       ///< the amount of data up to the first root in the array with test information
 
-struct QE_coeff
+struct QE_coeffs
 {
     double a;
     double b;
@@ -44,46 +44,7 @@ struct QE_roots
 *
 * @return If one of the command line flags is -d , then true otherwise fals.
 */
-bool check_flag_test(int argc, char *argv[]);
-
-/// Function called for code testing
-/**
-* This function is called when you specify the start of the program -d .\n
-* It contains a set of tests and checks the operation of the main program on them using the testqe() function.\n
-* Also, this function outputs information about the passed tests and the result of the check to the console.\n\n
-*
-* Данная функция вызывается при указании запуска программы -d .\n
-* Она содержит набор тестов и проверяет на них работу основной программы с помощью функции testqe().\n
-* Так же эта функция выводит в консоль информацию о пройденных тестах и результат проверки.
-*/
-void unit_test();
-
-/// A function that tests the operation of a test with certain parameters
-/**
-* @param [in] coeff coefficients of the quadratic equation
-* @param [in] corr_roots correct roots of the quadratic equation
-*
-* @param [out] test_roots the found roots of the quadratic equation
-*
-* This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.\n\n
-*
-* Эта функция не содержит набот тестов, а только вызывает функцию основного
-* тестирования на заранее определённых входных и выходных данных.\n
-* В случае если верный ответ совподает с выводом программы возврощается true иначе false.
-*
-* @return If the correct answer coincides with the output of the program, true is returned otherwise false.
-*/
-bool testqe(const QE_coeff coeff, const QE_roots corr_roots, QE_roots *test_roots);
-
-/// A function that outputs the found roots of the quadratic equation
-/**
-* @param [out] roots roots of the quadratic equation
-*
-* In this function, all cases are considered separately: there are no roots, 1 root, 2 roots, infinity of roots.\n\n
-*
-* В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
-*/
-void output_roots(const QE_roots roots);
+bool is_debug(int argc, char *argv[]);
 
 /// Function for clearing the input buffer
 /**
@@ -92,21 +53,6 @@ void output_roots(const QE_roots roots);
 * Эта функция очищает буфер ввода до перехода на следующую строку.
 */
 void clear_buffer();
-
-/// Function used to take equation parameters from the console
-/**
-* @param [in] coeff pointer to the coefficients of the quadratic equation
-*
-* @param [out] coeff coefficients of the quadratic equation
-*
-* The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.\n\n
-*
-* В случае если введена буква f будет считаться что человек хочет завершить работу и функция вернёт true как знак того.\n
-* Ввод будет продолжаться до тех пор пока не будет введена буква f или не будет указано 3 параметра которые можно записать в double.
-*
-* @return true if the letter f is entered, otherwise false
-*/
-bool input_param(QE_coeff *coeff);
 
 /// Function for comparing 2 numbers of type double
 /**
@@ -126,7 +72,7 @@ bool equal_double(double a, double b);
 
 /// The function of solving a linear equation
 /**
-* @param [in] coeff coefficients of the quadratic equation
+* @param [in] coeffs coeffsicients of the quadratic equation
 *
 * @param [out] roots roots of the linear equation
 *
@@ -134,11 +80,11 @@ bool equal_double(double a, double b);
 *
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению.
 */
-void linear_equation(const QE_coeff coeff, QE_roots *roots);
+void linear_equation(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the correct quadratic equation
 /**
-* @param [in] coeff coefficients of the quadratic equation
+* @param [in] coeffs coeffsicients of the quadratic equation
 *
 * @param [out] roots roots of the quadratic equation
 *
@@ -147,11 +93,11 @@ void linear_equation(const QE_coeff coeff, QE_roots *roots);
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0,
 * что гарантирует не бесконечное число корней.
 */
-void quadratic_equation(const QE_coeff coeff, QE_roots *roots);
+void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the quadratic equation
 /**
-* @param [in] coeff coefficients of the quadratic equation
+* @param [in] coeffs coeffsicients of the quadratic equation
 *
 * @param [out] roots roots of the quadratic equation
 *
@@ -163,7 +109,7 @@ void quadratic_equation(const QE_coeff coeff, QE_roots *roots);
 * Если a равен 0, то уравнение рассматривается как линейное.\n
 * Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней.
 */
-void solveqe(const QE_coeff coeff, QE_roots *roots);
+void solve_quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// A function that swaps two numbers of the double type
 /**
@@ -178,22 +124,6 @@ void solveqe(const QE_coeff coeff, QE_roots *roots);
 * Эта функция меняет местами 2 числа типа double.
 */
 void swap_double(double* a, double* b);
-
-/// Function for checking the test with the output of information to the console
-/**
-* @param [in] num_of_test number of test
-* @param [in] coeff coefficients of the quadratic equation
-* @param [in] corr_roots correct roots of the quadratic equation
-*
-* @param [out] count_false_test invalid test counter
-*
-* This function tests the program on certain data and outputs information
-* to the console about whether the test was successfully passed and about the test.\n\n
-*
-* Эта функция тестирует программу на определённых данных и выводит в консоль
-* информацию о том успешно ли пройден тест и о сомом тесте. 
-*/
-void print_tests_res(int num_of_test, const QE_coeff coeff, const QE_roots corr_roots, int* count_false_test);
 
 /// This function calls the user interface in the console
 void start_solve();
