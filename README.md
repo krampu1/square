@@ -18,7 +18,7 @@ To use a progect you should have `g++ compiler` and `make`
     * `make clean`
 
 ## Usage
-To use a program you should run `run` file.
+To use a program you should run `run` file in linux and `run.exe` file in windows.
 
 The program allows you to choose the mode of operation: testing and solving.
 
