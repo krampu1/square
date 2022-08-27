@@ -3,8 +3,8 @@
 * \brief quadratic equation code file
 */
 
-#include "quadratic_equation.h"
-#include "input_output.h"
+#include "../include/quadratic_equation.h"
+#include "../include/input_output.h"
 #include <math.h>
 #include <assert.h>
 #include <string.h>

@@ -3,7 +3,7 @@
 * \brief unit test code file
 */
 
-#include "../body/quadratic_equation.h"
+#include "../include/quadratic_equation.h"
 #include "unit_test.h"
 
 const char *TEST_FILE = "./test/tests.txt";

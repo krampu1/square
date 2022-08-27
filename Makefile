@@ -18,13 +18,13 @@ all: square.o quadratic_equation.o unit_test.o input_output.o
 square.o: square.cpp
 	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
-quadratic_equation.o: ./body/quadratic_equation.cpp
+quadratic_equation.o: ./src/quadratic_equation.cpp
 	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
 unit_test.o: ./test/unit_test.cpp
 	$(CC) $(FLUGS) -c $< -o $(TESTDIR)/$@
 
-input_output.o: ./body/input_output.cpp
+input_output.o: ./src/input_output.cpp
 	$(CC) $(FLUGS) -c $< -o $(BUILDDIR)/$@
 
 clean:

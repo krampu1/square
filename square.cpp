@@ -3,7 +3,7 @@
 * \brief main code file
 */
 
-#include "body\quadratic_equation.h"
+#include "include\quadratic_equation.h"
 #include "test\unit_test.h"
 #include <stdio.h>
 

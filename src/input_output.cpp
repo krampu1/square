@@ -3,8 +3,8 @@
 * \brief input/output code file
 */
 
-#include "quadratic_equation.h"
-#include "input_output.h"
+#include "../include/quadratic_equation.h"
+#include "../include/input_output.h"
 
 void output_roots(const QE_roots *roots)
 {
