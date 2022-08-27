@@ -5,9 +5,9 @@
 
 enum Input_const
 {
-    SUCCESS = 0,
+    INPUT_SUCCESS = 0,
 
-    CLOSE   = 1,
+    INPUT_CLOSE_FLUG   = 1,
 };
 
 /// Function used to take equation parameters from the console

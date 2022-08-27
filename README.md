@@ -5,7 +5,7 @@
 </p>
 
 ## Description
-This program can solve quadratic equations.
+This program can solve quadratic equations with real number.
 
 ## Installation
 To use a progect you should have `g++ compiler` and `make`

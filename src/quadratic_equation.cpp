@@ -62,7 +62,7 @@ void start_solve()
     {
         int ret_input = input_param(&coeffs);
 
-        if (ret_input == CLOSE) 
+        if (ret_input == INPUT_CLOSE_FLUG) 
         {
             break;
         }

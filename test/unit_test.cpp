@@ -10,14 +10,14 @@ const char *TEST_FILE = "./test/tests.txt";
 
 enum Read_const
 {
-    SUCCESS  = 0,
-    END_FILE = 1,
+    READED_SUCCESS  = 0,
+    READED_END_FILE = 1,
 };
 
 enum Test_const
 {
-    CORRECT = 0,
-    FAIL    = 1,
+    CORRECT_TEST = 0,
+    FAIL_TEST    = 1,
 };
 
 void output_answer(const QE_roots *roots, const char *str);
@@ -36,12 +36,12 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
 
     if (ret_input == EOF)
     {
-        return END_FILE;
+        return READED_END_FILE;
     }
 
     assert(ret_input == COUNT_READ_PARAM);
 
-    return SUCCESS;
+    return READED_SUCCESS;
 }
 
 void unit_test()
@@ -60,7 +60,7 @@ void unit_test()
 
         int ret_read = read_test(input_file, &coeffs, &roots);
 
-        if (ret_read == END_FILE)
+        if (ret_read == READED_END_FILE)
         {
             break;
         }
@@ -111,7 +111,7 @@ void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *c
 
     QE_roots test_roots = {0, 0, 0};
     
-    if (testqe(coeffs, corr_roots, &test_roots) == FAIL)
+    if (testqe(coeffs, corr_roots, &test_roots) == FAIL_TEST)
     {
         printf(COLOR_RED "error in test number %d || ", num_of_test + 1);
         (*count_false_test)++;
@@ -152,8 +152,8 @@ int testqe(const QE_coeffs *coeffs, const QE_roots *corr_roots, QE_roots *test_r
         || !equal_double(corr_roots->x1, test_roots->x1)
         || !equal_double(corr_roots->x2, test_roots->x2))
     {
-        return FAIL;
+        return FAIL_TEST;
     }
 
-    return CORRECT;
+    return CORRECT_TEST;
 }

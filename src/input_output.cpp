@@ -54,14 +54,14 @@ int input_param(QE_coeffs *coeffs)
 
         if (num_correctly_numbers == EOF)
         {
-            return CLOSE;
+            return INPUT_CLOSE_FLUG;
         }
 
         int first_char = getchar();
 
         if (first_char == 'f')
         {
-            return CLOSE;
+            return INPUT_CLOSE_FLUG;
         }
 
         if (first_char != '\n') 
@@ -77,5 +77,5 @@ int input_param(QE_coeffs *coeffs)
         printf("error in input data, enter 3 numbers:\n");
     }
 
-    return SUCCESS;
+    return INPUT_SUCCESS;
 }
