@@ -18,13 +18,10 @@ To use a progect you should have `g++ compiler` and `make`
 ## Usage
 To use a program you should run `run` file in linux and `run.exe` file in windows.
 
-The program allows you to choose the mode of operation: testing and solving.
-
-For testing: run the program with the -d flag
-
-For solve: just run the program
-
 Usage example:
 <p align="center">
     <img src="example//solve.bmp" alt="Preview" width="416"/>
 </p>
+
+## Features
+Еhe program allows you to choose the testing mode of the program. To do this, run the program with the `-d` flag.
