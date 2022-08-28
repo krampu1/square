@@ -3,22 +3,31 @@
 * \brief input/output header file
 */
 
+#include "quadratic_equation.h"
+
+
 enum Input_const
 {
-    INPUT_SUCCESS = 0,
-
-    INPUT_CLOSE_FLUG   = 1,
+    INPUT_SUCCESS    = 0,
+    INPUT_CLOSE_FLAG = 1,
 };
 
-struct QE_coeffs;
-
-struct QE_roots;
+///
+/**
+* @param [in] argc number of command line arguments
+* @param [in] argv array of command line arguments
+*
+* Если один из флагов командной строки -d , то true, иначе false
+*
+* @return If one of the command line flags is -d , then true otherwise false.
+*/
+bool is_test(int argc, char *argv[]);
 
 /// Function used to take equation parameters from the console
 /**
-* @param [in] coeffs pointer to the coeffsicients of the quadratic equation
+* @param [in] coeffs pointer to the coefficients of the quadratic equation
 *
-* @param [out] coeffs coeffsicients of the quadratic equation
+* @param [out] coeffs coefficients of the quadratic equation
 *
 * The input will continue until the letter f is entered or 3 parameters are specified that can be written to double.\n\n
 *
@@ -38,3 +47,7 @@ int input_param(QE_coeffs *coeffs);
 * В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
 */
 void output_roots(const QE_roots *roots);
+
+void gretings();
+
+void bye();

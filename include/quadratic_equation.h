@@ -2,23 +2,14 @@
 * \file quadratic_equation.h
 * \brief quadratic equation header file
 */
+#ifndef QUADRATIC_EQUATION
+#define QUADRATIC_EQUATION
 
 #include <math.h>
 #include <stdio.h>
 #include <assert.h>
 
-#define COLOR_RED "\x1B[31m"      ///< this line allows you to recolor the color of subsequent characters in the console to red
-
-#define COLOR_GREEN "\x1B[32m"    ///< this line allows you to recolor the color of subsequent characters in the console to green
-
-#define END_COLOR "\033[0m" ///< this line allows you to recolor the color of subsequent characters in the console to defoult сcolor
-
-
-static const double Epsilon = 1e-5;      ///< the constant of the minimum difference at which doubles are considered different
-
 static const int INFINITE_ROOTS = -1;    ///< a constant denoting that the equation has an infinite number of solutions
-
-static const int OFFSER_ROOTS = 3;       ///< the amount of data up to the first root in the array with test information
 
 struct QE_coeffs
 {
@@ -34,17 +25,6 @@ struct QE_roots
     double x1;
     double x2;
 };
-
-///
-/**
-* @param [in] argc number of command line arguments
-* @param [in] argv array of command line arguments
-*
-* Если один из флагов командной строки -d , то true, иначе false
-*
-* @return If one of the command line flags is -d , then true otherwise fals.
-*/
-bool is_debug(int argc, char *argv[]);
 
 /// Function for clearing the input buffer
 /**
@@ -72,7 +52,7 @@ bool equal_double(double a, double b);
 
 /// The function of solving a linear equation
 /**
-* @param [in] coeffs coeffsicients of the quadratic equation
+* @param [in] coeffs coefficients of the quadratic equation
 *
 * @param [out] roots roots of the linear equation
 *
@@ -84,7 +64,7 @@ void linear_equation(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the correct quadratic equation
 /**
-* @param [in] coeffs coeffsicients of the quadratic equation
+* @param [in] coeffs coefficients of the quadratic equation
 *
 * @param [out] roots roots of the quadratic equation
 *
@@ -97,7 +77,7 @@ void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the quadratic equation
 /**
-* @param [in] coeffs coeffsicients of the quadratic equation
+* @param [in] coeffs coefficients of the quadratic equation
 *
 * @param [out] roots roots of the quadratic equation
 *
@@ -127,3 +107,5 @@ void swap_double(double* a, double* b);
 
 /// This function calls the user interface in the console
 void start_solve();
+ 
+#endif

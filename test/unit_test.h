@@ -31,7 +31,7 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots);
 /// Function for checking the test with the output of information to the console
 /**
 * @param [in] num_of_test number of test
-* @param [in] coeffs coeffsicients of the quadratic equation
+* @param [in] coeffs coefficients of the quadratic equation
 * @param [in] corr_roots correct roots of the quadratic equation
 *
 * @param [out] count_false_test invalid test counter
@@ -46,7 +46,7 @@ void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *c
 
 /// A function that tests the operation of a test with certain parameters
 /**
-* @param [in] coeffs coeffsicients of the quadratic equation
+* @param [in] coeffs coefficients of the quadratic equation
 * @param [in] corr_roots correct roots of the quadratic equation
 *
 * @param [out] test_roots the found roots of the quadratic equation

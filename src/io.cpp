@@ -4,7 +4,33 @@
 */
 
 #include "../include/quadratic_equation.h"
-#include "../include/input_output.h"
+#include "../include/io.h"
+#include <string.h>
+
+bool is_test(int argc, char *argv[])
+{
+    const int STRING_FLAG_SIZE = 3;
+
+    for (int i = 0; i < argc; i++)
+    {
+        if (!strncmp("-d", argv[i], STRING_FLAG_SIZE))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void gretings()
+{
+    printf("This program solve quadratic equation. Press f to exit program.\n");
+}
+
+void bye()
+{
+    printf("The program has terminated because the input has been completed.");
+}
 
 void output_roots(const QE_roots *roots)
 {
@@ -54,14 +80,14 @@ int input_param(QE_coeffs *coeffs)
 
         if (num_correctly_numbers == EOF)
         {
-            return INPUT_CLOSE_FLUG;
+            return INPUT_CLOSE_FLAG;
         }
 
         int first_char = getchar();
 
         if (first_char == 'f' || first_char == EOF)
         {
-            return INPUT_CLOSE_FLUG;
+            return INPUT_CLOSE_FLAG;
         }
 
         if (first_char != '\n') 

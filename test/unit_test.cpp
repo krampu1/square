@@ -6,12 +6,18 @@
 #include "../include/quadratic_equation.h"
 #include "unit_test.h"
 
+#define COLOR_RED "\x1B[31m"
+
+#define COLOR_GREEN "\x1B[32m"
+
+#define END_COLOR "\033[0m"
+
 const char *TEST_FILE_PATH = "./test/tests.txt";
 
 enum Read_const
 {
-    READED_SUCCESS  = 0,
-    READED_END_FILE = 1,
+    READ_SUCCESS  = 0,
+    READ_END_FILE = 1,
 };
 
 enum Test_const
@@ -24,9 +30,8 @@ void output_answer(const QE_roots *roots, const char *str);
 
 int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
 {
-    assert(coeffs != NULL);
-    assert(roots != NULL);
-
+    assert(coeffs     != NULL);
+    assert(roots      != NULL);
     assert(input_file != NULL);
 
     const int COUNT_READ_PARAM = 6;
@@ -36,12 +41,12 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
 
     if (ret_input == EOF)
     {
-        return READED_END_FILE;
+        return READ_END_FILE;
     }
 
     assert(ret_input == COUNT_READ_PARAM);
 
-    return READED_SUCCESS;
+    return READ_SUCCESS;
 }
 
 void unit_test()
@@ -60,7 +65,7 @@ void unit_test()
 
         int ret_read = read_test(input_file, &coeffs, &roots);
 
-        if (ret_read == READED_END_FILE)
+        if (ret_read == READ_END_FILE)
         {
             break;
         }

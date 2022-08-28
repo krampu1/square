@@ -4,28 +4,13 @@
 */
 
 #include "../include/quadratic_equation.h"
-#include "../include/input_output.h"
+#include "../include/io.h"
 #include <math.h>
 #include <assert.h>
 #include <string.h>
 
 void fix_zero_double(double *a);
 void arrange_double(double *a, double *b);
-
-bool is_debug(int argc, char *argv[])
-{
-    const int STRING_FLAG_SIZE = 3;
-
-    for (int i = 0; i < argc; i++)
-    {
-        if (!strncmp("-d", argv[i], STRING_FLAG_SIZE))
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
 
 void fix_zero_double(double *a)
 {
@@ -52,29 +37,6 @@ void arrange_double(double *a, double *b)
     }
 }
 
-void start_solve()
-{
-    printf("This program solve quadratic equation. Press f to exit program.\n");
-
-    QE_coeffs coeffs = {0, 0, 0};
-
-    while (true)
-    {
-        int ret_input = input_param(&coeffs);
-
-        if (ret_input == INPUT_CLOSE_FLUG) 
-        {
-            printf("The program has terminated because the input has been completed.");
-            break;
-        }
-
-        QE_roots roots = {};
-
-        solve_quadratic_equation(&coeffs, &roots);
-        output_roots(&roots);
-    }
-}
-
 void swap_double(double* a, double* b)
 {
     assert(a != NULL);
@@ -96,6 +58,8 @@ void clear_buffer()
 
 bool equal_double(double a, double b)
 {
+    const double Epsilon = 1e-5; 
+    
     return (fabs(a-b) < Epsilon);
 }
 
@@ -172,7 +136,6 @@ void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)
         fix_zero_double(&roots->x2);
     }
 }
-
 
 
 void solve_quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)

@@ -12,9 +12,9 @@ FLAGS := -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef          \
 
 FLAGS_OPT := -O3
 
-DIR_BUILD := ./build
+DIR_BUILD := .\build
 
-EXEC_FILE := Quadratic.exe
+EXEC_FILE := quadratic.exe
 
 DEBUG_FILE := debug.exe
 
@@ -25,11 +25,11 @@ debug: build_dir $(DIR_BUILD)/$(EXEC_FILE)
 
 release: build_dir $(DIR_BUILD)/$(DEBUG_FILE)
 
-$(DIR_BUILD)/$(EXEC_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/input_output.o
-	$(CC) $(FLAGS) $(FLAGS_OPT) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/input_output.o -o $(DIR_BUILD)/$(EXEC_FILE)
+$(DIR_BUILD)/$(EXEC_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/io.o
+	$(CC) $(FLAGS) $(FLAGS_OPT) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(EXEC_FILE)
 
-$(DIR_BUILD)/$(DEBUG_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/input_output.o
-	$(CC) $(FLAGS) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/input_output.o -o $(DIR_BUILD)/$(DEBUG_FILE)
+$(DIR_BUILD)/$(DEBUG_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/io.o
+	$(CC) $(FLAGS) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(DEBUG_FILE)
 
 build/square.o: square.cpp
 	$(CC) $(FLAGS) -c $< -o ./$@
@@ -40,14 +40,14 @@ build/quadratic_equation.o: ./src/quadratic_equation.cpp
 build/unit_test.o: ./test/unit_test.cpp
 	$(CC) $(FLAGS) -c $< -o ./$@
 
-build/input_output.o: ./src/input_output.cpp
+build/io.o: ./src/io.cpp
 	$(CC) $(FLAGS) -c $< -o ./$@
 
 clean:
 	del $(DIR_BUILD)\square.o
 	del $(DIR_BUILD)\quadratic_equation.o
 	del $(DIR_BUILD)\unit_test.o
-	del $(DIR_BUILD)\input_output.o
+	del $(DIR_BUILD)\io.o
 
 ifneq ("$(wildcard ./build)","./build") 
 build_dir:
