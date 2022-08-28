@@ -32,23 +32,39 @@ static bool is_equal(double a, double b)
     assert(a != NAN);
     assert(b != NAN);
     
-    const double Epsilon = 1e-5; 
+    const double EPSILON = 1e-5; 
     
-    return (fabs(a-b) < Epsilon);
+    return (fabs(a-b) < EPSILON);
 }
 
-void output_answer(const Quadratic_solution *roots, const char *str);
+void output_answer(const Quadratic_solution *solution, const char *str)
+{
+    assert(solution != NULL);
 
-int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *roots)
+    assert(str != NULL);
+
+    printf("%s", str);
+
+    if (solution->count_roots == INFINITY_ROOTS)
+    {
+        printf(" answer: count_roots = infinity ");
+    }
+    else
+    {
+        printf(" answer: count_roots = %d x1 = %lg x2 = %lg", solution->count_roots, solution->x1, solution->x2);
+    }
+}
+
+int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert(coeffs     != NULL);
-    assert(roots      != NULL);
+    assert(solution      != NULL);
     assert(input_file != NULL);
 
     const int COUNT_READ_PARAM = 6;
 
     int ret_input = fscanf(input_file, "%lf %lf %lf %d %lf %lf",
-                           &coeffs->a, &coeffs->b, &coeffs->c, &roots->count_roots, &roots->x1, &roots->x2);
+                           &coeffs->a, &coeffs->b, &coeffs->c, &solution->count_roots, &solution->x1, &solution->x2);
 
     if (ret_input == EOF)
     {
@@ -72,16 +88,16 @@ void unit_test()
     while (true)
     {
         Quadratic_coeffs coeffs = {0, 0, 0};
-        Quadratic_solution roots = {ZERO, 0, 0};
+        Quadratic_solution solution = {ZERO, 0, 0};
 
-        int ret_read = read_test(input_file, &coeffs, &roots);
+        int ret_read = read_test(input_file, &coeffs, &solution);
 
         if (ret_read == READ_END_FILE)
         {
             break;
         }
 
-        print_tests_res(num_test++, &coeffs, &roots, &count_false_test);
+        print_tests_res(num_test++, &coeffs, &solution, &count_false_test);
     }
 
     if (count_false_test == 0) 
@@ -94,40 +110,21 @@ void unit_test()
     }
 }
 
-void output_answer(const Quadratic_solution *roots, const char *str)
-{
-    assert(isfinite(roots->x1));
-    assert(isfinite(roots->x2));
-
-    assert(str != NULL);
-
-    printf("%s", str);
-
-    if (roots->count_roots == INFINITE_ROOTS)
-    {
-        printf(" answer: count_roots = infinit ");
-    }
-    else
-    {
-        printf(" answer: count_roots = %d x1 = %lg x2 = %lg", roots->count_roots, roots->x1, roots->x2);
-    }
-}
-
-void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, int *count_false_test)
+void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test)
 {
     assert(coeffs != NULL);
     assert(coeffs != NULL);
     assert(isfinite(coeffs->a));
     assert(isfinite(coeffs->b));
     assert(isfinite(coeffs->c));
-    assert(isfinite(corr_roots->x1));
-    assert(isfinite(corr_roots->x2));
+    assert(isfinite(corr_solution->x1));
+    assert(isfinite(corr_solution->x2));
 
     assert(count_false_test != NULL);
 
-    Quadratic_solution test_roots = {ZERO, 0, 0};
+    Quadratic_solution test_solution = {ZERO, 0, 0};
     
-    if (testqe(coeffs, corr_roots, &test_roots) == FAIL_TEST)
+    if (testqe(coeffs, corr_solution, &test_solution) == FAIL_TEST)
     {
         printf(COLOR_RED "error in test number %d || ", num_of_test + 1);
         (*count_false_test)++;
@@ -139,34 +136,34 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
 
     printf("a = %lg b = %lg c = %lg || ", coeffs->a, coeffs->b, coeffs->c);
 
-    output_answer(corr_roots, "true");
+    output_answer(corr_solution, "true");
     printf(" || ");
-    output_answer(&test_roots, "program");
+    output_answer(&test_solution, "program");
 
     printf(END_COLOR "\n");
 }
 
-int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, Quadratic_solution *test_roots)
+int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution)
 {
-    assert(test_roots != NULL);
-    assert(corr_roots != NULL);
+    assert(test_solution != NULL);
+    assert(corr_solution != NULL);
     assert(coeffs != NULL);
 
     assert(isfinite(coeffs->a));
     assert(isfinite(coeffs->b));
     assert(isfinite(coeffs->c));
 
-    assert(isfinite(corr_roots->x1));
-    assert(isfinite(corr_roots->x2));
+    assert(isfinite(corr_solution->x1));
+    assert(isfinite(corr_solution->x2));
 
-    assert(isfinite(test_roots->x1));
-    assert(isfinite(test_roots->x2));
+    assert(isfinite(test_solution->x1));
+    assert(isfinite(test_solution->x2));
     
-    solve(coeffs, test_roots);
+    solve(coeffs, test_solution);
 
-    if (corr_roots->count_roots != test_roots->count_roots
-        || !is_equal(corr_roots->x1, test_roots->x1)
-        || !is_equal(corr_roots->x2, test_roots->x2))
+    if (corr_solution->count_roots != test_solution->count_roots
+        || !is_equal(corr_solution->x1, test_solution->x1)
+        || !is_equal(corr_solution->x2, test_solution->x2))
     {
         return FAIL_TEST;
     }

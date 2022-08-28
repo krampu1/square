@@ -26,15 +26,15 @@ enum Input_const
 */
 int input_coeffs(Quadratic_coeffs *coeffs);
 
-/// A function that outputs the found roots of the quadratic equation
+/// A function that outputs the found solution of the quadratic equation
 /**
-* @param [out] roots roots of the quadratic equation
+* @param [out] solution solution of the quadratic equation
 *
 * In this function, all cases are considered separately: there are no roots, 1 root, 2 roots, infinity of roots.\n\n
 *
 * В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
 */
-void output_roots(const Quadratic_solution *roots);
+void output_solution(const Quadratic_solution *solution);
 
 void greetings();
 

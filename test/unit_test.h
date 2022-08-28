@@ -21,20 +21,20 @@ void unit_test();
 /**
 * @param [in] input_file pointer to the file for reading
 * @param [in] coeffs  pointer to a structure with parameters
-* @param [in] roots pointer to a structure with roots
+* @param [in] solution pointer to a structure with roots
 *
 * @param [out] coeffs structure with parameters
-* @param [out] roots structure with roots
+* @param [out] solution structure with roots
 *
 * @return int SUCCESS=>0 END_FILE=>1
 */
-int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *roots);
+int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
 /// Function for checking the test with the output of information to the console
 /**
 * @param [in] num_of_test number of test
 * @param [in] coeffs coefficients of the quadratic equation
-* @param [in] corr_roots correct roots of the quadratic equation
+* @param [in] corr_solution correct solution of the quadratic equation
 *
 * @param [out] count_false_test invalid test counter
 *
@@ -44,14 +44,14 @@ int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *ro
 * Эта функция тестирует программу на определённых данных и выводит в консоль
 * информацию о том успешно ли пройден тест и о сомом тесте. 
 */
-void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, int* count_false_test);
+void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int* count_false_test);
 
 /// A function that tests the operation of a test with certain parameters
 /**
 * @param [in] coeffs coefficients of the quadratic equation
-* @param [in] corr_roots correct roots of the quadratic equation
+* @param [in] corr_solution correct solution of the quadratic equation
 *
-* @param [out] test_roots the found roots of the quadratic equation
+* @param [out] test_solution the found roots of the quadratic equation
 *
 * This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.\n\n
 *
@@ -61,4 +61,4 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
 *
 * @return int CORRECT=>0 FAIL=>1
 */
-int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, Quadratic_solution *test_roots);
+int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);

@@ -28,15 +28,15 @@ void bye()
     printf("The program has terminated because the input has been completed.");
 }
 
-void output_roots(const Quadratic_solution *roots)
+void output_solution(const Quadratic_solution *solution)
 {
-    assert(roots != NULL);
+    assert(solution != NULL);
 
     printf("solution of the equation: ");
 
-    switch (roots->count_roots)
+    switch (solution->count_roots)
     {
-        case INFINITE_ROOTS:
+        case INFINITY_ROOTS:
 
             printf("infinite number of roots.\n");
             break;
@@ -47,21 +47,21 @@ void output_roots(const Quadratic_solution *roots)
             break;
 
         case ONE:
-            assert(isfinite(roots->x1));
+            assert(isfinite(solution->x1));
             
-            printf("x1 = %lg\n", roots->x1);
+            printf("x1 = %lg\n", solution->x1);
             break;
 
         case TWO:
-            assert(isfinite(roots->x1));
-            assert(isfinite(roots->x2));
+            assert(isfinite(solution->x1));
+            assert(isfinite(solution->x2));
 
-            printf("x1 = %lg x2 = %lg\n", roots->x1, roots->x2);
+            printf("x1 = %lg x2 = %lg\n", solution->x1, solution->x2);
             break;
 
         default:
 
-            printf("Error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots->count_roots);
+            printf("Error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, solution->count_roots);
             break;
     }
 }

@@ -7,7 +7,7 @@
 
 enum Quadratic_num_of_roots
 {
-    INFINITE_ROOTS = -1,
+    INFINITY_ROOTS = -1,
     ZERO =            0,
     ONE =             1,
     TWO =             2,
@@ -28,36 +28,11 @@ struct Quadratic_solution
     double x2;
 };
 
-/// The function of solving a linear equation
-/**
-* @param [in] coeffs coefficients of the quadratic equation
-*
-* @param [out] roots roots of the linear equation
-*
-* This function considers the linear case of a quadratic equation when the parameter a is 0, which is equivalent to a linear equation.\n\n
-*
-* Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению.
-*/
-void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *roots);
-
-/// The function of solving the correct quadratic equation
-/**
-* @param [in] coeffs coefficients of the quadratic equation
-*
-* @param [out] roots roots of the quadratic equation
-*
-* This function considers the linear case of a quadratic equation when the parameter a is not equal to 0, which guarantees a non-infinite number of roots.\n\n
-*
-* Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0,
-* что гарантирует не бесконечное число корней.
-*/
-void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *roots);
-
 /// The function of solving the quadratic equation
 /**
 * @param [in] coeffs coefficients of the quadratic equation
 *
-* @param [out] roots roots of the quadratic equation
+* @param [out] solution solution of the quadratic equation
 *
 * This function divides the quadratic equation into 2 cases.\n
 * If a is 0, then the equation is treated as linear.\n
@@ -67,6 +42,6 @@ void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution 
 * Если a равен 0, то уравнение рассматривается как линейное.\n
 * Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней.
 */
-void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *roots);
+void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
 #endif

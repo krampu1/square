@@ -9,7 +9,7 @@
 #include <assert.h>
 #include <string.h>
 
-#define assert_solve assert(coeffs != NULL);assert(roots != NULL);assert(isfinite(coeffs->a));assert(isfinite(coeffs->b));assert(isfinite(coeffs->c));
+#define assert_solve assert(coeffs != NULL);assert(solution != NULL);assert(isfinite(coeffs->a));assert(isfinite(coeffs->b));assert(isfinite(coeffs->c));
 
 static void clamp_zero_double(double *a);
 static void sort_ascending(double *a, double *b);
@@ -64,7 +64,7 @@ static bool is_zero(double a)
     return false;
 }
 
-void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
+void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert_solve
 
@@ -72,66 +72,66 @@ void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
     {
         if (is_zero(coeffs->c))
         {
-            roots->count_roots = INFINITE_ROOTS; 
+            solution->count_roots = INFINITY_ROOTS; 
         }
         else
         {
-            roots->count_roots = ZERO;
+            solution->count_roots = ZERO;
         }
     }
     else
     {
-        roots->count_roots = ONE;
-        roots->x1 = -coeffs->c / coeffs->b;
+        solution->count_roots = ONE;
+        solution->x1 = -coeffs->c / coeffs->b;
 
-        clamp_zero_double(&roots->x1);
+        clamp_zero_double(&solution->x1);
     }
 }
 
-void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
+void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert_solve
 
     assert(!is_zero(coeffs->a));
 
-    double discrimenant = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c;
+    double discriminant = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c;
 
-    if (is_zero(discrimenant))
+    if (is_zero(discriminant))
     {
-        roots->count_roots = ONE;
-        roots->x1 = -coeffs->b / (2 * coeffs->a);
+        solution->count_roots = ONE;
+        solution->x1 = -coeffs->b / (2 * coeffs->a);
 
-        clamp_zero_double(&roots->x1);
+        clamp_zero_double(&solution->x1);
     }
-    else if (discrimenant < 0)
+    else if (discriminant < 0)
     {
-        roots->count_roots = ZERO;
+        solution->count_roots = ZERO;
     }
     else
     {
-        double sqrt_discrimenant = sqrt(discrimenant);
+        double sqrt_discriminant = sqrt(discriminant);
 
-        roots->count_roots = TWO;
-        roots->x1 = (-coeffs->b + sqrt_discrimenant) / (2 * coeffs->a);
-        roots->x2 = (-coeffs->b - sqrt_discrimenant) / (2 * coeffs->a);
+        solution->count_roots = TWO;
+        solution->x1 = (-coeffs->b + sqrt_discriminant) / (2 * coeffs->a);
+        solution->x2 = (-coeffs->b - sqrt_discriminant) / (2 * coeffs->a);
 
-        sort_ascending(&roots->x1, &roots->x2);
+        sort_ascending(&solution->x1, &solution->x2);
 
-        clamp_zero_double(&roots->x1);
-        clamp_zero_double(&roots->x2);
+        clamp_zero_double(&solution->x1);
+        clamp_zero_double(&solution->x2);
     }
 }
 
-void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
+void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert_solve
 
     if (is_zero(coeffs->a))
     {
-        solve_linear(coeffs, roots);
+        solve_linear(coeffs, solution);
     }
     else
     {
-        solve_nonzero_quadratic(coeffs, roots);
+        solve_nonzero_quadratic(coeffs, solution);
     }
 }
