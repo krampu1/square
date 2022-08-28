@@ -16,7 +16,7 @@ DIR_BUILD := .\build
 
 EXEC_FILE := quadratic.exe
 
-DEBUG_FILE := debug.exe
+DEBUG_FILE := test.exe
 
 
 all: test
