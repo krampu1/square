@@ -50,7 +50,7 @@ void output_roots(const Quadratic_solution *roots)
 {
     assert(roots != NULL);
 
-    Quadratic_num_of_roots switch (roots->count_roots)
+    switch (roots->count_roots)
     {
         case INFINITE_ROOTS:
 
