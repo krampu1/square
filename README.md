@@ -1,7 +1,7 @@
 # Quadratic
 
 <p align="center">
-     <img src="example//square.jpg" alt="Logo" width="416"/>
+     <img src="resources//square.jpg" alt="Logo" width="416"/>
 </p>
 
 ## Description
@@ -20,7 +20,7 @@ To use a program you should run `Quadratic` file.
 
 Usage example:
 <p align="center">
-    <img src="example//solve.bmp" alt="Preview" width="416"/>
+    <img src="resources//solve.bmp" alt="Preview" width="416"/>
 </p>
 
 ## Features

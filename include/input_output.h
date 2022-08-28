@@ -10,6 +10,10 @@ enum Input_const
     INPUT_CLOSE_FLUG   = 1,
 };
 
+struct QE_coeffs;
+
+struct QE_roots;
+
 /// Function used to take equation parameters from the console
 /**
 * @param [in] coeffs pointer to the coeffsicients of the quadratic equation
