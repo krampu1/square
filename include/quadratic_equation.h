@@ -48,7 +48,7 @@ void clear_buffer();
 *
 * @return true if the numbers are equal, otherwise false
 */
-bool equal_double(double a, double b);
+bool is_equal_double(double a, double b);
 
 /// The function of solving a linear equation
 /**
@@ -60,7 +60,7 @@ bool equal_double(double a, double b);
 *
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a равен 0, что эквивалентно линейному уравнению.
 */
-void linear_equation(const QE_coeffs *coeffs, QE_roots *roots);
+void solve_linear(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the correct quadratic equation
 /**
@@ -73,7 +73,7 @@ void linear_equation(const QE_coeffs *coeffs, QE_roots *roots);
 * Эта функция рассматривает часный случай квадратного уравнения, когда параметр a не равен 0,
 * что гарантирует не бесконечное число корней.
 */
-void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots);
+void solve_quadratic(const QE_coeffs *coeffs, QE_roots *roots);
 
 /// The function of solving the quadratic equation
 /**

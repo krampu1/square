@@ -154,8 +154,8 @@ int testqe(const QE_coeffs *coeffs, const QE_roots *corr_roots, QE_roots *test_r
     solve_quadratic_equation(coeffs, test_roots);
 
     if (corr_roots->count_roots != test_roots->count_roots
-        || !equal_double(corr_roots->x1, test_roots->x1)
-        || !equal_double(corr_roots->x2, test_roots->x2))
+        || !is_equal_double(corr_roots->x1, test_roots->x1)
+        || !is_equal_double(corr_roots->x2, test_roots->x2))
     {
         return FAIL_TEST;
     }

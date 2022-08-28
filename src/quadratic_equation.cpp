@@ -17,7 +17,7 @@ void fix_zero_double(double *a)
     assert(a != NULL);
     assert(isfinite(*a));
 
-    if (equal_double(*a, 0))
+    if (is_equal_double(*a, 0))
     {
         *a = 0;
     }  
@@ -56,14 +56,14 @@ void clear_buffer()
     while ((ch=getchar()) != '\n' && ch != EOF) { }
 }
 
-bool equal_double(double a, double b)
+bool is_equal_double(double a, double b)
 {
     const double Epsilon = 1e-5; 
     
     return (fabs(a-b) < Epsilon);
 }
 
-void linear_equation(const QE_coeffs *coeffs, QE_roots *roots)
+void solve_linear(const QE_coeffs *coeffs, QE_roots *roots)
 {
     assert(coeffs != NULL);
     assert(roots != NULL);
@@ -75,9 +75,9 @@ void linear_equation(const QE_coeffs *coeffs, QE_roots *roots)
     assert(isfinite(roots->x1));
     assert(isfinite(roots->x2));
 
-    if (equal_double(coeffs->b, 0))
+    if (is_equal_double(coeffs->b, 0))
     {
-        if (equal_double(coeffs->c, 0))
+        if (is_equal_double(coeffs->c, 0))
         {
             roots->count_roots = INFINITE_ROOTS; 
         }
@@ -95,7 +95,7 @@ void linear_equation(const QE_coeffs *coeffs, QE_roots *roots)
     }
 }
 
-void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)
+void solve_quadratic(const QE_coeffs *coeffs, QE_roots *roots)
 {
     assert(coeffs != NULL);
     assert(roots != NULL);
@@ -107,11 +107,11 @@ void quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)
     assert(isfinite(roots->x1));
     assert(isfinite(roots->x2));
 
-    assert(!equal_double(coeffs->a, 0));
+    assert(!is_equal_double(coeffs->a, 0));
 
     double discrimenant = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c;
 
-    if (equal_double(discrimenant, 0))
+    if (is_equal_double(discrimenant, 0))
     {
         roots->count_roots = 1;
         roots->x1 = -coeffs->b / (2 * coeffs->a);
@@ -150,12 +150,12 @@ void solve_quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)
     assert(isfinite(roots->x1));
     assert(isfinite(roots->x2));
 
-    if (equal_double(coeffs->a, 0))
+    if (is_equal_double(coeffs->a, 0))
     {
-        linear_equation(coeffs, roots);
+        solve_linear(coeffs, roots);
     }
     else
     {
-        quadratic_equation(coeffs, roots);
+        solve_quadratic(coeffs, roots);
     }
 }
