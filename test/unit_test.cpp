@@ -2,9 +2,10 @@
 * \file unit_test.cpp 
 * \brief unit test code file
 */
-
 #include "../include/quadratic_equation.h"
 #include "unit_test.h"
+#include <math.h>
+#include <assert.h>
 
 #define COLOR_RED "\x1B[31m"
 
@@ -26,9 +27,19 @@ enum Test_const
     FAIL_TEST    = 1,
 };
 
-void output_answer(const QE_roots *roots, const char *str);
+static bool is_equal(double a, double b)
+{
+    assert(a != NAN);
+    assert(b != NAN);
+    
+    const double Epsilon = 1e-5; 
+    
+    return (fabs(a-b) < Epsilon);
+}
 
-int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
+void output_answer(const Quadratic_solution *roots, const char *str);
+
+int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *roots)
 {
     assert(coeffs     != NULL);
     assert(roots      != NULL);
@@ -49,10 +60,10 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
     return READ_SUCCESS;
 }
 
-void unit_test()
+int main()
 {
     FILE *input_file = fopen(TEST_FILE_PATH, "r");
-
+    
     assert(input_file != NULL);
 
     int count_false_test = 0;
@@ -60,8 +71,8 @@ void unit_test()
 
     while (true)
     {
-        QE_coeffs coeffs = {0, 0, 0};
-        QE_roots roots = {0, 0, 0};
+        Quadratic_coeffs coeffs = {0, 0, 0};
+        Quadratic_solution roots = {ZERO, 0, 0};
 
         int ret_read = read_test(input_file, &coeffs, &roots);
 
@@ -83,7 +94,7 @@ void unit_test()
     }
 }
 
-void output_answer(const QE_roots *roots, const char *str)
+void output_answer(const Quadratic_solution *roots, const char *str)
 {
     assert(isfinite(roots->x1));
     assert(isfinite(roots->x2));
@@ -102,7 +113,7 @@ void output_answer(const QE_roots *roots, const char *str)
     }
 }
 
-void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *corr_roots, int *count_false_test)
+void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, int *count_false_test)
 {
     assert(coeffs != NULL);
     assert(coeffs != NULL);
@@ -114,7 +125,7 @@ void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *c
 
     assert(count_false_test != NULL);
 
-    QE_roots test_roots = {0, 0, 0};
+    Quadratic_solution test_roots = {ZERO, 0, 0};
     
     if (testqe(coeffs, corr_roots, &test_roots) == FAIL_TEST)
     {
@@ -135,7 +146,7 @@ void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *c
     printf(END_COLOR "\n");
 }
 
-int testqe(const QE_coeffs *coeffs, const QE_roots *corr_roots, QE_roots *test_roots)
+int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, Quadratic_solution *test_roots)
 {
     assert(test_roots != NULL);
     assert(corr_roots != NULL);
@@ -151,11 +162,11 @@ int testqe(const QE_coeffs *coeffs, const QE_roots *corr_roots, QE_roots *test_r
     assert(isfinite(test_roots->x1));
     assert(isfinite(test_roots->x2));
     
-    solve_quadratic_equation(coeffs, test_roots);
+    solve(coeffs, test_roots);
 
     if (corr_roots->count_roots != test_roots->count_roots
-        || !is_equal_double(corr_roots->x1, test_roots->x1)
-        || !is_equal_double(corr_roots->x2, test_roots->x2))
+        || !is_equal(corr_roots->x1, test_roots->x1)
+        || !is_equal(corr_roots->x2, test_roots->x2))
     {
         return FAIL_TEST;
     }

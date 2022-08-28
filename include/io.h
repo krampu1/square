@@ -36,7 +36,7 @@ bool is_test(int argc, char *argv[]);
 *
 * @return int
 */
-int input_param(QE_coeffs *coeffs);
+int input_coeffs(Quadratic_coeffs *coeffs);
 
 /// A function that outputs the found roots of the quadratic equation
 /**
@@ -46,8 +46,8 @@ int input_param(QE_coeffs *coeffs);
 *
 * В этой функции отдельно рассматриваются все случаи: корней нет, 1 корень, 2 корня, бесконечность корней.
 */
-void output_roots(const QE_roots *roots);
+void output_roots(const Quadratic_solution *roots);
 
-void gretings();
+void gritings();
 
 void bye();

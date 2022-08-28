@@ -19,17 +19,17 @@ EXEC_FILE := quadratic.exe
 DEBUG_FILE := debug.exe
 
 
-all: debug
+all: test
 
-debug: build_dir $(DIR_BUILD)/$(EXEC_FILE)
+test: build_dir $(DIR_BUILD)/$(DEBUG_FILE)
 
-release: build_dir $(DIR_BUILD)/$(DEBUG_FILE)
+release: build_dir $(DIR_BUILD)/$(EXEC_FILE)
 
-$(DIR_BUILD)/$(EXEC_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/io.o
-	$(CC) $(FLAGS) $(FLAGS_OPT) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(EXEC_FILE)
+$(DIR_BUILD)/$(EXEC_FILE): build/square.o build/quadratic_equation.o build/io.o
+	$(CC) $(FLAGS) $(FLAGS_OPT) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(EXEC_FILE)
 
-$(DIR_BUILD)/$(DEBUG_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/io.o
-	$(CC) $(FLAGS) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(DEBUG_FILE)
+$(DIR_BUILD)/$(DEBUG_FILE): build/quadratic_equation.o build/unit_test.o
+	$(CC) $(FLAGS) $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o -o $(DIR_BUILD)/$(DEBUG_FILE)
 
 build/square.o: square.cpp
 	$(CC) $(FLAGS) -c $< -o ./$@

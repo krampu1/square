@@ -3,6 +3,8 @@
 * \brief unit test header file
 */
 
+#include <stdio.h>
+
 /// Function called for code testing
 /**
 * This function is called when you specify the start of the program -d .\n
@@ -26,7 +28,7 @@ void unit_test();
 *
 * @return int SUCCESS=>0 END_FILE=>1
 */
-int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots);
+int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *roots);
 
 /// Function for checking the test with the output of information to the console
 /**
@@ -42,7 +44,7 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots);
 * Эта функция тестирует программу на определённых данных и выводит в консоль
 * информацию о том успешно ли пройден тест и о сомом тесте. 
 */
-void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *corr_roots, int* count_false_test);
+void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, int* count_false_test);
 
 /// A function that tests the operation of a test with certain parameters
 /**
@@ -59,4 +61,4 @@ void print_tests_res(int num_of_test, const QE_coeffs *coeffs, const QE_roots *c
 *
 * @return int CORRECT=>0 FAIL=>1
 */
-int testqe(const QE_coeffs *coeffs, const QE_roots *corr_roots, QE_roots *test_roots);
+int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_roots, Quadratic_solution *test_roots);

@@ -9,153 +9,129 @@
 #include <assert.h>
 #include <string.h>
 
-void fix_zero_double(double *a);
-void arrange_double(double *a, double *b);
+#define assert_solve assert(coeffs != NULL);assert(roots != NULL);assert(isfinite(coeffs->a));assert(isfinite(coeffs->b));assert(isfinite(coeffs->c));
 
-void fix_zero_double(double *a)
+static void clamp_zero_double(double *a);
+static void sort_ascending(double *a, double *b);
+static bool is_equal(double a, double b);
+static bool is_zero(double a);
+
+void clamp_zero_double(double *a)
 {
     assert(a != NULL);
-    assert(isfinite(*a));
+    assert(*a != NAN);
 
-    if (is_equal_double(*a, 0))
+    if (is_zero(*a))
     {
         *a = 0;
     }  
 }
 
-void arrange_double(double *a, double *b)
+static void sort_ascending(double *a, double *b)
 {
     assert(a != NULL);
     assert(b != NULL);
 
-    assert(isfinite(*a));
-    assert(isfinite(*b));
+    assert(*a != NAN);
+    assert(*b != NAN);
 
     if (*a > *b)
     {
-        swap_double(a, b);
+        double temp = *a;
+        *a = *b;
+        *b = temp;
     }
 }
 
-void swap_double(double* a, double* b)
+static bool is_equal(double a, double b)
 {
-    assert(a != NULL);
-    assert(b != NULL);
+    assert(isfinite(a));
+    assert(isfinite(b));
+
+    const double EPSILON = 1e-5; 
     
-    assert(isfinite(*a));
-    assert(isfinite(*b));
-
-    double x = *a;
-    *a = *b;
-    *b = x;
+    return (fabs(a-b) < EPSILON);
 }
 
-void clear_buffer()
+static bool is_zero(double a)
 {
-    int ch;
-    while ((ch=getchar()) != '\n' && ch != EOF) { }
-}
+    assert(a != NAN);
 
-bool is_equal_double(double a, double b)
-{
-    const double Epsilon = 1e-5; 
-    
-    return (fabs(a-b) < Epsilon);
-}
-
-void solve_linear(const QE_coeffs *coeffs, QE_roots *roots)
-{
-    assert(coeffs != NULL);
-    assert(roots != NULL);
-
-    assert(isfinite(coeffs->a));
-    assert(isfinite(coeffs->b));
-    assert(isfinite(coeffs->c));
-
-    assert(isfinite(roots->x1));
-    assert(isfinite(roots->x2));
-
-    if (is_equal_double(coeffs->b, 0))
+    if (is_equal(a, 0))
     {
-        if (is_equal_double(coeffs->c, 0))
+        return true;
+    }
+    return false;
+}
+
+void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
+{
+    assert_solve
+
+    if (is_zero(coeffs->b)) 
+    {
+        if (is_zero(coeffs->c))
         {
             roots->count_roots = INFINITE_ROOTS; 
         }
         else
         {
-            roots->count_roots = 0;
+            roots->count_roots = ZERO;
         }
     }
     else
     {
-        roots->count_roots = 1;
+        roots->count_roots = ONE;
         roots->x1 = -coeffs->c / coeffs->b;
 
-        fix_zero_double(&roots->x1);
+        clamp_zero_double(&roots->x1);
     }
 }
 
-void solve_quadratic(const QE_coeffs *coeffs, QE_roots *roots)
+void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
 {
-    assert(coeffs != NULL);
-    assert(roots != NULL);
+    assert_solve
 
-    assert(isfinite(coeffs->a));
-    assert(isfinite(coeffs->b));
-    assert(isfinite(coeffs->c));
-
-    assert(isfinite(roots->x1));
-    assert(isfinite(roots->x2));
-
-    assert(!is_equal_double(coeffs->a, 0));
+    assert(!is_zero(coeffs->a));
 
     double discrimenant = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c;
 
-    if (is_equal_double(discrimenant, 0))
+    if (is_zero(discrimenant))
     {
-        roots->count_roots = 1;
+        roots->count_roots = ONE;
         roots->x1 = -coeffs->b / (2 * coeffs->a);
 
-        fix_zero_double(&roots->x1);
+        clamp_zero_double(&roots->x1);
     }
     else if (discrimenant < 0)
     {
-        roots->count_roots = 0;
+        roots->count_roots = ZERO;
     }
     else
     {
         double sqrt_discrimenant = sqrt(discrimenant);
 
-        roots->count_roots = 2;
+        roots->count_roots = TWO;
         roots->x1 = (-coeffs->b + sqrt_discrimenant) / (2 * coeffs->a);
         roots->x2 = (-coeffs->b - sqrt_discrimenant) / (2 * coeffs->a);
 
-        arrange_double(&roots->x1, &roots->x2);
+        sort_ascending(&roots->x1, &roots->x2);
 
-        fix_zero_double(&roots->x1);
-        fix_zero_double(&roots->x2);
+        clamp_zero_double(&roots->x1);
+        clamp_zero_double(&roots->x2);
     }
 }
 
-
-void solve_quadratic_equation(const QE_coeffs *coeffs, QE_roots *roots)
+void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *roots)
 {
-    assert(coeffs != NULL);
-    assert(roots != NULL);
+    assert_solve
 
-    assert(isfinite(coeffs->a));
-    assert(isfinite(coeffs->b));
-    assert(isfinite(coeffs->c));
-
-    assert(isfinite(roots->x1));
-    assert(isfinite(roots->x2));
-
-    if (is_equal_double(coeffs->a, 0))
+    if (is_zero(coeffs->a))
     {
         solve_linear(coeffs, roots);
     }
     else
     {
-        solve_quadratic(coeffs, roots);
+        solve_nonzero_quadratic(coeffs, roots);
     }
 }

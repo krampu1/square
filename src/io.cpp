@@ -6,6 +6,20 @@
 #include "../include/quadratic_equation.h"
 #include "../include/io.h"
 #include <string.h>
+#include <stdio.h>
+#include <math.h>
+#include <assert.h>
+
+
+static void skip_stdin_line()
+{
+    int ch;
+    
+    while ((ch = getchar()) != '\n' && ch != EOF)
+    {
+        continue;
+    }
+}
 
 bool is_test(int argc, char *argv[])
 {
@@ -22,7 +36,7 @@ bool is_test(int argc, char *argv[])
     return false;
 }
 
-void gretings()
+void gritings()
 {
     printf("This program solve quadratic equation. Press f to exit program.\n");
 }
@@ -32,29 +46,31 @@ void bye()
     printf("The program has terminated because the input has been completed.");
 }
 
-void output_roots(const QE_roots *roots)
+void output_roots(const Quadratic_solution *roots)
 {
-    assert(isfinite(roots->x1));
-    assert(isfinite(roots->x2));
+    assert(roots != NULL);
 
-    switch (roots->count_roots)
+    Quadratic_num_of_roots switch (roots->count_roots)
     {
         case INFINITE_ROOTS:
 
             printf("infinit number of roots\n");
             break;
         
-        case 0:
+        case ZERO:
 
             printf("no roots\n");
             break;
 
-        case 1:
-
+        case ONE:
+            assert(isfinite(roots->x1));
+            
             printf("x1 = %lg\n", roots->x1);
             break;
 
-        case 2:
+        case TWO:
+            assert(isfinite(roots->x1));
+            assert(isfinite(roots->x2));
 
             printf("x1 = %lg x2 = %lg\n", roots->x1, roots->x2);
             break;
@@ -66,7 +82,7 @@ void output_roots(const QE_roots *roots)
     }
 }
 
-int input_param(QE_coeffs *coeffs)
+int input_coeffs(Quadratic_coeffs *coeffs)
 {
     assert(coeffs != NULL);
 
@@ -92,7 +108,8 @@ int input_param(QE_coeffs *coeffs)
 
         if (first_char != '\n') 
         {
-            clear_buffer();
+            printf("After 3 arguments, some characters were entered.");
+            skip_stdin_line();
         }
 
         if (num_correctly_numbers == COUNT_INPUT_PARAM) 

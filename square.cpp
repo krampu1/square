@@ -5,24 +5,23 @@
 
 #include "include\io.h"
 #include "include\quadratic_equation.h"
-#include "test\unit_test.h"
 #include <stdio.h>
 
 int main(int argc, char *argv[]) 
 {
-    if (is_test(argc, argv))
+    if (is_test(argc, argv)) // TODO: extract tests in other main (it's a good practice, should be enforced!)
     {
         unit_test();
     }
     else
     {
-        gretings();
+        gritings();
 
-        QE_coeffs coeffs = {0, 0, 0};
+        Quadratic_coeffs coeffs = {0, 0, 0};
 
         while (true)
         {
-            int ret_input = input_param(&coeffs);
+            int ret_input = input_coeffs(&coeffs);
 
             if (ret_input == INPUT_CLOSE_FLAG) 
             {
@@ -30,9 +29,9 @@ int main(int argc, char *argv[])
                 break;
             }
 
-            QE_roots roots = {};
+            Quadratic_solution roots = {};
 
-            solve_quadratic_equation(&coeffs, &roots);
+            solve(&coeffs, &roots);
             output_roots(&roots);
         }
 
