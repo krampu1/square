@@ -60,7 +60,7 @@ int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *ro
     return READ_SUCCESS;
 }
 
-int main()
+void unit_test()
 {
     FILE *input_file = fopen(TEST_FILE_PATH, "r");
     

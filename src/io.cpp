@@ -3,17 +3,14 @@
 * \brief input/output code file
 */
 
-#include "../include/quadratic_equation.h"
 #include "../include/io.h"
-#include <string.h>
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
 
-
 static void skip_stdin_line()
 {
-    int ch;
+    int ch = 0;
     
     while ((ch = getchar()) != '\n' && ch != EOF)
     {
@@ -21,24 +18,9 @@ static void skip_stdin_line()
     }
 }
 
-bool is_test(int argc, char *argv[])
+void greetings()
 {
-    const int STRING_FLAG_SIZE = 3;
-
-    for (int i = 0; i < argc; i++)
-    {
-        if (!strncmp("-d", argv[i], STRING_FLAG_SIZE))
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-void gritings()
-{
-    printf("This program solve quadratic equation. Press f to exit program.\n");
+    printf("This program solves a quadratic equation. Press f to exit the program.\n");
 }
 
 void bye()
@@ -50,16 +32,18 @@ void output_roots(const Quadratic_solution *roots)
 {
     assert(roots != NULL);
 
+    printf("solution of the equation: ");
+
     switch (roots->count_roots)
     {
         case INFINITE_ROOTS:
 
-            printf("infinit number of roots\n");
+            printf("infinite number of roots.\n");
             break;
         
         case ZERO:
 
-            printf("no roots\n");
+            printf("no roots.\n");
             break;
 
         case ONE:

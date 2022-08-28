@@ -5,23 +5,11 @@
 
 #include "quadratic_equation.h"
 
-
 enum Input_const
 {
     INPUT_SUCCESS    = 0,
     INPUT_CLOSE_FLAG = 1,
 };
-
-///
-/**
-* @param [in] argc number of command line arguments
-* @param [in] argv array of command line arguments
-*
-* Если один из флагов командной строки -d , то true, иначе false
-*
-* @return If one of the command line flags is -d , then true otherwise false.
-*/
-bool is_test(int argc, char *argv[]);
 
 /// Function used to take equation parameters from the console
 /**
@@ -48,6 +36,6 @@ int input_coeffs(Quadratic_coeffs *coeffs);
 */
 void output_roots(const Quadratic_solution *roots);
 
-void gritings();
+void greetings();
 
 void bye();

@@ -7,9 +7,15 @@
 #include "include\quadratic_equation.h"
 #include <stdio.h>
 
-int main(int argc, char *argv[]) 
+#include "test\unit_test.h"
+
+int main() 
 {
-    gritings();
+#ifdef TEST
+    unit_test();
+#endif
+#ifndef TEST
+    greetings();
 
     Quadratic_coeffs coeffs = {0, 0, 0};
 
@@ -30,4 +36,5 @@ int main(int argc, char *argv[])
     }
 
     bye();
+#endif
 }
