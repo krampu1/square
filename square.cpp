@@ -6,7 +6,6 @@
 #include "include\io.h"
 #include "include\quadratic_equation.h"
 #include <stdio.h>
-
 #include "test\unit_test.h"
 
 int main() 
@@ -14,6 +13,7 @@ int main()
 #ifdef TEST
     unit_test();
 #endif
+
 #ifndef TEST
     greetings();
 

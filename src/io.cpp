@@ -37,12 +37,10 @@ void output_solution(const Quadratic_solution *solution)
     switch (solution->count_roots)
     {
         case INFINITY_ROOTS:
-
             printf("infinite number of roots.\n");
             break;
         
         case ZERO:
-
             printf("no roots.\n");
             break;
 
@@ -60,7 +58,6 @@ void output_solution(const Quadratic_solution *solution)
             break;
 
         default:
-
             printf("Error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, solution->count_roots);
             break;
     }
@@ -93,6 +90,7 @@ int input_coeffs(Quadratic_coeffs *coeffs)
         if (first_char != '\n') 
         {
             printf("After 3 arguments, some characters were entered.\n");
+            
             skip_stdin_line();
         }
 

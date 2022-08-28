@@ -13,6 +13,13 @@
 
 #define END_COLOR "\033[0m"
 
+#define assert_cor_test_data assert(isfinite(coeffs->a));        \
+                             assert(isfinite(coeffs->b));        \
+                             assert(isfinite(coeffs->c));        \
+                                                                 \
+                             assert(isfinite(corr_solution->x1));\
+                             assert(isfinite(corr_solution->x2));
+
 const char *TEST_FILE_PATH = "./test/tests.txt";
 
 enum Read_const
@@ -40,8 +47,7 @@ static bool is_equal(double a, double b)
 void output_answer(const Quadratic_solution *solution, const char *str)
 {
     assert(solution != NULL);
-
-    assert(str != NULL);
+    assert(str      != NULL);
 
     printf("%s", str);
 
@@ -58,7 +64,7 @@ void output_answer(const Quadratic_solution *solution, const char *str)
 int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert(coeffs     != NULL);
-    assert(solution      != NULL);
+    assert(solution   != NULL);
     assert(input_file != NULL);
 
     const int COUNT_READ_PARAM = 6;
@@ -112,15 +118,11 @@ void unit_test()
 
 void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test)
 {
-    assert(coeffs != NULL);
-    assert(coeffs != NULL);
-    assert(isfinite(coeffs->a));
-    assert(isfinite(coeffs->b));
-    assert(isfinite(coeffs->c));
-    assert(isfinite(corr_solution->x1));
-    assert(isfinite(corr_solution->x2));
-
+    assert(coeffs           != NULL);
+    assert(corr_solution    != NULL);
     assert(count_false_test != NULL);
+
+    assert_cor_test_data
 
     Quadratic_solution test_solution = {ZERO, 0, 0};
     
@@ -147,14 +149,9 @@ int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_soluti
 {
     assert(test_solution != NULL);
     assert(corr_solution != NULL);
-    assert(coeffs != NULL);
+    assert(coeffs        != NULL);
 
-    assert(isfinite(coeffs->a));
-    assert(isfinite(coeffs->b));
-    assert(isfinite(coeffs->c));
-
-    assert(isfinite(corr_solution->x1));
-    assert(isfinite(corr_solution->x2));
+    assert_cor_test_data
 
     assert(isfinite(test_solution->x1));
     assert(isfinite(test_solution->x2));
