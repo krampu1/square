@@ -108,7 +108,7 @@ int input_coeffs(Quadratic_coeffs *coeffs)
 
         if (first_char != '\n') 
         {
-            printf("After 3 arguments, some characters were entered.");
+            printf("After 3 arguments, some characters were entered.\n");
             skip_stdin_line();
         }
 
