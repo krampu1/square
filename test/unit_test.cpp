@@ -6,7 +6,7 @@
 #include "../include/quadratic_equation.h"
 #include "unit_test.h"
 
-const char *TEST_FILE = "./test/tests.txt";
+const char *TEST_FILE_PATH = "./test/tests.txt";
 
 enum Read_const
 {
@@ -46,7 +46,7 @@ int read_test(FILE *input_file, QE_coeffs *coeffs, QE_roots *roots)
 
 void unit_test()
 {
-    FILE *input_file = fopen(TEST_FILE, "r");
+    FILE *input_file = fopen(TEST_FILE_PATH, "r");
 
     assert(input_file != NULL);
 

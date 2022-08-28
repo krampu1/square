@@ -54,7 +54,7 @@ void arrange_double(double *a, double *b)
 
 void start_solve()
 {
-    printf("this program solve quadratic equation. Press f to exit program\n");
+    printf("This program solve quadratic equation. Press f to exit program.\n");
 
     QE_coeffs coeffs = {0, 0, 0};
 
@@ -64,6 +64,7 @@ void start_solve()
 
         if (ret_input == INPUT_CLOSE_FLUG) 
         {
+            printf("The program has terminated because the input has been completed.");
             break;
         }
 
@@ -89,7 +90,8 @@ void swap_double(double* a, double* b)
 
 void clear_buffer()
 {
-    while (getchar() != '\n') { }
+    int ch;
+    while ((ch=getchar()) != '\n' && ch != EOF) { }
 }
 
 bool equal_double(double a, double b)

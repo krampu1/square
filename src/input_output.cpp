@@ -35,7 +35,7 @@ void output_roots(const QE_roots *roots)
 
         default:
 
-            printf("error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots->count_roots);
+            printf("Error in switch in line %d in file %s.\n count_roots = %d\n", __LINE__, __FILE__, roots->count_roots);
             break;
     }
 }
@@ -46,7 +46,7 @@ int input_param(QE_coeffs *coeffs)
 
     const int COUNT_INPUT_PARAM = 3;
 
-    printf("enter a, b, c:\n");
+    printf("Enter a, b, c:\n");
 
     while (true)
     {
@@ -59,7 +59,7 @@ int input_param(QE_coeffs *coeffs)
 
         int first_char = getchar();
 
-        if (first_char == 'f')
+        if (first_char == 'f' || first_char == EOF)
         {
             return INPUT_CLOSE_FLUG;
         }
@@ -74,7 +74,7 @@ int input_param(QE_coeffs *coeffs)
             break;
         }
 
-        printf("error in input data, enter 3 numbers:\n");
+        printf("Error in input data, enter 3 numbers:\n");
     }
 
     return INPUT_SUCCESS;

@@ -5,7 +5,7 @@
 </p>
 
 ## Description
-This program can solve quadratic equations with real number.
+This program can solve quadratic equations with real number. Only for windows OS
 
 ## Installation
 To use a progect you should have `g++ compiler` and `make`
@@ -16,7 +16,7 @@ To use a progect you should have `g++ compiler` and `make`
     * `make`
 
 ## Usage
-To use a program you should run `run` file in linux and `run.exe` file in windows.
+To use a program you should run `Quadratic` file.
 
 Usage example:
 <p align="center">
@@ -24,4 +24,4 @@ Usage example:
 </p>
 
 ## Features
-Еhe program allows you to choose the testing mode of the program. To do this, run the program with the `-d` flag.
+The program allows you to choose the testing mode of the program. To do this, run the program with the `-d` flag.
