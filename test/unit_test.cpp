@@ -9,11 +9,11 @@
 
 const char *TEST_FILE_PATH = "./test/tests.txt";
 
-#define COLOR_RED "\x1B[31m"
+#define COLOR_RED   "\x1B[31m"
 
 #define COLOR_GREEN "\x1B[32m"
 
-#define END_COLOR "\033[0m"
+#define END_COLOR   "\033[0m"
 
 #define assert_cor_test_data assert(isfinite(coeffs->a));        \
                              assert(isfinite(coeffs->b));        \
@@ -34,11 +34,11 @@ enum Test_const
     FAIL_TEST    = 1,
 };
 
-void output_answer(const Quadratic_solution *solution, const char *str);
+static void output_answer(const Quadratic_solution *solution, const char *str);
 
-void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test);
+static void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test);
 
-int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);
+static int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);
 
 static bool is_equal(double a, double b)
 {
@@ -50,7 +50,7 @@ static bool is_equal(double a, double b)
     return (fabs(a-b) < EPSILON);
 }
 
-void output_answer(const Quadratic_solution *solution, const char *str)
+static void output_answer(const Quadratic_solution *solution, const char *str)
 {
     assert(solution != NULL);
     assert(str      != NULL);
@@ -67,7 +67,7 @@ void output_answer(const Quadratic_solution *solution, const char *str)
     }
 }
 
-int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
+static int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
     assert(coeffs     != NULL);
     assert(solution   != NULL);
@@ -95,11 +95,11 @@ void unit_test()
     assert(input_file != NULL);
 
     int count_false_test = 0;
-    int num_test = 0;
+    int num_test         = 0;
 
     while (true)
     {
-        Quadratic_coeffs coeffs = {0, 0, 0};
+        Quadratic_coeffs   coeffs   = {0   , 0, 0};
         Quadratic_solution solution = {ZERO, 0, 0};
 
         int ret_read = read_test(input_file, &coeffs, &solution);
@@ -122,7 +122,7 @@ void unit_test()
     }
 }
 
-void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test)
+static void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test)
 {
     assert(coeffs           != NULL);
     assert(corr_solution    != NULL);
@@ -130,7 +130,7 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
 
     assert_cor_test_data
 
-    Quadratic_solution test_solution = {ZERO, 0, 0};
+    Quadratic_solution test_solution = {0, 0, 0};
     
     if (test_quadratic(coeffs, corr_solution, &test_solution) == FAIL_TEST)
     {
@@ -151,7 +151,7 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
     printf(END_COLOR "\n");
 }
 
-int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution)
+static int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution)
 {
     assert(test_solution != NULL);
     assert(corr_solution != NULL);

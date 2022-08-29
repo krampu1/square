@@ -8,9 +8,9 @@
 enum Quadratic_num_of_roots
 {
     INFINITY_ROOTS = -1,
-    ZERO =            0,
-    ONE =             1,
-    TWO =             2,
+    ZERO           =  0,
+    ONE            =  1,
+    TWO            =  2,
 };
 
 struct Quadratic_coeffs
