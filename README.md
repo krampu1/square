@@ -23,6 +23,3 @@ Usage example:
 <p align="center">
     <img src="resources//solve.bmp" alt="Preview" width="416"/>
 </p>
-
-## Features
-The program allows you to choose the testing mode of the program. To do this, run the program with the `-d` flag.
