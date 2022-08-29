@@ -16,6 +16,18 @@
                      assert(isfinite(coeffs->b));\
                      assert(isfinite(coeffs->c));
 
+static bool is_equal(double a, double b);
+
+static bool is_zero(double a);
+
+void clamp_zero_double(double *a);
+
+static void sort_ascending(double *a, double *b);
+
+void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
+
+void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
+
 static bool is_equal(double a, double b)
 {
     assert(isfinite(a));

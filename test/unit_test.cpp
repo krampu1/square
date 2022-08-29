@@ -34,6 +34,8 @@ enum Test_const
     FAIL_TEST    = 1,
 };
 
+void output_answer(const Quadratic_solution *solution, const char *str);
+
 static bool is_equal(double a, double b)
 {
     assert(a != NAN);
