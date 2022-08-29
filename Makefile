@@ -16,20 +16,20 @@ DIR_BUILD := .\build
 
 EXEC_FILE := quadratic.exe
 
-DEBUG_FILE := test.exe
+TEST_FILE := test.exe
 
 
 all: test
 
-test: build_dir $(DIR_BUILD)/$(DEBUG_FILE)
+test: build_dir $(DIR_BUILD)/$(TEST_FILE)
 
 release: build_dir $(DIR_BUILD)/$(EXEC_FILE)
 
 $(DIR_BUILD)/$(EXEC_FILE): build/square.o build/quadratic_equation.o build/unit_test.o build/io.o
 	$(CC) $(FLAGS) $(FLAGS_OPT) $(DIR_BUILD)/square.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(EXEC_FILE)
 
-$(DIR_BUILD)/$(DEBUG_FILE): build/square_test.o build/quadratic_equation.o build/unit_test.o build/io.o
-	$(CC) $(FLAGS) $(DIR_BUILD)/square_test.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(DEBUG_FILE)
+$(DIR_BUILD)/$(TEST_FILE): build/square_test.o build/quadratic_equation.o build/unit_test.o build/io.o
+	$(CC) $(FLAGS) $(DIR_BUILD)/square_test.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(TEST_FILE)
 
 build/square_test.o: square.cpp
 	$(CC) $(FLAGS) -c $< -D TEST -o ./$@
