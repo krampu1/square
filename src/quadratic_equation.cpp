@@ -9,24 +9,24 @@
 #include <assert.h>
 #include <string.h>
 
-#define assert_solve assert(coeffs != NULL);     \
-                     assert(solution != NULL);   \
-                                                 \
-                     assert(isfinite(coeffs->a));\
-                     assert(isfinite(coeffs->b));\
-                     assert(isfinite(coeffs->c));
+#define assert_solve_equation assert(coeffs   != NULL);   \
+                              assert(solution != NULL);   \
+                                                          \
+                              assert(isfinite(coeffs->a));\
+                              assert(isfinite(coeffs->b));\
+                              assert(isfinite(coeffs->c));
 
 static bool is_equal(double a, double b);
 
 static bool is_zero(double a);
 
-void clamp_zero_double(double *a);
+static void clamp_zero_double(double *a);
 
 static void sort_ascending(double *a, double *b);
 
-void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
+static void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
-void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
+static void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
 static bool is_equal(double a, double b)
 {
@@ -50,7 +50,7 @@ static bool is_zero(double a)
     return false;
 }
 
-void clamp_zero_double(double *a)
+static void clamp_zero_double(double *a)
 {
     assert(a != NULL);
 
@@ -78,9 +78,9 @@ static void sort_ascending(double *a, double *b)
     }
 }
 
-void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
+static void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
-    assert_solve
+    assert_solve_equation
 
     if (is_zero(coeffs->b)) 
     {
@@ -102,9 +102,9 @@ void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
     }
 }
 
-void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
+static void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
-    assert_solve
+    assert_solve_equation
 
     assert(!is_zero(coeffs->a));
 
@@ -138,7 +138,7 @@ void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution 
 
 void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
-    assert_solve
+    assert_solve_equation
 
     if (is_zero(coeffs->a))
     {

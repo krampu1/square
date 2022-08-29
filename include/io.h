@@ -16,7 +16,7 @@ enum Input_const
 
 /// Function used to take equation parameters from the console
 /**
-* @param [in] coeffs pointer to the coefficients of the quadratic equation
+* @param [in]  coeffs pointer to the coefficients of the quadratic equation
 *
 * @param [out] coeffs coefficients of the quadratic equation
 *

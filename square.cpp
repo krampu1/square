@@ -31,7 +31,7 @@ int main()
 
         Quadratic_solution roots = {};
 
-        solve(&coeffs, &roots);
+        solve(&coeffs,  &roots);
         output_solution(&roots);
     }
 

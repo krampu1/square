@@ -30,7 +30,7 @@ struct Quadratic_solution
 
 /// The function of solving the quadratic equation
 /**
-* @param [in] coeffs coefficients of the quadratic equation
+* @param [in]  coeffs coefficients of the quadratic equation
 *
 * @param [out] solution solution of the quadratic equation
 *
