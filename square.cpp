@@ -24,7 +24,7 @@ static void greetings();
 
 static void bye();
 
-static void solve_outconsol(const Quadratic_coeffs *coeffs);
+static void solve_out_in_consol(const Quadratic_coeffs *coeffs);
 
 #endif
 
@@ -52,7 +52,7 @@ int main(const int argc, const char* argv[])
             return CONVERT_ERROR;
         }
         
-        solve_outconsol(&coeffs);
+        solve_out_in_consol(&coeffs);
     }
     else
     {
@@ -68,7 +68,7 @@ int main(const int argc, const char* argv[])
                 break;
             }
 
-            solve_outconsol(&coeffs);
+            solve_out_in_consol(&coeffs);
         }
 
         bye();
@@ -80,7 +80,7 @@ int main(const int argc, const char* argv[])
 
 #ifndef TEST
 
-static void solve_outconsol(const Quadratic_coeffs *coeffs)
+static void solve_out_in_consol(const Quadratic_coeffs *coeffs)
 {
     assert(coeffs != NULL);
 
