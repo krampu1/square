@@ -6,17 +6,17 @@
 #ifndef TEST
 
 #include "include\io.h"
+#include <assert.h>
+#include <math.h>
+
+#else
+
+#include "test\unit_test.h"
 
 #endif
 
 #include "include\quadratic_equation.h"
 #include <stdio.h>
-
-#ifdef TEST
-
-#include "test\unit_test.h"
-
-#endif
 
 #ifndef TEST
 
@@ -24,7 +24,7 @@ static void greetings();
 
 static void bye();
 
-static void solve_outconsol(const Quadratic_coeffs *coeffs)
+static void solve_outconsol(const Quadratic_coeffs *coeffs);
 
 #endif
 
@@ -67,7 +67,7 @@ int main(const int argc, const char* argv[])
             {
                 break;
             }
-            
+
             solve_outconsol(&coeffs);
         }
 
