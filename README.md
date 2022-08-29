@@ -17,7 +17,7 @@ To use the project, you must have a `g++ compiler` and a `make`
     * `make release`
 
 ## Usage
-To use the program, you must run the `quadratic` file.
+To use the program, you must run the `quadratic` file in the 'build` folder.
 
 Usage example:
 <p align="center">
