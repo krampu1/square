@@ -32,10 +32,10 @@ $(DIR_BUILD)/$(DEBUG_FILE): build/square_test.o build/quadratic_equation.o build
 	$(CC) $(FLAGS) $(DIR_BUILD)/square_test.o $(DIR_BUILD)/quadratic_equation.o $(DIR_BUILD)/unit_test.o $(DIR_BUILD)/io.o -o $(DIR_BUILD)/$(DEBUG_FILE)
 
 build/square_test.o: square.cpp
-	$(CC) $(FLAGS) -c $< $(TEST) -D TEST -o ./$@
+	$(CC) $(FLAGS) -c $< -D TEST -o ./$@
 
 build/square.o: square.cpp
-	$(CC) $(FLAGS) -c $< $(TEST) -o ./$@
+	$(CC) $(FLAGS) -c $< -o ./$@
 
 build/quadratic_equation.o: ./src/quadratic_equation.cpp
 	$(CC) $(FLAGS) -c $< -o ./$@
