@@ -12,7 +12,7 @@ FLAGS := -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef          \
 
 FLAGS_OPT := -O3
 
-DIR_BUILD := ./build
+DIR_BUILD := .\build
 
 EXEC_FILE := quadratic.exe
 

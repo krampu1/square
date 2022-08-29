@@ -3,6 +3,9 @@
 * \brief unit test header file
 */
 
+#ifndef UNIT_TEST
+#define UNIT_TEST
+
 #include <stdio.h>
 
 /// Function called for code testing
@@ -17,48 +20,4 @@
 */
 void unit_test();
 
-/// reading a test from a file
-/**
-* @param [in] input_file pointer to the file for reading
-* @param [in] coeffs  pointer to a structure with parameters
-* @param [in] solution pointer to a structure with roots
-*
-* @param [out] coeffs structure with parameters
-* @param [out] solution structure with roots
-*
-* @return int SUCCESS=>0 END_FILE=>1
-*/
-int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution);
-
-/// Function for checking the test with the output of information to the console
-/**
-* @param [in] num_of_test number of test
-* @param [in] coeffs coefficients of the quadratic equation
-* @param [in] corr_solution correct solution of the quadratic equation
-*
-* @param [out] count_false_test invalid test counter
-*
-* This function tests the program on certain data and outputs information
-* to the console about whether the test was successfully passed and about the test.\n\n
-*
-* Эта функция тестирует программу на определённых данных и выводит в консоль
-* информацию о том успешно ли пройден тест и о сомом тесте. 
-*/
-void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int* count_false_test);
-
-/// A function that tests the operation of a test with certain parameters
-/**
-* @param [in] coeffs coefficients of the quadratic equation
-* @param [in] corr_solution correct solution of the quadratic equation
-*
-* @param [out] test_solution the found roots of the quadratic equation
-*
-* This function does not contain sets of tests, but only calls the main testing function on predefined input and output data.\n\n
-*
-* Эта функция не содержит набот тестов, а только вызывает функцию основного
-* тестирования на заранее определённых входных и выходных данных.\n
-* В случае если верный ответ совподает с выводом программы возврощается true иначе false.
-*
-* @return int CORRECT=>0 FAIL=>1
-*/
-int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);
+#endif

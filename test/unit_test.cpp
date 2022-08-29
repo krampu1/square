@@ -7,6 +7,8 @@
 #include <math.h>
 #include <assert.h>
 
+const char *TEST_FILE_PATH = "./test/tests.txt";
+
 #define COLOR_RED "\x1B[31m"
 
 #define COLOR_GREEN "\x1B[32m"
@@ -19,8 +21,6 @@
                                                                  \
                              assert(isfinite(corr_solution->x1));\
                              assert(isfinite(corr_solution->x2));
-
-const char *TEST_FILE_PATH = "./test/tests.txt";
 
 enum Read_const
 {
@@ -35,6 +35,10 @@ enum Test_const
 };
 
 void output_answer(const Quadratic_solution *solution, const char *str);
+
+void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test);
+
+int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);
 
 static bool is_equal(double a, double b)
 {
@@ -128,7 +132,7 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
 
     Quadratic_solution test_solution = {ZERO, 0, 0};
     
-    if (testqe(coeffs, corr_solution, &test_solution) == FAIL_TEST)
+    if (test_quadratic(coeffs, corr_solution, &test_solution) == FAIL_TEST)
     {
         printf(COLOR_RED "error in test number %d || ", num_of_test + 1);
         (*count_false_test)++;
@@ -147,7 +151,7 @@ void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quad
     printf(END_COLOR "\n");
 }
 
-int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution)
+int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution)
 {
     assert(test_solution != NULL);
     assert(corr_solution != NULL);

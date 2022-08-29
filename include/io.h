@@ -3,6 +3,9 @@
 * \brief input/output header file
 */
 
+#ifndef IO
+#define IO
+
 #include "quadratic_equation.h"
 
 enum Input_const
@@ -39,3 +42,5 @@ void output_solution(const Quadratic_solution *solution);
 void greetings();
 
 void bye();
+
+#endif
