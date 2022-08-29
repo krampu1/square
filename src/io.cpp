@@ -1,12 +1,61 @@
 /** 
 * \file input_output.cpp 
-* \brief input/output code file
+* \brief input/output source file
 */
 
 #include "../include/io.h"
 #include <stdio.h>
+#include <string.h>
 #include <math.h>
 #include <assert.h>
+
+enum ARG_COEFFS_OFFSET
+{   
+    FIRST_COEFFS_OFFSET  = 1,
+    SECOND_COEFFS_OFFSET = 2,
+    THIRD_COEFFS_OFFSET  = 3,
+};
+
+Convert_const convert_args_to_coeffs(const int argc, const char *argv[], Quadratic_coeffs *coeffs)
+{
+    int num_of_s_arg = 0;
+
+    for (int num_of_arg = 0; num_of_arg < argc; num_of_arg++)
+    {
+        if (!strncmp("-s", argv[num_of_arg], 3))
+        {
+            num_of_s_arg = num_of_arg;
+        }
+    }
+    
+    if (num_of_s_arg + COUNT_ARG_COEFFS >= argc)
+    {
+        return CONVERT_ERROR;
+    }
+
+    int count_success_coeffs = sscanf(argv[num_of_s_arg + FIRST_COEFFS_OFFSET], "%lf", &coeffs->a) + 
+                               sscanf(argv[num_of_s_arg + SECOND_COEFFS_OFFSET],"%lf", &coeffs->b) + 
+                               sscanf(argv[num_of_s_arg + THIRD_COEFFS_OFFSET], "%lf", &coeffs->c);
+    
+    if (count_success_coeffs != COUNT_ARG_COEFFS)
+    {
+        return CONVERT_ERROR;
+    }
+
+    return CONVERT_SUCCESS;
+}
+
+bool is_console_solve(const int argc, const char *argv[])
+{
+    for (int num_of_arg = 0; num_of_arg < argc; num_of_arg++)
+    {
+        if (!strncmp("-s", argv[num_of_arg], 3))
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 static void skip_stdin_line()
 {
@@ -16,16 +65,6 @@ static void skip_stdin_line()
     {
         continue;
     }
-}
-
-void greetings()
-{
-    printf("This program solves a quadratic equation. Press f to exit the program.\n");
-}
-
-void bye()
-{
-    printf("The program has terminated because the input has been completed.");
 }
 
 void output_solution(const Quadratic_solution *solution)

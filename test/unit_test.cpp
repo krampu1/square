@@ -1,13 +1,14 @@
 /** 
 * \file unit_test.cpp 
-* \brief unit test code file
+* \brief unit test source file
 */
 #include "../include/quadratic_equation.h"
 #include "unit_test.h"
+#include "../include/common.h"
 #include <math.h>
 #include <assert.h>
 
-const char *TEST_FILE_PATH = "./test/tests.txt";
+static const char *TEST_FILE_PATH = "./test/tests.txt";
 
 #define COLOR_RED   "\x1B[31m"
 
@@ -40,53 +41,7 @@ static void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, con
 
 static int test_quadratic(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, Quadratic_solution *test_solution);
 
-static bool is_equal(double a, double b)
-{
-    assert(a != NAN);
-    assert(b != NAN);
-    
-    const double EPSILON = 1e-5; 
-    
-    return (fabs(a-b) < EPSILON);
-}
-
-static void output_answer(const Quadratic_solution *solution, const char *str)
-{
-    assert(solution != NULL);
-    assert(str      != NULL);
-
-    printf("%s", str);
-
-    if (solution->count_roots == INFINITY_ROOTS)
-    {
-        printf(" answer: count_roots = infinity ");
-    }
-    else
-    {
-        printf(" answer: count_roots = %d x1 = %lg x2 = %lg", solution->count_roots, solution->x1, solution->x2);
-    }
-}
-
-static int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
-{
-    assert(coeffs     != NULL);
-    assert(solution   != NULL);
-    assert(input_file != NULL);
-
-    const int COUNT_READ_PARAM = 6;
-
-    int ret_input = fscanf(input_file, "%lf %lf %lf %d %lf %lf",
-                           &coeffs->a, &coeffs->b, &coeffs->c, &solution->count_roots, &solution->x1, &solution->x2);
-
-    if (ret_input == EOF)
-    {
-        return READ_END_FILE;
-    }
-
-    assert(ret_input == COUNT_READ_PARAM);
-
-    return READ_SUCCESS;
-}
+static int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
 void unit_test()
 {
@@ -122,6 +77,44 @@ void unit_test()
     }
 }
 
+static void output_answer(const Quadratic_solution *solution, const char *str)
+{
+    assert(solution != NULL);
+    assert(str      != NULL);
+
+    printf("%s", str);
+
+    if (solution->count_roots == INFINITY_ROOTS)
+    {
+        printf(" answer: count_roots = infinity ");
+    }
+    else
+    {
+        printf(" answer: count_roots = %d x1 = %lg x2 = %lg", solution->count_roots, solution->x1, solution->x2);
+    }
+}
+
+static int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solution *solution)
+{
+    assert(coeffs     != NULL);
+    assert(solution   != NULL);
+    assert(input_file != NULL);
+
+    const int COUNT_READ_PARAM = 6;
+
+    int ret_input = fscanf(input_file, "%lf %lf %lf %d %lf %lf",
+                           &coeffs->a, &coeffs->b, &coeffs->c, (int *)(&solution->count_roots), &solution->x1, &solution->x2);
+
+    if (ret_input == EOF)
+    {
+        return READ_END_FILE;
+    }
+
+    assert(ret_input == COUNT_READ_PARAM);
+
+    return READ_SUCCESS;
+}
+
 static void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_solution, int *count_false_test)
 {
     assert(coeffs           != NULL);
@@ -130,7 +123,7 @@ static void print_tests_res(int num_of_test, const Quadratic_coeffs *coeffs, con
 
     assert_cor_test_data
 
-    Quadratic_solution test_solution = {0, 0, 0};
+    Quadratic_solution test_solution = {ZERO, 0, 0};
     
     if (test_quadratic(coeffs, corr_solution, &test_solution) == FAIL_TEST)
     {

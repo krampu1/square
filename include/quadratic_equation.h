@@ -34,13 +34,13 @@ struct Quadratic_solution
 *
 * @param [out] solution solution of the quadratic equation
 *
-* This function divides the quadratic equation into 2 cases.\n
+* This function branches the quadratic equation into 2 cases.\n
 * If a is 0, then the equation is treated as linear.\n
-* If a is not equal to 0, then the equation is considered as a square equation that cannot have an infinite number of roots.\n\n
+* Otherwise, the equation is considered as a square equation that cannot have an infinite number of roots.\n\n
 *
 * Эта функция разделяет квадратное уравнение на 2 случая.\n
 * Если a равен 0, то уравнение рассматривается как линейное.\n
-* Если а не равен 0, то уравнение рассматривается как квадратное у которого не может возникнуть бесконечное колличество корней.
+* В противном случае, уравнение рассматривается как квадратное у которого не может возникнуть бесконечное количество корней.
 */
 void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 

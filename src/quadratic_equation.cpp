@@ -1,10 +1,11 @@
 /** 
 * \file quadratic_equation.cpp 
-* \brief quadratic equation code file
+* \brief quadratic equation source file
 */
 
 #include "../include/quadratic_equation.h"
 #include "../include/io.h"
+#include "../include/common.h"
 #include <math.h>
 #include <assert.h>
 #include <string.h>
@@ -16,65 +17,21 @@
                               assert(isfinite(coeffs->b));\
                               assert(isfinite(coeffs->c));
 
-static bool is_equal(double a, double b);
-
-static bool is_zero(double a);
-
-static void clamp_zero_double(double *a);
-
-static void sort_ascending(double *a, double *b);
-
 static void solve_linear(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
 static void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_solution *solution);
 
-static bool is_equal(double a, double b)
+void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
 {
-    assert(isfinite(a));
-    assert(isfinite(b));
+    assert_solve_equation
 
-    const double EPSILON = 1e-5; 
-    
-    return (fabs(a-b) < EPSILON);
-}
-
-static bool is_zero(double a)
-{
-    assert(a != NAN);
-
-    if (is_equal(a, 0))
+    if (is_zero(coeffs->a))
     {
-        return true;
+        solve_linear(coeffs, solution);
     }
-
-    return false;
-}
-
-static void clamp_zero_double(double *a)
-{
-    assert(a != NULL);
-
-    assert(*a != NAN);
-
-    if (is_zero(*a))
+    else
     {
-        *a = 0;
-    }  
-}
-
-static void sort_ascending(double *a, double *b)
-{
-    assert(a != NULL);
-    assert(b != NULL);
-
-    assert(*a != NAN);
-    assert(*b != NAN);
-
-    if (*a > *b)
-    {
-        double temp = *a;
-        *a = *b;
-        *b = temp;
+        solve_nonzero_quadratic(coeffs, solution);
     }
 }
 
@@ -133,19 +90,5 @@ static void solve_nonzero_quadratic(const Quadratic_coeffs *coeffs, Quadratic_so
 
         clamp_zero_double(&solution->x1);
         clamp_zero_double(&solution->x2);
-    }
-}
-
-void solve(const Quadratic_coeffs *coeffs, Quadratic_solution *solution)
-{
-    assert_solve_equation
-
-    if (is_zero(coeffs->a))
-    {
-        solve_linear(coeffs, solution);
-    }
-    else
-    {
-        solve_nonzero_quadratic(coeffs, solution);
     }
 }
