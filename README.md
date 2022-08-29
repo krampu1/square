@@ -9,7 +9,7 @@ This program can solve quadratic equations with a real number. Only for Windows 
 
 ## Installation
 
-To use the progect, you must have `g++ compiler` and `make`
+To use the project, you must have a `g++ compiler` and a `make`
 * Clone this repository:
     * `git clone https://github.com/krampu1/square.git`
     * `cd square`
@@ -17,7 +17,7 @@ To use the progect, you must have `g++ compiler` and `make`
     * `make`
 
 ## Usage
-To use the program, you must run `Quadratic` file.
+To use the program, you must run the `Quadratic` file.
 
 Usage example:
 <p align="center">
