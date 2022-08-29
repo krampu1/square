@@ -14,10 +14,10 @@ To use the project, you must have a `g++ compiler` and a `make`
     * `git clone https://github.com/krampu1/square.git`
     * `cd square`
  * Build the program:
-    * `make`
+    * `make release`
 
 ## Usage
-To use the program, you must run the `Quadratic` file.
+To use the program, you must run the `quadratic` file.
 
 Usage example:
 <p align="center">
