@@ -48,8 +48,33 @@ int input_coeffs(Quadratic_coeffs *coeffs);
 */
 void output_solution(const Quadratic_solution *solution);
 
+/// is there a -s flag among the command line argument
+/**
+* @param [in] argc number of command line arguments
+* @param [in] argv command line arguments
+*
+* Если был введен флаг -s, то значение true, в противном случае false.
+*
+* @return if the -s flag was entered, then true, otherwise false
+*/
 bool is_console_solve(const int argc, const char *argv[]);
 
+
+/// converting certain command line arguments to coefficients
+/**
+* @param [in] argc number of command line arguments
+* @param [in] argv command line arguments
+* @param [in] coeffs pointer to the coefficients
+*
+* @param [out] coeffs coefficients
+*
+* This function converts certain command line arguments to 3 coefficients.\n\n
+*
+* Эта функция преобразует определённые аргументы командной строки в 3 коэффициента.\n
+* Если было успешное преобразование вернётся INPUT_SUCCESS иначе CONVERT_ERROR.
+*
+* @return if the conversion was successful, INPUT_SUCCESS will be returned otherwise CONVERT_ERROR
+*/
 Convert_const convert_args_to_coeffs(const int argc, const char *argv[], Quadratic_coeffs *coeffs);
 
 #endif
