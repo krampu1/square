@@ -160,12 +160,12 @@ int testqe(const Quadratic_coeffs *coeffs, const Quadratic_solution *corr_soluti
     
     solve(coeffs, test_solution);
 
-    if (corr_solution->count_roots != test_solution->count_roots
+    if (corr_solution->count_roots  !=  test_solution->count_roots
         || !is_equal(corr_solution->x1, test_solution->x1)
         || !is_equal(corr_solution->x2, test_solution->x2))
     {
         return FAIL_TEST;
     }
-
+    
     return CORRECT_TEST;
 }
