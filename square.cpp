@@ -43,12 +43,9 @@ int main(const int argc, const char* argv[])
 
     if (is_console_solve(argc, argv))
     {
-        Convert_const ret_get = convert_args_to_coeffs(argc, argv, &coeffs);
-
-        if(ret_get == CONVERT_ERROR)
+        if(convert_args_to_coeffs(argc, argv, &coeffs) == CONVERT_ERROR)
         {
             printf("Error about taking parameters from flags. the flag should look like -s a b c");
-
             return CONVERT_ERROR;
         }
         
@@ -60,14 +57,9 @@ int main(const int argc, const char* argv[])
 
         while (true)
         {
-
-            int ret_input = input_coeffs(&coeffs);
-
-            if (ret_input == INPUT_CLOSE_FLAG) 
-            {
+            if (input_coeffs(&coeffs) == INPUT_CLOSE_FLAG) 
                 break;
-            }
-
+ 
             solve_out_in_consol(&coeffs);
         }
 

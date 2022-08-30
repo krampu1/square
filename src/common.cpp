@@ -30,9 +30,7 @@ void clamp_zero_double(double *a)
     assert(*a != NAN);
 
     if (is_zero(*a))
-    {
         *a = 0;
-    }  
 }
 
 bool is_zero(double a)
@@ -40,9 +38,7 @@ bool is_zero(double a)
     assert(a != NAN);
 
     if (is_equal(a, 0))
-    {
         return true;
-    }
 
     return false;
 }

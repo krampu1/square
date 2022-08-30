@@ -60,9 +60,7 @@ void unit_test()
         int ret_read = read_test(input_file, &coeffs, &solution);
 
         if (ret_read == READ_END_FILE)
-        {
             break;
-        }
 
         print_tests_res(num_test++, &coeffs, &solution, &count_false_test);
     }
@@ -105,10 +103,8 @@ static int read_test(FILE *input_file, Quadratic_coeffs *coeffs, Quadratic_solut
     int ret_input = fscanf(input_file, "%lf %lf %lf %d %lf %lf",
                            &coeffs->a, &coeffs->b, &coeffs->c, (int *)(&solution->count_roots), &solution->x1, &solution->x2);
 
-    if (ret_input == EOF)
-    {
+    if (ret_input == EOF) 
         return READ_END_FILE;
-    }
 
     assert(ret_input == COUNT_READ_PARAM);
 

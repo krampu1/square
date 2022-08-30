@@ -23,24 +23,18 @@ Convert_const convert_args_to_coeffs(const int argc, const char *argv[], Quadrat
     for (int num_of_arg = 0; num_of_arg < argc; num_of_arg++)
     {
         if (!strncmp("-s", argv[num_of_arg], 3))
-        {
             num_of_s_arg = num_of_arg;
-        }
     }
     
     if (num_of_s_arg + COUNT_ARG_COEFFS >= argc)
-    {
         return CONVERT_ERROR;
-    }
 
     int count_success_coeffs = sscanf(argv[num_of_s_arg + FIRST_COEFFS_OFFSET], "%lf", &coeffs->a) + 
                                sscanf(argv[num_of_s_arg + SECOND_COEFFS_OFFSET],"%lf", &coeffs->b) + 
                                sscanf(argv[num_of_s_arg + THIRD_COEFFS_OFFSET], "%lf", &coeffs->c);
     
     if (count_success_coeffs != COUNT_ARG_COEFFS)
-    {
         return CONVERT_ERROR;
-    }
 
     return CONVERT_SUCCESS;
 }
@@ -50,9 +44,7 @@ bool is_console_solve(const int argc, const char *argv[])
     for (int num_of_arg = 0; num_of_arg < argc; num_of_arg++)
     {
         if (!strncmp("-s", argv[num_of_arg], 3))
-        {
             return true;
-        }
     }
     return false;
 }
@@ -62,9 +54,7 @@ static void skip_stdin_line()
     int ch = 0;
     
     while ((ch = getchar()) != '\n' && ch != EOF)
-    {
         continue;
-    }
 }
 
 void output_solution(const Quadratic_solution *solution)
@@ -115,16 +105,12 @@ int input_coeffs(Quadratic_coeffs *coeffs)
         int num_correctly_numbers = scanf("%lf %lf %lf", &coeffs->a, &coeffs->b, &coeffs->c);
 
         if (num_correctly_numbers == EOF)
-        {
             return INPUT_CLOSE_FLAG;
-        }
 
         int first_char = getchar();
 
         if (first_char == 'f' || first_char == EOF)
-        {
             return INPUT_CLOSE_FLAG;
-        }
 
         if (first_char != '\n') 
         {
@@ -134,9 +120,7 @@ int input_coeffs(Quadratic_coeffs *coeffs)
         }
 
         if (num_correctly_numbers == COUNT_INPUT_PARAM) 
-        {
             break;
-        }
 
         printf("Error in input data, enter 3 numbers:\n");
     }
